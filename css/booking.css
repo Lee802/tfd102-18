@@ -1,6 +1,6 @@
 div.banner{
     /* position: relative; */
-    background: url(../img/secne/TKUO-Vol4-1920-0036.jpg) no-repeat ;
+    background: url(../img/banner/2437151.jpg) no-repeat ;
     background-size: cover;
     width: 100%;
     height: 500px;
@@ -29,6 +29,9 @@ div.banner p.english{
     transform: translate(-50% ,-50%);
     margin: 0;
 }
+body{
+    background-color: rgba(128, 128, 128, 0.137);
+}
 
 div.body{
     display: flex;
@@ -38,6 +41,196 @@ div.body{
     align-items: center;
     flex-direction: column;
 }
+div.peoplehide{
+    border: 1px solid gray;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top:  50px;
+    width: 100%;
+    display: none;
+}
+div.peopleborder{
+    margin-left: 50px;
+}
+div.big , div.chli ,div.addborders{
+    display: flex;
+}
+div.addborders{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    font-size: 20px;
+
+    align-items: center;
+    margin-left: 50px;
+}
+div.top{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    font-size: 18px;
+    align-items: center;
+    padding-bottom: 10px;
+    position: sticky ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+div.topborder{
+    margin-left: -42%;
+}
+div.date , div.people{
+    position: relative;
+    border: 1px solid gray;
+    width: 250px;
+    text-align: left;
+    border-radius: 6px;
+    background-color: rgba(128, 128, 128, 0.192);
+    cursor: pointer;
+}
+
+div.peopleborder:active div.peoplehide{
+    display: block;
+}
+div.hiddentops{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+ }
 
 
+div.rooms{
+    margin-top: 50px;
+    margin-left: -30%;
+}
+div.room1{
+    padding-bottom: 100px;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+div.people , div.date{
+    padding-left: 10px;
+}
 
+div.img{
+    width: 450px;
+    height: 300px;
+}
+div.both{
+    display: flex;
+}
+div.rooms p{
+    margin-bottom: 30px;
+}
+div.detal{
+    padding-left: 20px;
+    border-bottom: 1px solid rgb(153, 153, 153);
+    width: 300px;
+    color: rgb(46, 46, 46);
+
+}
+a.more{
+    color: rgba(48, 48, 255, 0.987);
+    cursor: pointer;
+}
+div.rooms ul{
+     display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 20px;
+}
+div.icon{
+    height: 30px;
+}
+img.rooms{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+img.icon{
+    height: 18px;
+    width: 18px;
+    object-fit: contain;
+}
+div.pos{
+    position: relative;
+    left: 75%;
+    top: 50px;
+}
+a.money1{
+    font-size: 14px;
+}
+
+a.moneyscolor{
+    color: blue;
+    font-size: 26px;
+}
+div.addborder{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    font-size: 20px;
+
+    align-items: center;
+    margin-top: 30px;
+}
+div.num{
+    margin: 0;
+    padding: 0px 30px;
+    background-color: rgba(128, 128, 128, 0.254);
+    height: 30px;
+}
+div.addborder p{
+    padding: 0px;
+    margin: 0;
+    margin-left: 30px;
+
+}
+div.add , div.noadd{
+    padding: 0px 10px;
+    width:30px;
+    background-color: rgba(114, 113, 113, 0.418);
+    cursor: pointer;
+    height: 30px;
+}
+img.messageicon{
+    width: 18px;
+    padding: 2px;
+    margin-right: 4px;
+}
+div.message{
+    position: absolute;
+    top: 150px;
+    right: 18%;
+    background-color: white;
+    z-index: 1;
+    border: 1px solid rgb(157, 157, 157);
+    padding: 20px;
+    width: 350px;
+}
+div.totalrooms{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+input{
+    width: 100%;
+    height: 50px;
+    background-color:#1a2e40ff ;
+    color: white;
+    cursor: pointer;
+}
+a.smallsize{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+
+}
