@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "logo";
+    src: url(../font/DMFT1614930817567.ttf);
+}
+
+div.header ul li a.leftheader{
+    margin-left: 100px;
+}
+h1{
+    color: #d39717;
+}
+body{
+
+    min-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 0px;
+    background-color: #ece7da;
+}
+div.header{
+    background-color: black;
+    background-size: cover;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+div.header ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+div.header ul a{
+    padding-bottom: 26px;
+}
+
+div.header ul li.room{
+    position: relative;
+
+}
+div.header ul li.room:hover ul{
+    display: block;
+    z-index: 1;
+}
+div.header ul li.room ul{
+    position: absolute;
+    left: 0;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    flex-wrap: nowrap;
+    padding: 0px;
+    display: none;
+}
+
+div.header ul li.room ul li{
+   border: 1px solid gray;
+   border-bottom: 0px;
+
+   background-color: white;
+   padding: 0px 20px;
+}
+
+div.header ul li.room ul a{
+    display: block;
+    padding: 6px 20px;
+    color: black;
+    margin: 0;
+    font-size: 18px;
+}
+
+div.header ul li.room ul li:hover {
+    background-color: rgba(212, 211, 211, 0.986);
+}
+
+div.header ul li.room ul li:hover a{
+
+    color: #d39717 ;
+
+}
+
+div.header ul li a.first{
+    color: #d39717 ;
+}
+div.header ul li.room ul li:last-child{
+    border-bottom:  1px solid gray;
+}
+
+div.header img {
+    width: 100px;
+    height: 80px;
+    padding: 0px 60px;
+    margin: 0px 20px;
+}
+
+div.header a{
+    font-size: 20px;
+    padding: 50px 30px 21px 30px;
+    color: white;
+    text-decoration: none;
+
+    bottom: 20px;
+
+}
+
+div.header a.logoleft{
+    padding-right:30px;
+}
+div.header a.logoright{
+    padding-left: 30px;
+}
+div.header a:hover{
+    color: #d39717;
+
+}
+
+
+
+
+div.footer{
+    margin-top: 200px;
+    background-color: black;
+    min-width: 1200px;
+    height: 150px;
+
+}
+
+
+div.footer img{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    left:400px;
+    top:50%;
+    transform: translateY(-50%);
+}
+div.footer a{
+    color: white;
+    font-size: 18px;
+    position: relative;
+    left: 500px;
+}
+div.footer a.address{
+    left:580px;
+}

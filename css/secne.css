@@ -1,0 +1,83 @@
+div.banner{
+    /* position: relative; */
+    background: url(../img/secne/TKUO-Vol4-1920-0036.jpg) no-repeat ;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+div.banner div.mask{
+    background-color: rgba(128, 128, 128, 0.418);
+    width: 100%;
+    height: 500px;
+}
+div.banner p{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50% ,-50%);
+    margin: 0;
+}
+div.banner p.english{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% ,-50%);
+    margin: 0;
+}
+
+div.body{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-size: 16px;
+    align-items: center;
+
+}
+
+div.top , div.botton{
+    text-align: center;
+}
+
+div.botton{
+    font-size: 16px;
+    margin-top: 20px;
+}
+div.body h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+div.body div.gridbody{
+    display: grid;
+    grid-template-columns:  auto auto auto;
+    /* border: 1px solid black; */
+    column-gap: 30px;
+    row-gap: 100px;
+    width: 1200px;
+    grid-template-rows: 200px;
+}
+
+
+div.body div.gridbody div.griditem{
+    /* border: 1px solid red; */
+    line-height: top;
+    height: 250px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+div.body img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+div.body div.griditem:hover img{
+    transform: scale(1.2 , 1.2);
+    cursor: pointer;
+}

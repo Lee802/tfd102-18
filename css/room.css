@@ -1,0 +1,115 @@
+div.banner{
+    /* position: relative; */
+    background: url(../img/banner/TKUO-Vol2-1920-0005.jpg) no-repeat ;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+div.banner div.mask{
+    background-color: rgba(128, 128, 128, 0.418);
+    width: 100%;
+    height: 500px;
+}
+div.banner p{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50% ,-50%);
+    margin: 0;
+}
+div.banner p.english{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% ,-50%);
+    margin: 0;
+}
+
+div.body{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-size: 16px;
+    align-items: center;
+
+}
+
+div.rooms{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+div.rooms div{
+    height: 300px;
+    width: 300px;
+    margin-left: 100px;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    transition:  box-shadow .5s;
+    cursor: pointer;
+}
+div.rooms h1{
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+div.rooms div:first-child{
+    margin-left: 0;
+}
+div.rooms img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+div.rooms{
+    font-size: 16px;
+    margin-top: 120px;
+
+}
+
+div.rooms div.imgsfirsts{
+    margin-left: 0;
+}
+div.rooms div.mask{
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #5a5a5a00;
+    cursor: pointer;
+    transition: .5s;
+    height: 0px;
+}
+
+div.rooms div:hover div.mask{
+     background-color: #5a5a5a87;
+     height: 300px;
+}
+div.rooms p.rooms{
+    transition-delay: .2s;
+    visibility: hidden;
+}
+
+div.rooms div:hover p.rooms{
+    visibility:visible;
+    position: absolute;
+    left: 4%;
+    bottom: 4%;
+    margin: 0;
+    font-size: 30px;
+    color: white;
+    font-weight: 900;
+}
+
+
+

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "logo";
+    src: url(../font/DMFT1614930817567.ttf);
+}
+
+div.hiddenheader{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+div.hiddenheader a.logo{
+    margin: 0px 20px;
+    padding: 0px 60px;
+    font-size: 50px;
+    font-family: "logo";
+    cursor: pointer;
+}
+
+div.hiddenheader a.logo:hover{
+    color: white;
+}
+div.hiddenheader a.first{
+    position: relative;
+    top: 0;
+ 
+}
+
+div.hiddenheader a.first::after{
+    content: "";
+    border: 2px solid #d39717;
+    border-radius: 20%;
+    position: absolute;
+    width: 80px;
+    
+    left: 6px;
+    top: 80px;
+}
+
+div.hiddenheader li{
+    font-size: 0;
+    list-style: none;
+}
+
+.hiddenheaderhovers{
+    position: relative;
+    top: 0;
+}
+
+div.hiddenheader li:hover a::after{
+    content: "";
+    border: 2px solid #d39717;
+    border-radius: 20%;
+    position: absolute;
+    width: 80px;
+    left: 6px;
+    top: 80px;
+}
