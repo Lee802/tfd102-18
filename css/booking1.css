@@ -33,3 +33,274 @@ div.banner p.english{
 body{
     background-color: white;
 }
+div.body{
+    font-size: 16px;
+}
+div.first , div.two , div.three{
+    width: 100px;
+    height: 100px;
+    border: 5px solid green;
+    border-radius: 100%;
+    margin-left: 200px;
+    position: relative;
+    color: green;
+    font-size: 24px;
+}
+div.first{
+    margin-left: 0px;
+    background-color: green;
+    color: white;
+}
+div.top{
+    margin-top: 100px;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+}
+
+div.top div::after{
+    content: "";
+    border: 2px solid green;
+    position: absolute;
+    width: 150px;
+    left: 130%;
+    top: 50%;
+}
+div.top div.three::after{
+    display: none;
+}
+
+div.top p{
+    margin: 0;
+}
+div.top p.num{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+}
+div.top p.text{
+    position: absolute;
+    left: 4%;
+    top: 120%;
+    color: green;
+}
+div.body div.top div.three {
+    color: gray;
+    border: 5px solid gray;
+}
+div.body div.top div.two::after{
+    content: "";
+    border: 2px solid gray;;
+}
+div.body div.top div.three p {
+    color: gray;
+}
+
+p{
+    margin: 0;
+}
+div.payinfos p{
+    position: absolute;
+}
+
+div.mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.payinfos , div.needknowborders , div.moneyitems , div.moneytotalsandpays , div.paypals{
+    border:  1px solid gray ;
+    width: 700px;
+
+    padding:20px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+div.cancels{
+    width: 742px;
+    display: flex;
+    flex-wrap: wrap;
+}
+h2{
+    margin: 20px 0px 10px 0px;
+}
+div.needknow{
+    flex-direction: column;
+}
+textarea{
+    height: 200px;
+    resize : none;
+}
+div.payinfos input , div.cards input{
+    width: 300px;
+    height: 20px;
+    padding: 4px 6px;
+    background-color: rgba(122, 122, 122, 0.178);
+    border: 0px;
+    border-radius: 6px;
+}
+div.payinfos div.payinfofirst{
+    margin-top: 50px;
+}
+div.payinfos div , div.cards div{
+    width: 330px;
+    margin-top: 30px;
+}
+div.payinfos div.full {
+    width: 100%;
+}
+div.payinfos input , div.payinfos textarea , div.cards input{
+    width: 100%;
+    margin-top: 10px;
+}
+ div.payinfos div.full input{
+     width: 98%;
+ }
+ div.payinfos div.right{
+     margin-left: 4%;
+ }
+div.payinfos textarea{
+    width: 690px;
+    padding: 4px 6px;
+    background-color: rgba(122, 122, 122, 0.178);
+    border: 0px;
+    border-radius: 6px;
+}
+div.payinfos input:focus-visible , div.payinfos textarea:focus-visible , div.cards input:focus-visible{
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.589);
+    outline: none;
+}
+div.payinfos input , div.payinfos textarea , div.cards input{
+    border: 1px solid rgba(122, 122, 122, 0.178);
+    outline: none;
+}
+div.dates{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.329);
+    height: 50px;
+    align-items: center;
+}
+div.dates p.people{
+    margin-left: 4%;
+}
+img.messageicon{
+    width: 18px;
+    padding: 2px;
+    margin-right: 4px;
+}
+div.rooms{
+    padding: 20px 0px;
+}
+img.rooms{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+p.roomstitle{
+    padding: 20px 10px;
+    font-size: 18px;
+}
+div.img{
+    width: 200px;
+}
+
+div.moneystotal{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 100px;
+    text-align: right;
+}
+div.moneyitems{
+    position: relative;
+}
+
+div.moneystotal1{
+    bottom: 40px;
+    transform: translateX(-100%);
+}
+div.moneystotal2{
+
+    text-align: right;
+}
+div.roomtotalsmoney {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    height: 40px;
+}
+div.bottomline{
+    border-bottom: 1px solid gray;
+
+}
+a.smallsize{
+    margin: 0;
+    padding: 0;
+    font-size: 8px;
+
+}
+div.cards{
+    width: 100%;
+    border:1px solid gray;
+    margin-top: 20px;
+    padding: 20px;
+}
+a.moneyscolor{
+    color: blue;
+    font-size: 26px;
+}
+
+div.paypals{
+    position: relative;
+}
+div.cards div{
+    margin: 0;
+    margin-top: 20px;
+}
+div.cards div:first-child{
+    margin: 0;
+}
+div.sendandback a{
+    text-decoration:none;
+    color: gray;
+}
+
+div.sendandback a:link {color:gray;}    /* 設定尚未點閱過的連結樣式 */
+div.sendandback a:visited {color:#gray;} /* 設定過去曾經閱過的連結 */
+div.sendandback a:hover {color:#gray;}   /* 設定滑鼠游標指在連結位置上的樣式 */
+div.sendandback a:active {color:#gray;}  /* 設定上點擊過的連結樣式 */
+
+div.sendandback{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    align-items: flex-end;
+}
+
+div.checkbox input , div.checkbox label{
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+div.back{
+    width: 100px;
+    font-size: 20px;
+}
+
+div.send input {
+    width: 200px;
+    height: 50px;
+    background-color:#1a2e40ff ;
+    color: white;
+    cursor: pointer;
+}
