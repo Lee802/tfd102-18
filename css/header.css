@@ -119,8 +119,6 @@ div.header a:hover{
 }
 
 
-
-
 div.footer{
     margin-top: 200px;
     background-color: black;
@@ -146,7 +144,6 @@ div.footer img{
 div.footer a , div.footer p{
     color: white;
     font-size: 18px;
-    position: relative;
 }
 
 div.footer div.addressborders{
