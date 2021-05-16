@@ -125,25 +125,42 @@ div.footer{
     margin-top: 200px;
     background-color: black;
     min-width: 1200px;
-    height: 150px;
-
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
 }
 
-
+div.footers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+}
 div.footer img{
     position: relative;
     width: 80px;
     height: 80px;
-    left:400px;
-    top:50%;
-    transform: translateY(-50%);
 }
-div.footer a{
+div.footer a , div.footer p{
     color: white;
     font-size: 18px;
     position: relative;
-    left: 500px;
 }
-div.footer a.address{
-    left:580px;
+
+div.footer div.addressborders{
+    display: flex;
+    justify-content: center;
+
+}
+
+div.footer div.addressborders div{
+    width: 400px;
+}
+div.footer div.addressborders div.works{
+    width: 600px;
+}
+p{
+    margin: 0;
 }

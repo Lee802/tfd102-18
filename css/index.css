@@ -124,11 +124,13 @@ div.imgs img{
 div.rooms div{
     height: 300px;
     width: 300px;
-    margin-left: 100px;
-    margin-top: 40px;
     position: relative;
     overflow: hidden;
 
+}
+div.rooms a{
+     margin-left: 100px;
+    margin-top: 40px;
 }
 div.rooms h1{
     position: absolute;
@@ -136,7 +138,7 @@ div.rooms h1{
     left: 50%;
     transform: translateX(-50%);
 }
-div.rooms div:first-child{
+div.rooms a.firsts{
     margin-left: 0;
 }
 div.rooms img{

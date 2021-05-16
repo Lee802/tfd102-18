@@ -234,3 +234,9 @@ a.smallsize{
     font-size: 14px;
 
 }
+p{
+    margin: 18px 0px;
+}
+div.footer p{
+    margin: 0;
+}
