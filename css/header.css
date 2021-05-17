@@ -156,7 +156,7 @@ div.footer div.addressborders div{
     width: 400px;
 }
 div.footer div.addressborders div.works{
-    width: 600px;
+    max-width: 600px;
 }
 p{
     margin: 0;

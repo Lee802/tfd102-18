@@ -85,7 +85,7 @@ div.imgsec{
 }
 div.foods{
     position: relative;
-    left: -13%;
+    transform: translateX(-40%);
     top: 0;
 }
 
