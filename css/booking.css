@@ -115,6 +115,8 @@ div.rooms{
 div.room1{
     padding-bottom: 100px;
     border-bottom: 1px solid rgb(107, 107, 107);
+    position: relative;
+    height: 440px;
 }
 div.people , div.date{
     padding-left: 10px;
@@ -162,9 +164,9 @@ img.icon{
     object-fit: contain;
 }
 div.pos{
-    position: relative;
-    left: 75%;
-    top: 50px;
+    position: absolute;
+    bottom: 4%;
+    right: 0;
 }
 a.money1{
     font-size: 14px;
@@ -219,7 +221,7 @@ div.message{
     padding: 20px;
     width: 350px;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: 50px;
 
 
 }
