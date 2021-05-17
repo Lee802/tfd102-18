@@ -42,7 +42,7 @@ div.body div.border:first-child{
 div.body div.text{
     margin-left: 100px;
     margin-top: 200px;
-    width: 602px;
+    max-width: 602px;
 }
 h1{
     font-size: 20px;
@@ -65,7 +65,7 @@ div.leftimg{
     overflow: hidden;
 }
 div.rightimg{
-    width: 600px;
+    max-width: 600px;
     overflow: hidden;
 }
 div.body img{
