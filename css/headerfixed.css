@@ -4,13 +4,15 @@
 }
 
 div.hiddenheader{
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
+    z-index: 1;
+    display: none;
 }
 div.hiddenheader a.logo{
     margin: 0px 20px;
-    padding: 0px 60px;
+    padding: 0px 90px;
     font-size: 50px;
     font-family: "logo";
     cursor: pointer;
@@ -24,34 +26,17 @@ div.hiddenheader a.first{
     top: 0;
 
 }
-
-div.hiddenheader a.first::after{
-    content: "";
-    border: 2px solid #d39717;
-    border-radius: 20%;
-    position: absolute;
-    width: 80px;
-
-    left: 6px;
-    top: 80px;
+div.hiddenheader ul li a{
+        padding: 50px 30px 8px 30px;
 }
+
 
 div.hiddenheader li{
     font-size: 0;
     list-style: none;
 }
-
-.hiddenheaderhovers{
-    position: relative;
-    top: 0;
+div.hiddenheader ul li.room ul{
+    top: 34px;
 }
 
-div.hiddenheader li:hover a::after{
-    content: "";
-    border: 2px solid #d39717;
-    border-radius: 20%;
-    position: absolute;
-    width: 80px;
-    left: 6px;
-    top: 80px;
-}
+

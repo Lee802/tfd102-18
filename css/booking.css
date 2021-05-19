@@ -109,7 +109,7 @@ div.hiddentops{
 
 div.rooms{
     margin-top: 50px;
-    transform: translateX(-30%);
+    /* transform: translateX(-30%); */
     position: relative;
 }
 div.room1{
@@ -210,21 +210,25 @@ img.messageicon{
     padding: 2px;
     margin-right: 4px;
 }
-
+div.room{
+    display: flex;
+    justify-content: center;
+}
 div.message{
-    position: absolute;
-    top: 0;
+    position: sticky;
+    top: calc(80px + 50px);
     left: 100%;
     background-color: white;
-    z-index: 1;
     border: 1px solid rgb(157, 157, 157);
     padding: 20px;
     width: 350px;
-    margin-top: 20px;
+    height: 480px;
+    margin-top: 50px;
     margin-left: 50px;
 
 
 }
+
 div.totalrooms{
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
