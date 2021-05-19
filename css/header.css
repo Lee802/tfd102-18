@@ -85,6 +85,8 @@ div.header ul li.room ul li:hover a{
 
 div.header ul li a.first{
     color: #d39717 ;
+    border-bottom: 4px solid #d39717;
+    border-radius: 4px;
 }
 div.header ul li.room ul li:last-child{
     border-bottom:  1px solid gray;
@@ -105,6 +107,7 @@ div.header a{
 
     bottom: 20px;
 
+}
 }
 
 div.header a.logoleft{
