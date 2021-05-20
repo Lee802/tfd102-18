@@ -278,3 +278,7 @@ div.mainnew{
     display: flex;
     justify-content: space-between;
 }
+a.red{
+    color: red;
+    font-size: 24px;
+}
