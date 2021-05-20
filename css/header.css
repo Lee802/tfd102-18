@@ -1,7 +1,5 @@
 
-div.header ul li a.leftheader{
-    margin-left: 100px;
-}
+
 h1{
     color: #d39717;
 }
@@ -103,7 +101,6 @@ div.header a{
 
     bottom: 20px;
 
-}
 }
 
 div.header a.logoleft{
