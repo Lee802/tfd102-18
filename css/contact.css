@@ -13,28 +13,19 @@ div.banner div.mask{
 div.banner p{
     font-size: 30px;
     color: white;
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    transform: translate(-50% ,-50%);
+    z-index: 1;
     margin: 0;
 }
 div.banner p.english{
     font-size: 30px;
     color: white;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50% ,-50%);
+
     margin: 0;
 }
 
 
 
-div.banner  p , div.banner p.english{
-    position: static;
-    transform: translate(0 ,0);
-}
 
 div.banner p.english{
     font-size: 16px;
