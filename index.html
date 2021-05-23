@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/hamburgers-master/dist/hamburgers.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/headerfixed.css">
     <link rel="stylesheet" href="./css/index.css">
@@ -13,12 +14,18 @@
 
     <div class="header">
         <ul>
+            <button class="hamburger hamburger--squeeze" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner">
+                    </span>
+                </span>
+            </button>
             <li> <a href="./about.html">關於</a></li>
-            <li><a href="./activities.html" >簡介</a></li>
+            <li><a href="./activities.html">簡介</a></li>
             <li><a href="./secne.html " class="logoleft">環境</a></li>
-            <li><a href="./index.html"><img src="./img/logo.svg" alt=""></a></li>
+            <a href="./index.html" class="logobig"><img src="./img/logo.svg" alt=""></a>
 
-            <li class="room"><a href="./room.html"  class="logoright">房型</a>
+            <li class="room"><a href="./room.html" class="logoright">房型</a>
 
                 <ul>
                     <li><a href="./room1.html" class="hovers">豪華雙人房</a></li>
@@ -30,6 +37,7 @@
 
             <li><a href="./contact.html">聯繫</a></li>
             <li><a href="./booking.html">預約</a></li>
+
         </ul>
 
 
@@ -37,8 +45,8 @@
     <div class="header hiddenheader">
         <ul>
             <li> <a href="./about.html">關於</a></li>
-            <li><a href="./activities.html" >簡介</a></li>
-            <li><a href="./secne.html"  class="logoleft">環境</a></li>
+            <li><a href="./activities.html">簡介</a></li>
+            <li><a href="./secne.html" class="logoleft">環境</a></li>
             <li><a href="./index.html" class="logo">天堂</a></li>
             <li class="room"><a href="./room.html" class="logoright">房型</a>
 
@@ -56,12 +64,11 @@
 
     </div>
     <div class="banner">
-        <!-- <div class="left">&lt;</div>
-        <div class="right">&gt;</div> -->
+
     </div>
 
-    <div>
-        <div class="body">
+    <div class="bodys">
+        <div class="body rwd">
             <div class="first">
                 <h1>舒適享受不需路途遙遠</h1>
                 <a>一間屬於你我休閒渡假的好去處，為您量身定做的旅遊行程，我們團隊都會設想周到，只待您安排好時間，就讓我們團隊來為您服務。</a>
@@ -72,7 +79,7 @@
         </div>
 
 
-        <div class="body sec">
+        <div class="body sec rwd">
             <div class="first">
                 <h1 class="h1margin">Enjoy our resort!</h1>
                 <h1 class="h1margin1">享受我們的假期</h1>
@@ -83,7 +90,7 @@
             </div>
         </div>
 
-        <div class="body sec abs">
+        <div class="body sec abs rwd">
             <div class="first foods">
                 <h1 class="food">美食饗宴</h1>
                 <a>我們準備多樣化下午茶系列的美食佳餚，豐富您的味蕾，在下午愉悅的時光中，獲得充分的滿足。</a>
@@ -97,25 +104,26 @@
                 </div>
             </div>
         </div>
-        <div class="body sec imgs">
+
+        <div class="body sec imgs rwd">
             <h1>周 邊 環 境</h1>
             <div class="imgsfirsts">
                 <img src="./img/index/setting/0.jpg" alt="">
             </div>
-            <div>
+            <div class="max767none">
                 <img src="./img/index/setting/02a.jpg" alt="">
             </div>
-            <div>
+            <div class="max991 max767none">
                 <img src="./img/index/setting/1.jpg" alt="">
             </div>
-            <div>
+            <div class="max991none max767none">
                 <img src="./img/index/setting/123.jpg" alt="">
             </div>
-            <div>
+            <div class="max991none max767none">
                 <img src="./img/index/setting/1598545560-3492085194-g.jpg" alt="">
             </div>
         </div>
-        <div class="body sec rooms">
+        <div class="body sec rooms rwd">
             <h1>住 宿 選 擇</h1>
             <a href="./room1.html" class="firsts">
                 <div class="imgsfirsts">
@@ -158,17 +166,9 @@
             </div>
         </div>
     </div>
+    <script src="./js/burger.js"></script>
+    <script src="./js/index.js"></script>
 
-    <!-- <div class="test">
-        <div class="imgbord">
-            <div class="img">
-                <img src="./img/index/about-pic2.png" alt="" class="imgpostions">
-            </div>
-            <div class="img">
-                <img src="./img/index/home-pic.png" alt="" class="imgpostions1">
-            </div>
-        </div>
-    </div> -->
 
 </body>
 

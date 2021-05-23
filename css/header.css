@@ -19,12 +19,22 @@ div.header{
     display: flex;
     justify-content: center;
 }
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after{
+    background-color: white;
+}
 
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+    background-color: white;
+}
+div.header button{
+    display: none;
+}
 div.header ul{
     display: flex;
     align-items: center;
     list-style: none;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 div.header ul a{
@@ -153,8 +163,140 @@ div.footer div.addressborders{
 
 
 div.footer div.addressborders div.works{
-    max-width: 600px;
+    max-width: 500px;
 }
 p{
     margin: 0;
+}
+
+div.header ul  a.logobig{
+    padding:0;
+}
+
+@media all and (min-width: 992px ) and (max-width: 1200px){
+    body{
+        min-width: 960px;
+    }
+    div.footer{
+        min-width: 960px;
+    }
+    /* div.works{
+        width: 500px;
+    } */
+}
+
+
+
+@media all and (min-width: 768px ) and (max-width: 991px){
+    body{
+        min-width: 720px;
+    }
+    div.footer{
+        min-width: 720px;
+    }
+
+    div.footer{
+        margin-top:100px;
+    }
+    div.header a{
+        padding: 50px 15px 21px 15px;
+    }
+    div.header ul li:nth-child(4) a{
+        padding: 70px 10px;
+        padding-bottom: 0;
+    }
+}
+
+@media all and (min-width:576px) and (max-width: 767px){
+    body{
+        min-width: 540px;
+    }
+    div.footer{
+        min-width: 540px;
+    }
+
+    div.footer{
+        margin-top:100px;
+    }
+    div.header a{
+        padding: 50px 20px 21px 20px;
+    }
+    div.header ul li:nth-child(4) a{
+        padding: 70px 20px;
+        padding-bottom: 0;
+    }
+    div.addressborders{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    div.numbersandaddress{
+        transform: none;
+    }
+    div.works{
+        margin-top: 20px;
+    }
+    div.header ul li{
+        display: none;
+    }
+    div.header button {
+        display: flex;
+        position: absolute;
+        right: 10px;
+    }
+    div.header {
+        justify-content: space-between;
+    }
+    div.header img{
+        padding: 0;
+    }
+}
+
+
+
+@media all and (max-width:575px){
+    body{
+        min-width: 100%;
+    }
+    div.footer{
+        min-width: 100%;
+    }
+
+    div.footer{
+        margin-top:100px;
+    }
+    div.header a{
+        padding: 50px 20px 21px 20px;
+    }
+    div.header ul li:nth-child(4) a{
+        padding: 70px 20px;
+        padding-bottom: 0;
+    }
+    div.addressborders{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div.numbersandaddress{
+        transform: none;
+    }
+    div.works{
+        margin-top: 20px;
+    }
+        div.header ul li{
+        display: none;
+    }
+    div.header button {
+        display: flex;
+        position: absolute;
+        right: 10px;
+    }
+    div.header {
+        justify-content: space-between;
+    }
+    div.header img{
+        padding: 0;
+    }
 }
