@@ -87,10 +87,14 @@ div.header ul li.room ul li:hover a , div.headerright ul li.room ul li:hover a{
 
 }
 
-div.header ul li a.first , div.headerright ul li a.first{
+div.header ul li a.first {
     color: #d39717 ;
     border-bottom: 4px solid #d39717;
     border-radius: 4px;
+}
+div.headerright ul li a.first{
+    color: #d39717 ;
+    border-bottom: 0;
 }
 div.header ul li.room ul li:last-child{
     border-bottom:  1px solid gray;
@@ -374,6 +378,7 @@ div.headerright ul li.room ul.roomhides{
 
     div.headerright ul li ul li a {
         font-size: 18px;
+
     }
 
 }
