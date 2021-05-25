@@ -83,7 +83,7 @@ div.top{
     align-items: center;
     padding-bottom: 10px;
     position: sticky ;
-    top: 0;
+    top: 50px;
     left: 0;
     width: 100%;
     z-index: 1;
@@ -225,7 +225,7 @@ div.room{
 }
 div.message{
     position: sticky;
-    top: calc(80px + 50px);
+    top: calc(80px + 50px + 50px);
     left: 100%;
     background-color: white;
     border: 1px solid rgb(157, 157, 157);

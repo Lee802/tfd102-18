@@ -4,15 +4,21 @@
 }
 
 div.hiddenheader{
-    position: sticky;
+    position: absolute;
     width: 100%;
     top: 0;
-    z-index: 1;
-    display: none;
+    z-index: 2;
+    transform: translateY(-500%);
+    transition: all .5s;
+}
+div.hiddenheader.navFixed{
+    position: fixed;
+    top: 0;
+    transform: translateY(0%);
 }
 div.hiddenheader a.logo{
     margin: 0px 20px;
-    padding: 0px 90px;
+    padding: 0px 60px;
     font-size: 50px;
     font-family: "logo";
     cursor: pointer;
@@ -27,7 +33,7 @@ div.hiddenheader a.first{
 
 }
 div.hiddenheader ul li a{
-        padding: 50px 30px 8px 30px;
+    padding: 50px 30px 8px 30px;
 }
 
 
@@ -37,6 +43,14 @@ div.hiddenheader li{
 }
 div.hiddenheader ul li.room ul{
     top: 34px;
+}
+@media all and (min-width: 768px ) and (max-width: 991px){
+    div.hiddenheader ul li a{
+        padding: 50px 15px 8px 15px;
+    }
+    div.hiddenheader a.logo{
+        margin: 0 60px;
+    }
 }
 
 

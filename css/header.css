@@ -180,7 +180,7 @@ div.headerright{
     background-color: black;
     position: fixed;
     right: 0;
-    z-index: 1;
+    z-index: 4;
     transform: translateX(100%);
     transition: all .5s;
     height: 100%;
@@ -314,7 +314,7 @@ div.headerright ul li.room ul.roomhides{
         justify-content: space-between;
         position: sticky;
         top: 0;
-        z-index: 1;
+        z-index: 2;
     }
     div.header img{
         padding: 0;
@@ -371,4 +371,9 @@ div.headerright ul li.room ul.roomhides{
     div.header img{
         padding: 0;
     }
+
+    div.headerright ul li ul li a {
+        font-size: 18px;
+    }
+
 }
