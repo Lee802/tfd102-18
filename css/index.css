@@ -1,17 +1,18 @@
-div.banner{
+div.banner {
     /* position: relative; */
-    background: url(../img/banner/TKUO-Vol1-1920-0006.jpg) no-repeat ;
+    background: url(../img/banner/TKUO-Vol1-1920-0006.jpg) no-repeat;
     background-size: cover;
     width: 100%;
     padding-top: calc(100% * 7 / 16);
 }
 
-div.banner div.left , div.right{
+div.banner div.left,
+div.right {
     color: gray;
     font-size: 30px;
 }
 
-div.body{
+div.body {
     /* width: 100%; */
     display: flex;
     font-size: 16px;
@@ -21,73 +22,68 @@ div.body{
     /* align-items: center; */
 }
 
-
-
-div.first{
+div.first {
     width: 600px;
     margin-right: 100px;
     /* flex: 1; */
 }
 
-
-
-h1{
+h1 {
     margin-top: 50px;
 }
-div.img{
+
+div.img {
     max-width: 475px;
     height: 317px;
     /* margin-left: 10%; */
 }
-div.body img{
 
+div.body img {
     /* width: 600px; */
     height: 100%;
     width: 100%;
-    object-fit:contain;
-
+    object-fit: contain;
 }
 
-
-div.first h1.h1margin{
+div.first h1.h1margin {
     margin-bottom: 5px;
 }
-div.first h1.h1margin1{
+
+div.first h1.h1margin1 {
     margin-top: 0;
 }
-div.sec{
+
+div.sec {
     margin-top: 100px;
 }
 
-
-div.imgbord{
+div.imgbord {
     position: absolute;
     /* flex: 1; */
     height: 100%;
-
 }
 
-div.imgbord div.img{
+div.imgbord div.img {
     position: absolute;
     height: 600px;
     width: 570px;
 }
 
-
-div.abs{
+div.abs {
     height: 600px;
-
 }
-div.imgfirst{
+
+div.imgfirst {
     left: 110px;
     top: 0;
 }
 
-div.imgsec{
+div.imgsec {
     right: -110px;
     top: 120px;
 }
-div.foods{
+
+div.foods {
     position: relative;
     transform: translateX(-40%);
     top: 0;
@@ -95,12 +91,13 @@ div.foods{
 
 div.imgs {
     background-color: white;
-
 }
-div.imgs h1{
+
+div.imgs h1 {
     margin-bottom: 50px;
 }
-div.imgs div{
+
+div.imgs div {
     border: 1px solid black;
     height: 500px;
     max-width: 300px;
@@ -108,56 +105,66 @@ div.imgs div{
     margin-top: 150px;
     margin-bottom: 100px;
 }
-div.imgs:first-child{
+
+div.imgs:first-child {
     margin-left: 0;
 }
 
-div.imgs h1{
+div.imgs h1 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-div.imgs div.imgsfirsts{
+
+div.imgs div.imgsfirsts {
     margin-left: 30px;
 }
-div.imgs div:last-child{
+
+div.imgs div:last-child {
     margin-right: 30px;
 }
-div.imgs img{
+
+div.imgs img {
     width: 100%;
     object-fit: cover;
     cursor: pointer;
 }
-div.rooms div{
+
+div.rooms div {
     height: 300px;
     width: 300px;
     position: relative;
     overflow: hidden;
-
 }
-div.rooms a{
+
+div.rooms a {
     margin-left: 100px;
     margin-top: 40px;
 }
-div.rooms h1{
+
+div.rooms h1 {
     position: absolute;
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
 }
-div.rooms a.firsts{
+
+div.rooms a.firsts {
     margin-left: 0;
 }
-div.rooms img{
+
+div.rooms img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: .5s;
 }
-div.rooms div.imgsfirsts{
+
+div.rooms div.imgsfirsts {
     margin-left: 0;
 }
-div.rooms div.mask{
+
+div.rooms div.mask {
     margin: 0;
     position: absolute;
     top: 0;
@@ -165,7 +172,8 @@ div.rooms div.mask{
     background-color: #5a5a5a7e;
     cursor: pointer;
 }
-div.rooms p{
+
+div.rooms p {
     position: absolute;
     left: 4%;
     top: 4%;
@@ -175,325 +183,300 @@ div.rooms p{
     font-weight: 900;
     cursor: pointer;
 }
-div.rooms div:hover img{
-    transform: scale(1.2 , 1.2);
+
+div.rooms div:hover img {
+    transform: scale(1.2, 1.2);
 }
 
-
-@media all and (min-width: 992px ) and (max-width: 1200px){
-
-    div.bodys{
+@media all and (min-width: 992px) and (max-width: 1200px) {
+    div.bodys {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
-
-    div.rwd{
-        width:960px;
+    div.rwd {
+        width: 960px;
     }
-    div.foods{
+    div.foods {
         transform: translateX(-48%);
         width: 440px;
     }
-    div.img{
+    div.img {
         max-width: 444px;
     }
-    div.imgbord div.img{
+    div.imgbord div.img {
         width: 500px;
     }
-    div.imgfirst{
+    div.imgfirst {
         left: 35px;
     }
-    div.imgs{
+    div.imgs {
         width: 100%;
     }
-    div.imgsec{
+    div.imgsec {
         right: -35px;
     }
-    div.imgs div{
-       width: 200px;
-       height: 400px;
+    div.imgs div {
+        width: 200px;
+        height: 400px;
     }
-    div.rooms div{
+    div.rooms div {
         height: 260px;
         width: 260px;
     }
-    div.rooms a{
+    div.rooms a {
         margin-left: 70px;
     }
 }
 
-@media  all and (min-width: 768px ) and (max-width: 991px){
-    div.bodys{
+@media all and (min-width: 768px) and (max-width: 991px) {
+    div.bodys {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
-    div.rwd{
-        width:720px;
+    div.rwd {
+        width: 720px;
     }
-    div.foods{
+    div.foods {
         transform: translateX(-48%);
         width: 310px;
     }
-    div.img{
+    div.img {
         max-width: 320px;
     }
-
-    div.imgfirst{
+    div.imgfirst {
         left: 40px;
     }
-    div.imgs{
+    div.imgs {
         width: 100%;
     }
-    div.imgsec{
+    div.imgsec {
         right: -40px;
         top: 87px;
     }
-    div.imgs div{
-       width: 200px;
-       height: 400px;
-       margin-bottom: 60px;
-       margin-top: 120px;
+    div.imgs div {
+        width: 200px;
+        height: 400px;
+        margin-bottom: 60px;
+        margin-top: 120px;
     }
-    div.rooms div{
+    div.rooms div {
         height: 200px;
         width: 200px;
     }
-    div.rooms a{
+    div.rooms a {
         margin-left: 50px;
     }
-    div.sec{
-        margin-top:50px;
+    div.sec {
+        margin-top: 50px;
     }
-    div.imgs div.max991none{
+    div.imgs div.max991none {
         display: none;
     }
-    div.max991{
+    div.max991 {
         margin-right: 30px;
     }
 }
 
-@media all and (min-width:576px) and (max-width: 767px){
-    div.bodys{
+@media all and (min-width:576px) and (max-width: 767px) {
+    div.bodys {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
-    div.body{
+    div.body {
         flex-wrap: wrap;
     }
-    div.rwd{
-        width:540px;
+    div.rwd {
+        width: 540px;
     }
-    div.foods{
+    div.foods {
         transform: translateX(-48%);
         width: 310px;
     }
-    div.img{
+    div.img {
         max-width: 100%;
         margin-top: 30px;
     }
-
-    div.imgfirst{
+    div.imgfirst {
         left: 0;
         margin-top: 220px;
     }
-    div.first{
+    div.first {
         margin-right: 0px;
     }
-    h1{
+    h1 {
         margin-top: 80px;
     }
-    div.foods{
+    div.foods {
         transform: translateX(0);
         width: 100%;
     }
-    div.imgs{
+    div.imgs {
         width: 100%;
         margin-top: 100px;
     }
-    div.imgs div{
+    div.imgs div {
         margin-top: 80px;
         margin-bottom: 60px;
     }
-    div.imgs div.imgsfirsts{
+    div.imgs div.imgsfirsts {
         margin-left: 0;
         height: 500px;
-
     }
-    div.imgsec{
+    div.imgsec {
         position: relative;
         right: 0;
         top: 0;
-
     }
-    div.imgbord div.img{
+    div.imgbord div.img {
         position: static;
         width: 540px;
     }
-    div.abs{
+    div.abs {
         height: 1300px;
     }
-    div.body img{
+    div.body img {
         height: auto;
     }
-    div.imgs img{
+    div.imgs img {
         height: 100%;
     }
-    div.imgsec{
-        margin-top:78px;
+    div.imgsec {
+        margin-top: 78px;
     }
-
-    div.rooms h1{
+    div.rooms h1 {
         margin-top: 70px;
     }
-    div.imgs h1{
+    div.imgs h1 {
         margin-top: 30px;
     }
-    div.rooms{
+    div.rooms {
         flex-direction: column;
     }
-    div.rooms a{
+    div.rooms a {
         margin-left: 0;
     }
-
-
-    div.rooms div{
+    div.rooms div {
         height: 400px;
         width: 100%;
         margin-top: 50px;
     }
-    div.rooms div.imgsfirsts{
+    div.rooms div.imgsfirsts {
         margin-top: 0px;
     }
-
-    div.sec{
-        margin-top:50px;
+    div.sec {
+        margin-top: 50px;
     }
-    div.imgs div.max767none{
+    div.imgs div.max767none {
         display: none;
     }
-    div.max991{
+    div.max991 {
         margin-right: 30px;
     }
-
-
-
-
 }
 
-
-@media all and (max-width:575px){
-
-    div.bodys{
+@media all and (max-width:575px) {
+    div.bodys {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
-    div.body{
+    div.body {
         flex-wrap: wrap;
     }
-    div.rwd{
-        max-width:575px;
+    div.rwd {
+        max-width: 575px;
     }
-    div.foods{
+    div.foods {
         transform: translateX(-48%);
         width: 310px;
     }
-    div.img{
+    div.img {
         max-width: 100%;
         margin-top: 30px;
     }
-
-    div.imgfirst{
+    div.imgfirst {
         left: 0;
         margin-top: 220px;
     }
-    div.first{
+    div.first {
         margin-right: 0px;
         width: 100%;
     }
-    h1{
+    h1 {
         margin-top: 5px;
     }
-    div.foods{
+    div.foods {
         transform: translateX(0);
         width: 100%;
     }
-    div.imgs{
+    div.imgs {
         width: 100%;
         margin-top: 100px;
     }
-    div.imgs div{
+    div.imgs div {
         margin-top: 80px;
         margin-bottom: 60px;
     }
-    div.imgs div.imgsfirsts{
+    div.imgs div.imgsfirsts {
         margin-left: 0;
         height: 500px;
-
     }
-    div.imgsec{
+    div.imgsec {
         position: relative;
         right: 0;
         top: 0;
-
     }
-    div.imgbord div.img{
+    div.imgbord div.img {
         position: static;
         width: 100%;
     }
-    div.abs{
+    div.abs {
         height: 1300px;
     }
-    div.body img{
+    div.body img {
         height: auto;
     }
-    div.imgs img{
+    div.imgs img {
         height: 100%;
     }
-    div.imgsec{
-        margin-top:78px;
+    div.imgsec {
+        margin-top: 78px;
     }
-
-    div.rooms h1{
+    div.rooms h1 {
         margin-top: 70px;
     }
-    div.imgs h1{
+    div.imgs h1 {
         margin-top: 30px;
     }
-    div.rooms{
+    div.rooms {
         flex-direction: column;
     }
-    div.rooms a{
+    div.rooms a {
         margin-left: 0;
     }
-
-
-    div.rooms div{
+    div.rooms div {
         height: 400px;
         width: 100%;
         margin-top: 50px;
     }
-    div.rooms div.imgsfirsts{
+    div.rooms div.imgsfirsts {
         margin-top: 0px;
     }
-
-    div.sec{
-        margin-top:50px;
+    div.sec {
+        margin-top: 50px;
         width: 100%;
     }
-    div.imgs div.max767none{
+    div.imgs div.max767none {
         display: none;
     }
-    div.max991{
+    div.max991 {
         margin-right: 30px;
     }
-
 }
-

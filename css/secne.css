@@ -99,6 +99,7 @@ div.body div.griditem:hover img.smallimgs {
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
     z-index: 99;
+    cursor: zoom-out;
 }
 
 .imgPreview img {
