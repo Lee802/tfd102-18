@@ -81,13 +81,13 @@ div.header ul li.room ul li:hover {
     background-color: rgba(212, 211, 211, 0.986);
 }
 
-div.header ul li.room ul li:hover a{
+div.header ul li.room ul li:hover a , div.headerright ul li.room ul li:hover a{
 
     color: #d39717 ;
 
 }
 
-div.header ul li a.first{
+div.header ul li a.first , div.headerright ul li a.first{
     color: #d39717 ;
     border-bottom: 4px solid #d39717;
     border-radius: 4px;
@@ -119,7 +119,7 @@ div.header a.logoleft{
 div.header a.logoright{
     padding-left: 30px;
 }
-div.header a:hover{
+div.header a:hover , div.headerright a:hover{
     color: #d39717;
 
 }
@@ -171,6 +171,70 @@ p{
 
 div.header ul  a.logobig{
     padding:0;
+}
+
+
+div.headerright{
+    width: 40%;
+    font-size: 24px;
+    background-color: black;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: all .5s;
+    height: 100%;
+}
+div.headerright.openbox{
+    transform: translateX(0%);
+}
+div.headerright ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding-left: 10px;
+}
+div.headerright ul li{
+    list-style: none;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.48);
+    padding: 10px 0;
+}
+
+div.headerright ul li a{
+    text-decoration:none;
+    color: white;
+    padding-right: calc(100% - 50px);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+div.headerright ul li ul li a{
+    border: 0;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+div.headerright ul li ul li:last-child{
+    border-bottom: 0px;
+}
+div.headerright ul li ul li:nth-child(4){
+    padding-right: calc(100% - 80px);
+    display: inline-block;
+}
+
+div.headerright ul button{
+    background-color: black;
+    color: white;
+    border: 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+div.headerright ul button:hover{
+    color: #d39717;
+}
+div.headerright ul li.room ul.roomhides{
+    display: none;
 }
 
 @media all and (min-width: 992px ) and (max-width: 1200px){
@@ -239,6 +303,7 @@ div.header ul  a.logobig{
     }
     div.header ul li{
         display: none;
+
     }
     div.header button {
         display: flex;
@@ -247,10 +312,14 @@ div.header ul  a.logobig{
     }
     div.header {
         justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
     div.header img{
         padding: 0;
     }
+
 }
 
 
@@ -285,7 +354,7 @@ div.header ul  a.logobig{
     div.works{
         margin-top: 20px;
     }
-        div.header ul li{
+    div.header ul li{
         display: none;
     }
     div.header button {
@@ -295,6 +364,9 @@ div.header ul  a.logobig{
     }
     div.header {
         justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1;
     }
     div.header img{
         padding: 0;
