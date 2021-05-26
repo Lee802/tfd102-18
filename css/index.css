@@ -1,5 +1,5 @@
 div.banner {
-    /* position: relative; */
+    position: relative;
     background: url(../img/banner/TKUO-Vol1-1920-0006.jpg) no-repeat;
     background-size: cover;
     width: 100%;
@@ -479,4 +479,107 @@ div.rooms div:hover img {
     div.max991 {
         margin-right: 30px;
     }
+}
+
+#slider,
+ul.slieder-item-container,
+ul.slieder-item-container a {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+#slider {
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    height: 1200px;
+}
+
+ul.slieder-item-container {
+    position: absolute;
+    list-style-type: none;
+    width: 800%;
+}
+
+ul.slieder-item-container li {
+    width: 13%;
+    float: left;
+}
+
+ul.slieder-item-container li a {
+    display: inline-block;
+}
+
+ul.slieder-item-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.slieder-item-container li div {
+    width: 100%;
+    height: 900px;
+}
+
+#slider:hover .arrow-container {
+    display: block;
+}
+
+div.arrow-container {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 50%;
+    margin-top: -25px;
+    display: none;
+}
+
+div.arrow-container span {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 50px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+div.arrow-container .left-arrow {
+    left: 0px;
+    cursor: pointer;
+}
+
+div.arrow-container .right-arrow {
+    right: 0px;
+    cursor: pointer;
+}
+
+div.indicator-container {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -75px;
+    text-align: center;
+}
+
+div.indicator-container span.indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background: white;
+    cursor: pointer;
+}
+
+#slider .indicator.active {
+    background: red;
 }
