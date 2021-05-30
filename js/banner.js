@@ -24,7 +24,6 @@ function loop() {
             }, 100);
 
             i++;
-            console.log(i);
         } else {
             i = 0;
             return;

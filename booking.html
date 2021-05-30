@@ -105,36 +105,31 @@
             <div class="topborder">
                 訂房日期
                 <div class="date">
-                    2021/05/14 - 2021/05/15
+                    <input type="date" class="date" value="2021/05/30">
                 </div>
             </div>
             <div class="peopleborder">
-                人數
+                <div class="borderspeoples">
+                    人數
 
-                <div class="people ">
-                    1 成人 , 0 小孩
                 </div>
                 <div class="peoplehide">
                     <div class="big">
                         <p>成人</p>
                         <div class="addborders">
                             &ensp;
-                            <div class="noadd">-</div>
-                            <div class="num">
-                                1
-                            </div>
-                            <div class="add">+</div>
+                            <div id="peoplenoadd">-</div>
+
+                            <div id="peopleadd">+</div>
                         </div>
                     </div>
                     <div class="chli">
                         <p>小孩</p>
                         <div class="addborders">
                             &ensp;
-                            <div class="noadd">-</div>
-                            <div class="num">
-                                0
-                            </div>
-                            <div class="add">+</div>
+                            <div id="chlinoadd">-</div>
+
+                            <div id="chliadd">+</div>
                         </div>
                     </div>
                 </div>
@@ -174,18 +169,21 @@
                         &emsp;&emsp;&emsp;&emsp;<a class="money1">TWD <a class="moneyscolor">3,335</a> / 晚</a>
                         <div class="addborder">
                             &ensp;
-                            <div class="noadd">-</div>
-                            <div class="num">
-                                0
+                            <div class="noadd" id="firstnoadd">-</div>
+                            <div class="addnum">
+                                <div class="num">
+                                    0
+                                </div>
                             </div>
-                            <div class="add">+</div>
+
+                            <div class="add" id="firstadd">+</div>
                             <p>間</p>
                         </div>
 
                     </div>
                 </div>
                 <div class="room1">
-                    <h2>豪華雙人房-雙床房</h2>
+                    <h2>景觀雙人房-雙床房</h2>
                     <div class="both">
                         <div class="img">
                             <img src="./img/index/rooms/leonardo-2091747-tpesh-king-0584-hor-clsc_O-610221-1.jpg" alt="" class="rooms">
@@ -206,27 +204,66 @@
                         </div>
                     </div>
                     <div class="pos">
-                        &emsp;&emsp;&emsp;&emsp;<a class="money1">TWD <a class="moneyscolor">3,335</a> / 晚</a>
+                        &emsp;&emsp;&emsp;&emsp;<a class="money1">TWD <a class="moneyscolor">2,990</a> / 晚</a>
                         <div class="addborder">
                             &ensp;
-                            <div class="noadd">-</div>
-                            <div class="num">
-                                0
+                            <div class="noadd" id="secnoadd">-</div>
+                            <div class="addnum">
+                                <div class="num">
+                                    0
+                                </div>
                             </div>
-                            <div class="add">+</div>
+                            <div class="add" id="secadd">+</div>
                             <p>間</p>
                         </div>
 
                     </div>
                 </div>
                 <div class="room1">
-                    <h2>豪華雙人房-雙床房</h2>
+                    <h2>家庭四人房-雙床房</h2>
                     <div class="both">
                         <div class="img">
                             <img src="./img/index/rooms/TKUO-Vol3-1920-0030-1.jpg" alt="" class="rooms">
                         </div>
                         <div class="detal">
-                            床型<br> 單人床 x 2<br><br> 人數限制&emsp;&emsp;&emsp;&emsp;坪數
+                            床型<br> 雙人床 x 2<br><br> 人數限制&emsp;&emsp;&emsp;&emsp;坪數
+                            <br> 2 人&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 23 平方公尺<br><br> 設施
+                            <ul>
+                                <li><img src="./img/smallicon/on_feature_5.svg" alt="" class="icon"> 電話</li>
+                                <li><img src="./img/smallicon/on_feature_12.svg" alt="" class="icon"> 衣櫥</li>
+                                <li><img src="./img/smallicon/on_feature_101.svg" alt="" class="icon"> 雙人床</li>
+                                <li><img src="./img/smallicon/on_feature_1.svg" alt="" class="icon"> 空調</li>
+                            </ul>
+                            <br>
+                            <a class="more">+ 更多</a>
+
+
+                        </div>
+                    </div>
+                    <div class="pos">
+                        &emsp;&emsp;&emsp;&emsp;<a class="money1">TWD <a class="moneyscolor">4,000</a> / 晚</a>
+                        <div class="addborder">
+                            &ensp;
+                            <div class="noadd" id="threenoadd">-</div>
+                            <div class="addnum">
+                                <div class="num">
+                                    0
+                                </div>
+                            </div>
+                            <div class="add" id="threeadd">+</div>
+                            <p>間</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="room1">
+                    <h2>家庭四人房-雙床房</h2>
+                    <div class="both">
+                        <div class="img">
+                            <img src="./img/index/rooms/TKUO-Vol3-1920-0030-1.jpg" alt="" class="rooms">
+                        </div>
+                        <div class="detal">
+                            床型<br> 雙人床 x 2<br><br> 人數限制&emsp;&emsp;&emsp;&emsp;坪數
                             <br> 2 人&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 23 平方公尺<br><br> 設施
                             <ul>
                                 <li><img src="./img/smallicon/on_feature_5.svg" alt="" class="icon"> 電話</li>
@@ -254,32 +291,82 @@
 
                     </div>
                 </div>
+                <div class="room1">
+                    <h2>家庭四人房-雙床房</h2>
+                    <div class="both">
+                        <div class="img">
+                            <img src="./img/index/rooms/TKUO-Vol3-1920-0030-1.jpg" alt="" class="rooms">
+                        </div>
+                        <div class="detal">
+                            床型<br> 雙人床 x 2<br><br> 人數限制&emsp;&emsp;&emsp;&emsp;坪數
+                            <br> 2 人&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 23 平方公尺<br><br> 設施
+                            <ul>
+                                <li><img src="./img/smallicon/on_feature_5.svg" alt="" class="icon"> 電話</li>
+                                <li><img src="./img/smallicon/on_feature_12.svg" alt="" class="icon"> 衣櫥</li>
+                                <li><img src="./img/smallicon/on_feature_101.svg" alt="" class="icon"> 雙人床</li>
+                                <li><img src="./img/smallicon/on_feature_1.svg" alt="" class="icon"> 空調</li>
+                            </ul>
+                            <br>
+                            <a class="more">+ 更多</a>
 
-            </div>
-            <div class="message">
-                <div class="rightpeople">
-                    <p class="date"><img src="./img/smallicon/date.png" alt="" class="messageicon">2021/05/14 - 2021/05/15
-                    </p>
-                    <p class="people"><img src="./img/smallicon/people.jpg" alt="" class="messageicon">1 成人 , 0 小孩
-                    </p>
-                </div>
-                <div class="totalrooms">
-                    <p>標準雙人房-雙人床</p>
-                    <div class="leftandright">
-                        <div class="mainnew">
-                            <p>官網優惠價</p>
-                            <p>x1 間</p>
+
                         </div>
-                        <div class="mainnew">
-                            <p>TWD 2,990</p>
-                            <p>x 1 晚</p>
-                        </div>
-                        <div class="mainnew">
-                            <p>總價 </p>
-                            <p>TWD<a class="moneyscolor">2,990</a></p>
+                    </div>
+                    <div class="pos">
+                        &emsp;&emsp;&emsp;&emsp;<a class="money1">TWD <a class="moneyscolor">3,335</a> / 晚</a>
+                        <div class="addborder">
+                            &ensp;
+                            <div class="noadd">-</div>
+                            <div class="num">
+                                0
+                            </div>
+                            <div class="add">+</div>
+                            <p>間</p>
                         </div>
 
                     </div>
+                </div>
+                <div class="room1">
+                    <h2>家庭四人房-雙床房</h2>
+                    <div class="both">
+                        <div class="img">
+                            <img src="./img/index/rooms/TKUO-Vol3-1920-0030-1.jpg" alt="" class="rooms">
+                        </div>
+                        <div class="detal">
+                            床型<br> 雙人床 x 2<br><br> 人數限制&emsp;&emsp;&emsp;&emsp;坪數
+                            <br> 2 人&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 23 平方公尺<br><br> 設施
+                            <ul>
+                                <li><img src="./img/smallicon/on_feature_5.svg" alt="" class="icon"> 電話</li>
+                                <li><img src="./img/smallicon/on_feature_12.svg" alt="" class="icon"> 衣櫥</li>
+                                <li><img src="./img/smallicon/on_feature_101.svg" alt="" class="icon"> 雙人床</li>
+                                <li><img src="./img/smallicon/on_feature_1.svg" alt="" class="icon"> 空調</li>
+                            </ul>
+                            <br>
+                            <a class="more">+ 更多</a>
+
+
+                        </div>
+                    </div>
+                    <div class="pos">
+                        &emsp;&emsp;&emsp;&emsp;<a class="money1">TWD <a class="moneyscolor">3,335</a> / 晚</a>
+                        <div class="addborder">
+                            &ensp;
+                            <div class="noadd">-</div>
+                            <div class="num">
+                                0
+                            </div>
+                            <div class="add">+</div>
+                            <p>間</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="message">
+                <div class="rightpeople">
+                    <p class="date"><img src="./img/smallicon/date.png" alt="" class="messageicon">2021/05/14 - 2021/05/15</p>
+                </div>
+                <div class="totalroom">
 
                 </div>
                 <div class="totalmoney">

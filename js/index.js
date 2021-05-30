@@ -14,10 +14,15 @@ var curIndex = 0;
 window.onload = function() {
     initElement();
     initEvent();
+
     if (autoplay) {
+
         startAnimation(slider_item_container);
+
     }
 }
+
+
 
 function initElement() {
     slider = document.getElementById("slider");
@@ -61,6 +66,7 @@ function initEvent() {
 function animate(element, target) {
     var step = 10;
     var time = 10;
+    slider_item_width = slider_items[0].offsetWidth;
     var gap = (Math.abs(target - element.offsetLeft) / slider_item_width);
     // console.log(target + "target");
     // console.log(element.offsetLeft + "element.offsetLeft");
@@ -99,6 +105,7 @@ function prev() {
     var element = slider_item_container;
     var li = element.children;
     curIndex = curIndex - 1;
+    slider_item_width = slider_items[0].offsetWidth;
     if (curIndex < 0) {
         element.style.left = -((li.length - 1) * slider_item_width) + "px";
         curIndex = li.length - 2;
@@ -118,6 +125,7 @@ function next(nextIndex) {
             curIndex = 1;
         }
     }
+    slider_item_width = slider_items[0].offsetWidth;
     animate(element, -(curIndex * slider_item_width));
 }
 

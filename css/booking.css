@@ -129,6 +129,31 @@ div.people {
     cursor: pointer;
 }
 
+div.date input {
+    background-color: rgba(255, 235, 205, 0);
+    color: black;
+    border: 0;
+    padding-inline-start: 0;
+    cursor: pointer;
+    width: 250px;
+    height: 100%;
+    font-size: 18px;
+}
+
+div.date input:focus-visible {
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(../img/smallicon/date.png) no-repeat;
+    background-size: 20px;
+    cursor: pointer;
+}
+
 div.hiddentops {
     position: fixed;
     top: 0;
@@ -245,12 +270,21 @@ div.addborder p {
 }
 
 div.add,
-div.noadd {
+div.noadd,
+div#peopleadd,
+div#peoplenoadd,
+div#chlinoadd,
+div#chliadd {
     padding: 0px 10px;
     width: 30px;
     background-color: rgba(114, 113, 113, 0.418);
     cursor: pointer;
     height: 30px;
+}
+
+div.bignum,
+div.chilnum {
+    width: 100px;
 }
 
 img.messageicon {
@@ -270,16 +304,38 @@ div.message {
     left: 100%;
     background-color: white;
     border: 1px solid rgb(157, 157, 157);
-    padding: 20px;
+    /* padding: 20px; */
     width: 350px;
-    height: 540px;
     margin-top: 50px;
     margin-left: 50px;
+    height: 100%;
+}
+
+div.rightpeople {
+    border-bottom: 1px solid gray;
+    padding: 0 20px;
+    padding-top: 10px;
 }
 
 div.totalrooms {
-    border-top: 1px solid gray;
     border-bottom: 1px solid gray;
+    margin: 0 20px;
+}
+
+div.totalrooms:last-child {
+    border: 0;
+}
+
+div.totalmoney {
+    border-top: 1px solid gray;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+
+div.totalroom.addcss {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 234px;
 }
 
 input {

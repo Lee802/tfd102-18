@@ -1,35 +1,45 @@
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
-
-h1{
+h1 {
     color: #d39717;
 }
-body{
 
+body {
     min-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
     font-size: 0px;
     background-color: #ece7da;
 }
-div.header{
+
+div.header {
     background-color: black;
     background-size: cover;
-
     text-align: center;
     display: flex;
     justify-content: center;
 }
-.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after{
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
     background-color: white;
 }
 
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
     background-color: white;
 }
-div.header button{
+
+div.header button {
     display: none;
 }
-div.header ul{
+
+div.header ul {
     display: flex;
     align-items: center;
     list-style: none;
@@ -37,19 +47,20 @@ div.header ul{
     flex-wrap: wrap;
 }
 
-div.header ul a{
+div.header ul a {
     padding-bottom: 26px;
 }
 
-div.header ul li.room{
+div.header ul li.room {
     position: relative;
-
 }
-div.header ul li.room:hover ul{
+
+div.header ul li.room:hover ul {
     display: block;
     z-index: 1;
 }
-div.header ul li.room ul{
+
+div.header ul li.room ul {
     position: absolute;
     left: 0;
     top: 50px;
@@ -61,15 +72,14 @@ div.header ul li.room ul{
     display: none;
 }
 
-div.header ul li.room ul li{
-   border: 1px solid gray;
-   border-bottom: 0px;
-
-   background-color: white;
-   padding: 0px 20px;
+div.header ul li.room ul li {
+    border: 1px solid gray;
+    border-bottom: 0px;
+    background-color: white;
+    padding: 0px 20px;
 }
 
-div.header ul li.room ul a{
+div.header ul li.room ul a {
     display: block;
     padding: 6px 20px;
     color: black;
@@ -81,23 +91,24 @@ div.header ul li.room ul li:hover {
     background-color: rgba(212, 211, 211, 0.986);
 }
 
-div.header ul li.room ul li:hover a , div.headerright ul li.room ul li:hover a{
-
-    color: #d39717 ;
-
+div.header ul li.room ul li:hover a,
+div.headerright ul li.room ul li:hover a {
+    color: #d39717;
 }
 
 div.header ul li a.first {
-    color: #d39717 ;
+    color: #d39717;
     border-bottom: 4px solid #d39717;
     border-radius: 4px;
 }
-div.headerright ul li a.first{
-    color: #d39717 ;
+
+div.headerright ul li a.first {
+    color: #d39717;
     border-bottom: 0;
 }
-div.header ul li.room ul li:last-child{
-    border-bottom:  1px solid gray;
+
+div.header ul li.room ul li:last-child {
+    border-bottom: 1px solid gray;
 }
 
 div.header img {
@@ -107,29 +118,28 @@ div.header img {
     margin: 0px 20px;
 }
 
-div.header a{
+div.header a {
     font-size: 20px;
     padding: 50px 30px 21px 30px;
     color: white;
     text-decoration: none;
-
     bottom: 20px;
-
 }
 
-div.header a.logoleft{
-    padding-right:30px;
+div.header a.logoleft {
+    padding-right: 30px;
 }
-div.header a.logoright{
+
+div.header a.logoright {
     padding-left: 30px;
 }
-div.header a:hover , div.headerright a:hover{
-    color: #d39717;
 
+div.header a:hover,
+div.headerright a:hover {
+    color: #d39717;
 }
 
-
-div.footer{
+div.footer {
     margin-top: 200px;
     background-color: black;
     min-width: 1200px;
@@ -140,45 +150,48 @@ div.footer{
     font-size: 16px;
 }
 
-div.footers{
+div.footers {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 200px;
 }
-div.footer img{
+
+div.footer img {
     position: relative;
     width: 80px;
     height: 80px;
-    transform: translate(-200% , -40%);
+    transform: translate(-200%, -40%);
 }
-div.footer a , div.footer p{
+
+div.footer a,
+div.footer p {
     color: white;
     font-size: 18px;
 }
-div.numbersandaddress{
+
+div.numbersandaddress {
     transform: translateX(-20%);
 }
-div.footer div.addressborders{
+
+div.footer div.addressborders {
     display: flex;
     justify-content: center;
-
 }
 
-
-div.footer div.addressborders div.works{
+div.footer div.addressborders div.works {
     max-width: 500px;
 }
-p{
+
+p {
     margin: 0;
 }
 
-div.header ul  a.logobig{
-    padding:0;
+div.header ul a.logobig {
+    padding: 0;
 }
 
-
-div.headerright{
+div.headerright {
     width: 40%;
     font-size: 24px;
     background-color: black;
@@ -189,63 +202,71 @@ div.headerright{
     transition: all .5s;
     height: 100%;
 }
-div.headerright.openbox{
+
+div.headerright.openbox {
     transform: translateX(0%);
 }
-div.headerright ul{
+
+div.headerright ul {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0;
     padding-left: 10px;
 }
-div.headerright ul li{
+
+div.headerright ul li {
     list-style: none;
     border-bottom: 1px solid rgba(128, 128, 128, 0.48);
     padding: 10px 0;
 }
 
-div.headerright ul li a{
-    text-decoration:none;
+div.headerright ul li a {
+    text-decoration: none;
     color: white;
     padding-right: calc(100% - 50px);
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-div.headerright ul li ul li a{
+
+div.headerright ul li ul li a {
     border: 0;
     padding-right: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-div.headerright ul li ul li:last-child{
+
+div.headerright ul li ul li:last-child {
     border-bottom: 0px;
 }
-div.headerright ul li ul li:nth-child(4){
+
+div.headerright ul li ul li:nth-child(4) {
     padding-right: calc(100% - 80px);
     display: inline-block;
 }
 
-div.headerright ul button{
+div.headerright ul button {
     background-color: black;
     color: white;
     border: 0;
     font-size: 24px;
     cursor: pointer;
 }
-div.headerright ul button:hover{
+
+div.headerright ul button:hover {
     color: #d39717;
 }
-div.headerright ul li.room ul.roomhides{
+
+div.headerright ul li.room ul.roomhides {
     display: none;
 }
 
-@media all and (min-width: 992px ) and (max-width: 1200px){
-    body{
+@media all and (min-width: 992px) and (max-width: 1200px) {
+    body {
         min-width: 960px;
     }
-    div.footer{
+    div.footer {
         min-width: 960px;
     }
     /* div.works{
@@ -253,61 +274,56 @@ div.headerright ul li.room ul.roomhides{
     } */
 }
 
-
-
-@media all and (min-width: 768px ) and (max-width: 991px){
-    body{
+@media all and (min-width: 768px) and (max-width: 991px) {
+    body {
         min-width: 720px;
     }
-    div.footer{
+    div.footer {
         min-width: 720px;
     }
-
-    div.footer{
-        margin-top:100px;
+    div.footer {
+        margin-top: 100px;
     }
-    div.header a{
+    div.header a {
         padding: 50px 15px 21px 15px;
     }
-    div.header ul li:nth-child(4) a{
+    div.header ul li:nth-child(4) a {
         padding: 70px 10px;
         padding-bottom: 0;
     }
 }
 
-@media all and (min-width:576px) and (max-width: 767px){
-    body{
+@media all and (min-width:576px) and (max-width: 767px) {
+    body {
         min-width: 540px;
     }
-    div.footer{
+    div.footer {
         min-width: 540px;
     }
-
-    div.footer{
-        margin-top:100px;
+    div.footer {
+        margin-top: 100px;
     }
-    div.header a{
+    div.header a {
         padding: 50px 20px 21px 20px;
     }
-    div.header ul li:nth-child(4) a{
+    div.header ul li:nth-child(4) a {
         padding: 70px 20px;
         padding-bottom: 0;
     }
-    div.addressborders{
+    div.addressborders {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
     }
-    div.numbersandaddress{
+    div.numbersandaddress {
         transform: none;
     }
-    div.works{
+    div.works {
         margin-top: 20px;
     }
-    div.header ul li{
+    div.header ul li {
         display: none;
-
     }
     div.header button {
         display: flex;
@@ -320,45 +336,41 @@ div.headerright ul li.room ul.roomhides{
         top: 0;
         z-index: 2;
     }
-    div.header img{
+    div.header img {
         padding: 0;
     }
-
 }
 
-
-
-@media all and (max-width:575px){
-    body{
+@media all and (max-width:575px) {
+    body {
         min-width: 100%;
     }
-    div.footer{
+    div.footer {
         min-width: 100%;
     }
-
-    div.footer{
-        margin-top:100px;
+    div.footer {
+        margin-top: 100px;
     }
-    div.header a{
+    div.header a {
         padding: 50px 20px 21px 20px;
     }
-    div.header ul li:nth-child(4) a{
+    div.header ul li:nth-child(4) a {
         padding: 70px 20px;
         padding-bottom: 0;
     }
-    div.addressborders{
+    div.addressborders {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    div.numbersandaddress{
+    div.numbersandaddress {
         transform: none;
     }
-    div.works{
+    div.works {
         margin-top: 20px;
     }
-    div.header ul li{
+    div.header ul li {
         display: none;
     }
     div.header button {
@@ -372,13 +384,10 @@ div.headerright ul li.room ul.roomhides{
         top: 0;
         z-index: 1;
     }
-    div.header img{
+    div.header img {
         padding: 0;
     }
-
     div.headerright ul li ul li a {
         font-size: 18px;
-
     }
-
 }
