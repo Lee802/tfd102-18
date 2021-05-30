@@ -1,50 +1,74 @@
+div.banner {
+    overflow: hidden;
+}
 
-div.banner div.mask{
-    background: url(../img/banner/2437151.jpg) no-repeat ;
-    background-size: cover;
+div.banner div.mask {
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-}
-div.banner p{
-    font-size: 30px;
-    color: white;
-    z-index: 1;
-    margin: 0;
-}
-div.banner p.english{
-    font-size: 30px;
-    color: white;
-
-    margin: 0;
 }
 
-
-
-
-div.banner p.english{
-    font-size: 16px;
-}
-div.banner div.mask1{
+div.banner div.mask::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(211, 211, 211, 0.35);
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.576);
-    position: absolute;
-    left: 0;
-    right: 0;
+    z-index: 1;
 }
-body{
+
+div.bannerimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.bannerimg {
+    width: 100%;
+    height: 500px;
+    transform: translate3d(0px, 0px, 0px);
+    overflow: hidden;
+}
+
+div.bannerimg.zoomin {
+    transform: scale(1.4, 1.4);
+    transition: 8s;
+}
+
+div.banner p {
+    font-size: 30px;
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+div.banner p.english {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    top: calc(50% + 24px);
+}
+
+body {
     background-color: white;
 }
-div.body{
+
+div.body {
     font-size: 16px;
 }
-div.first , div.two , div.three{
+
+div.first,
+div.two,
+div.three {
     width: 100px;
     height: 100px;
     border: 5px solid green;
@@ -54,23 +78,26 @@ div.first , div.two , div.three{
     color: green;
     font-size: 24px;
 }
-div.first{
+
+div.first {
     margin-left: 0px;
     background-color: green;
     color: white;
 }
-div.two{
+
+div.two {
     background-color: green;
     color: white;
 }
-div.top{
+
+div.top {
     margin-top: 100px;
     display: flex;
     height: 200px;
     justify-content: center;
 }
 
-div.top div::after{
+div.top div::after {
     content: "";
     border: 2px solid green;
     position: absolute;
@@ -78,40 +105,48 @@ div.top div::after{
     left: 130%;
     top: 50%;
 }
-div.top div.three::after{
+
+div.top div.three::after {
     display: none;
 }
 
-div.top p{
+div.top p {
     margin: 0;
 }
-div.top p.num{
+
+div.top p.num {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
 }
-div.top p.text{
+
+div.top p.text {
     position: absolute;
     left: 4%;
     top: 120%;
     color: green;
 }
+
 div.body div.top div.three {
     color: green;
     border: 5px solid green;
 }
-div.body div.top div.two::after{
+
+div.body div.top div.two::after {
     content: "";
-    border: 2px solid green;;
+    border: 2px solid green;
+    ;
 }
+
 div.body div.top div.three p {
     color: green;
 }
 
-p{
+p {
     margin: 0;
 }
+
 div.body {
     display: flex;
     justify-content: center;
@@ -119,23 +154,22 @@ div.body {
     align-items: center;
 }
 
-div.mid{
+div.mid {
     width: 720px;
     margin-top: 20px;
-
 }
-div.mid p.address{
+
+div.mid p.address {
     margin-top: 10px;
 }
 
-
-img.messageicon{
+img.messageicon {
     width: 18px;
     padding: 2px;
     margin-right: 4px;
 }
 
-div.mid div.checkin{
+div.mid div.checkin {
     display: flex;
     flex-direction: row;
     margin: 0;
@@ -143,20 +177,23 @@ div.mid div.checkin{
     justify-content: space-between;
 }
 
-div.mid div.checkin div{
+div.mid div.checkin div {
     margin-left: 50px;
     background-color: rgba(128, 128, 128, 0.233);
     height: 100px;
     padding: 20px;
 }
-div.mid div.checkin div:first-child{
+
+div.mid div.checkin div:first-child {
     margin-left: 0;
 }
-div.mid div.checkin p{
+
+div.mid div.checkin p {
     font-size: 20px;
     font-weight: 700;
 }
-div.mid div.checkin p.date{
+
+div.mid div.checkin p.date {
     font-size: 16px;
     font-weight: normal;
 }

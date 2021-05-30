@@ -1,53 +1,76 @@
+div.banner {
+    overflow: hidden;
+}
 
-div.banner div.mask{
-    background: url(../img/banner/TKUO-Vol2-1920-0005.jpg) no-repeat ;
-    background-size: cover;
+div.banner div.mask {
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-div.banner p{
-    font-size: 30px;
-    color: white;
-    z-index: 1;
-    margin: 0;
-}
-div.banner p.english{
-    font-size: 30px;
-    color: white;
 
-    margin: 0;
-}
-
-
-
-div.banner p.english{
-    font-size: 16px;
-}
-div.banner div.mask1{
+div.banner div.mask::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(211, 211, 211, 0.35);
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.576);
-    position: absolute;
-    left: 0;
-    right: 0;
+    z-index: 1;
 }
-div.body{
+
+div.bannerimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.bannerimg {
+    width: 100%;
+    height: 500px;
+    transform: translate3d(0px, 0px, 0px);
+    overflow: hidden;
+}
+
+div.bannerimg.zoomin {
+    transform: scale(1.4, 1.4);
+    transition: 8s;
+}
+
+div.banner p {
+    font-size: 30px;
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+div.banner p.english {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    top: calc(50% + 24px);
+}
+
+div.body {
     display: flex;
     position: relative;
     justify-content: center;
     font-size: 16px;
     align-items: center;
-
 }
-div.room{
+
+div.room {
     margin-top: 120px;
 }
-div.rooms{
+
+div.rooms {
     display: flex;
     position: relative;
     justify-content: center;
@@ -55,40 +78,43 @@ div.rooms{
     margin-top: 120px;
 }
 
-div.rooms div{
+div.rooms div {
     height: 300px;
     width: 300px;
     margin-left: 100px;
     margin-top: 40px;
     position: relative;
     overflow: hidden;
-    transition:  box-shadow .5s;
+    transition: box-shadow .5s;
     cursor: pointer;
 }
-div.rooms h1{
+
+div.rooms h1 {
     position: absolute;
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
 }
-div.rooms div:first-child{
+
+div.rooms div:first-child {
     margin-left: 0;
 }
-div.rooms img{
+
+div.rooms img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-
 }
-div.rooms123{
+
+div.rooms123 {
     margin-top: 10px;
 }
 
-
-div.rooms div.imgsfirsts{
+div.rooms div.imgsfirsts {
     margin-left: 0;
 }
-div.rooms div.mask{
+
+div.rooms div.mask {
     margin: 0;
     position: absolute;
     top: 0;
@@ -99,17 +125,18 @@ div.rooms div.mask{
     height: 0px;
 }
 
-div.rooms div:hover div.mask{
-     background-color: #5a5a5a87;
-     height: 300px;
+div.rooms div:hover div.mask {
+    background-color: #5a5a5a87;
+    height: 300px;
 }
-div.rooms p.rooms{
+
+div.rooms p.rooms {
     transition-delay: .2s;
     visibility: hidden;
 }
 
-div.rooms div:hover p.rooms{
-    visibility:visible;
+div.rooms div:hover p.rooms {
+    visibility: visible;
     position: absolute;
     left: 4%;
     bottom: 4%;
@@ -118,6 +145,3 @@ div.rooms div:hover p.rooms{
     color: white;
     font-weight: 900;
 }
-
-
-

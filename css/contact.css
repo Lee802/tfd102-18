@@ -1,43 +1,64 @@
+div.banner {
+    overflow: hidden;
+}
 
-div.banner div.mask{
-    background: url(../img/banner/TKUO-Vol2-1920-0067.jpg) no-repeat ;
-    background-size: cover;
+div.banner div.mask {
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-div.banner p{
-    font-size: 30px;
-    color: white;
-    z-index: 1;
-    margin: 0;
-}
-div.banner p.english{
-    font-size: 30px;
-    color: white;
 
-    margin: 0;
-}
-
-
-
-
-div.banner p.english{
-    font-size: 16px;
-}
-div.banner div.mask1{
+div.banner div.mask::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(211, 211, 211, 0.35);
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.576);
-    position: absolute;
-    left: 0;
-    right: 0;
+    z-index: 1;
 }
-div.body{
+
+div.bannerimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+div.bannerimg {
+    width: 100%;
+    height: 500px;
+    transform: translate3d(0px, 0px, 0px);
+    overflow: hidden;
+}
+
+div.bannerimg.zoomin {
+    transform: scale(1.4, 1.4);
+    transition: 8s;
+}
+
+div.banner p {
+    font-size: 30px;
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+div.banner p.english {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    top: calc(50% + 24px);
+}
+
+div.body {
     display: flex;
     position: relative;
     justify-content: center;
@@ -46,36 +67,41 @@ div.body{
     flex-direction: column;
 }
 
-h1{
+h1 {
     font-size: 40px;
     display: flex;
     justify-content: center;
 }
-div.map iframe{
+
+div.map iframe {
     width: 100%;
     height: 500px;
 }
 
-div.inside{
+div.inside {
     display: flex;
     justify-content: center;
     text-align: center;
 }
 
-div.in{
-    margin-left:  200px;
+div.in {
+    margin-left: 200px;
 }
-div.firstin{
+
+div.firstin {
     margin-left: 0;
 }
-div.inputlist{
+
+div.inputlist {
     margin-top: 2%;
     width: 50%;
     height: 800px;
     background-color: #f5e5be;
     text-align: center;
 }
-div.inputlist input , div.inputlist textarea{
+
+div.inputlist input,
+div.inputlist textarea {
     border: none;
     border-bottom: 2px solid black;
     background-color: #d3971700;
@@ -83,23 +109,29 @@ div.inputlist input , div.inputlist textarea{
     height: 3%;
     margin-top: 30px;
 }
-div.inputlist input.full , div.inputlist textarea{
+
+div.inputlist input.full,
+div.inputlist textarea {
     width: 82%;
 }
-div.inputlist input.right{
+
+div.inputlist input.right {
     margin-left: 20px;
 }
-div.inputlist input:focus-visible{
+
+div.inputlist input:focus-visible {
     border: none;
     outline: none;
     border-bottom: 2px solid black;
 }
-div.inputlist textarea:focus-visible{
+
+div.inputlist textarea:focus-visible {
     border: none;
     outline: none;
     border-bottom: 2px solid black;
 }
-div.inputlist input.btn{
+
+div.inputlist input.btn {
     border: 1px solid #d39717;
     background-color: #d3971700;
     color: #d39717;
@@ -108,16 +140,13 @@ div.inputlist input.btn{
     margin-top: 80px;
 }
 
-div.inputlist input.btn:hover{
-    background-color:#d39717 ;
+div.inputlist input.btn:hover {
+    background-color: #d39717;
     color: white;
     cursor: pointer;
 }
 
-
-
-div.inputlist textarea{
+div.inputlist textarea {
     height: 200px;
-    resize : none;
+    resize: none;
 }
-

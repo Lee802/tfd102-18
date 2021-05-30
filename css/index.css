@@ -497,7 +497,7 @@ ul.slieder-item-container a {
     -ms-user-select: none;
     user-select: none;
     width: 100%;
-    height: 1200px;
+    height: 800px;
 }
 
 ul.slieder-item-container {
@@ -578,8 +578,9 @@ div.indicator-container span.indicator {
     border-radius: 100%;
     background: white;
     cursor: pointer;
+    margin: 6px;
 }
 
 #slider .indicator.active {
-    background: red;
+    background: #d39717;
 }
