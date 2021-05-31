@@ -312,9 +312,12 @@ div.message {
 }
 
 div.rightpeople {
-    border-bottom: 1px solid gray;
     padding: 0 20px;
     padding-top: 10px;
+}
+
+div.rightpeople.borderadd {
+    border-bottom: 1px solid gray;
 }
 
 div.totalrooms {
@@ -327,15 +330,22 @@ div.totalrooms:last-child {
 }
 
 div.totalmoney {
-    border-top: 1px solid gray;
     padding: 0 20px;
     padding-bottom: 20px;
+}
+
+div.totalmoney.-border {
+    border-top: 1px solid gray;
 }
 
 div.totalroom.addcss {
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: 234px;
+}
+
+div.totalroom.addcss p {
+    margin: 10px 0;
 }
 
 input {
@@ -349,7 +359,7 @@ input {
 a.smallsize {
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 p {
