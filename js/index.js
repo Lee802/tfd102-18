@@ -152,10 +152,26 @@ function setCurrentActiveIndicator(index) {
     }
 }
 
+// window.addEventListener("resize", function() {
+//     let a = document.getElementsByClassName("slieder-item-container ")[0].getElementsByTagName("img");
 
+//     for (let i = 0; i < a.length; i++) {
+//         a[i].style.width = "100%";
+//     }
+
+// });
+// document.addEventListener("DOMContentLoaded", function(event) {
+//     console.log(event);
+
+// });
+
+document.addEventListener("click", function(event) {
+
+
+});
 
 // for (let i = 0; i < 5; i++) {
 // 抬升 hoisting
 //     console.log(i);
 // }
-// console.log(i);
+// console.log(i);.targ
