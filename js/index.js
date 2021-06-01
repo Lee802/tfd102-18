@@ -160,13 +160,120 @@ function setCurrentActiveIndicator(index) {
 //     }
 
 // });
-// document.addEventListener("DOMContentLoaded", function(event) {
-//     console.log(event);
+document.addEventListener("DOMContentLoaded", function() {
+    let total_div = document.getElementById("imgborders").querySelectorAll("div");
+    let j = 0;
+    for (let i = 0; i < total_div.length; i++) {
+        if (!total_div[i].classList.contains("nones") && j < 4) {
+            j++;
 
-// });
+        } else {
+            total_div[i].classList.add("-nones");
+        }
+    }
+});
 
+let h = 0;
+let g = 0;
+let right_offsetWidth = 0;
+let left_offsetWidth = 0;
 document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("right")) {
 
+        let total_div = document.getElementById("move").querySelectorAll("div");
+        let move = document.getElementById("move");
+        let j = 0;
+        h++;
+        right_offsetWidth += total_div[h].offsetWidth + 20;
+        move.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
+
+        for (let i = 0; i < total_div.length; i++) {
+
+
+            console.log(left_offsetWidth);
+            total_div[i].style.left = left_offsetWidth + "px";
+            if (total_div[i].getAttribute("data-img") <= h) {
+                if (i == h) {
+                    left_offsetWidth = total_div[i].offsetWidth;
+                }
+                total_div[i].classList.add("-nones");
+                total_div[i].classList.remove("marginleft");
+            }
+            if (j < 4 && total_div[i].getAttribute("data-img") > h) {
+                j++;
+                if (total_div[i].classList.contains("-nones")) {
+                    total_div[i].classList.remove("-nones");
+                }
+            } else {
+                total_div[i].classList.add("-nones");
+                if (h == 5) {
+                    h = 0;
+                }
+            }
+        }
+
+    }
+    if (event.target.classList.contains("left")) {
+        g++;
+        let total_div = document.getElementById("move").querySelectorAll("div");
+        let move = document.getElementById("move");
+
+        left_offsetWidth += total_div[g].offsetWidth + 20;
+        move.style.transform = `translate3d(${left_offsetWidth}px,0px,0px)`;
+        console.log(move);
+        if (g == total_div.length) {
+            g = 0;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /*if (event.target.classList.contains("right")) {
+        let total_div = document.getElementById("imgborders").querySelectorAll("div");
+        let j = 0;
+        h++;
+        let left_offsetWidth;
+        for (let i = 0; i < total_div.length; i++) {
+            if (i == h) {
+                left_offsetWidth = total_div[i].offsetWidth;
+            }
+
+            console.log(left_offsetWidth);
+            total_div[i].style.left = left_offsetWidth + "px";
+            if (total_div[i].getAttribute("data-img") <= h) {
+                if (i == h) {
+                    left_offsetWidth = total_div[i].offsetWidth;
+                }
+                total_div[i].classList.add("-nones");
+                total_div[i].classList.remove("marginleft");
+            }
+            if (j < 4 && total_div[i].getAttribute("data-img") > h) {
+                j++;
+                if (total_div[i].classList.contains("-nones")) {
+                    total_div[i].classList.remove("-nones");
+                }
+
+                if (j == 1) {
+                    total_div[i].classList.add("marginleft");
+                } else if (j == 4) {
+                    total_div[i].classList.add("mariginright");
+                } else if (j == 3) {
+                    total_div[i].classList.remove("mariginright");
+                }
+            } else {
+                total_div[i].classList.add("-nones");
+            }
+        }
+    }*/
 
 });
 
