@@ -36,6 +36,10 @@ div.bannerimg {
     overflow: hidden;
 }
 
+div.bottomline p.blue {
+    font-weight: 900;
+}
+
 div.bannerimg.zoomin {
     transform: scale(1.4, 1.4);
     transition: 8s;
@@ -302,6 +306,25 @@ div.moneystotal1 {
 
 div.moneystotal2 {
     text-align: right;
+}
+
+div.roomborders {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+div.roomborders::after {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.329);
+    width: 94%;
+    bottom: 0;
+    left: 20px;
+}
+
+div.roomborders:last-child::after {
+    display: none;
 }
 
 div.roomtotalsmoney {

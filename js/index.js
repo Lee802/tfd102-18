@@ -34,7 +34,7 @@ function initElement() {
     slider_item_container.appendChild(firstItem);
 
     slider_item_width = slider_items[0].offsetWidth;
-
+    // console.log(slider_items);
 }
 
 function initEvent() {
@@ -160,6 +160,8 @@ function setCurrentActiveIndicator(index) {
 //     }
 
 // });
+var total_divs_last;
+
 document.addEventListener("DOMContentLoaded", function() {
     let total_div = document.getElementById("imgborders").querySelectorAll("div");
     let j = 0;
@@ -171,59 +173,118 @@ document.addEventListener("DOMContentLoaded", function() {
             total_div[i].classList.add("-nones");
         }
     }
+    let width_border = document.getElementById("move");
+    let offwidth = width_border.querySelectorAll("div").length * 100;
+    width_border.style.width = `${offwidth}%`;
+    let total_divs = document.getElementById("move").querySelectorAll("div");
+
+    let a = document.getElementById("move");
+    a.appendChild(total_divs[0].cloneNode(true));
+    total_divs_last = a.querySelectorAll("div");
+    a.appendChild(total_divs[6].cloneNode(true));
+    total_divs_last = a.querySelectorAll("div");
+    a.appendChild(total_divs[7].cloneNode(true));
+    total_divs_last = a.querySelectorAll("div");
+
 });
 
-let h = 0;
+let index = 3;
 let g = 0;
+let l = 0;
 let right_offsetWidth = 0;
 let left_offsetWidth = 0;
+
 document.addEventListener("click", function(event) {
+
     if (event.target.classList.contains("right")) {
 
-        let total_div = document.getElementById("move").querySelectorAll("div");
+
         let move = document.getElementById("move");
-        let j = 0;
-        h++;
-        right_offsetWidth += total_div[h].offsetWidth + 20;
-        move.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
+        let move_div = move.querySelectorAll("div");
+        index++;
+        console.log(index);
+        console.log(total_divs_last.length);
+        // console.log(total_divs_last[index].getAttribute("data-img"));
+        console.log(move_div[index].getAttribute("data-img"));
 
-        for (let i = 0; i < total_div.length; i++) {
+        if (index < total_divs_last.length && move_div[index].getAttribute("data-img") != 1) {
+            right_offsetWidth += -total_divs_last[index].offsetWidth - 20;
+            left_offsetWidth -= total_divs_last[index].offsetWidth + 20;
+            console.log(right_offsetWidth);
+            move.style.transition = "all .5s";
+        } else if (right_offsetWidth <= 1600) {
+            console.log("uns");
+            right_offsetWidth = 0;
+            left_offsetWidth = 0
+            right_offsetWidth += 640;
+            left_offsetWidth -= 640;
+            index = 1;
 
-
-            console.log(left_offsetWidth);
-            total_div[i].style.left = left_offsetWidth + "px";
-            if (total_div[i].getAttribute("data-img") <= h) {
-                if (i == h) {
-                    left_offsetWidth = total_div[i].offsetWidth;
-                }
-                total_div[i].classList.add("-nones");
-                total_div[i].classList.remove("marginleft");
-            }
-            if (j < 4 && total_div[i].getAttribute("data-img") > h) {
-                j++;
-                if (total_div[i].classList.contains("-nones")) {
-                    total_div[i].classList.remove("-nones");
-                }
-            } else {
-                total_div[i].classList.add("-nones");
-                if (h == 5) {
-                    h = 0;
-                }
-            }
         }
+
+        setTimeout(() => {
+            move.style.transition = null;
+        }, 600);
+
+        move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+
+
+
+        // for (let i = 0; i < total_div.length; i++) {
+
+
+        //     if (total_div[i].getAttribute("data-img") <= h) {
+        //         if (i == h) {
+        //             left_offsetWidth = total_div[i].offsetWidth;
+        //         }
+        //         total_div[i].classList.add("-nones");
+        //         total_div[i].classList.remove("marginleft");
+        //     }
+        //     if (j < 4 && total_div[i].getAttribute("data-img") > h) {
+        //         j++;
+        //         if (total_div[i].classList.contains("-nones")) {
+        //             total_div[i].classList.remove("-nones");
+        //         }
+        //     } else {
+        //         total_div[i].classList.add("-nones");
+        //         if (h == (total_div.length - 4)) {
+        //             h = 0;
+        //         }
+        //     }
+        // }
 
     }
     if (event.target.classList.contains("left")) {
-        g++;
         let total_div = document.getElementById("move").querySelectorAll("div");
         let move = document.getElementById("move");
-
-        left_offsetWidth += total_div[g].offsetWidth + 20;
+        let j = 0;
+        l++;
+        left_offsetWidth += total_div[l].offsetWidth + 20;
+        right_offsetWidth -= total_div[l].offsetWidth + 20;
         move.style.transform = `translate3d(${left_offsetWidth}px,0px,0px)`;
-        console.log(move);
-        if (g == total_div.length) {
-            g = 0;
-        }
+
+        // for (let i = 0; i < total_div.length; i++) {
+
+        //     total_div[i].style.left = left_offsetWidth + "px";
+        //     if (total_div[i].getAttribute("data-img") <= l) {
+        //         if (i == l) {
+        //             left_offsetWidth = total_div[i].offsetWidth;
+        //         }
+        //         total_div[i].classList.add("-nones");
+        //         total_div[i].classList.remove("marginleft");
+        //     }
+        //     if (j < 4 && total_div[i].getAttribute("data-img") > h) {
+        //         j++;
+        //         if (total_div[i].classList.contains("-nones")) {
+        //             total_div[i].classList.remove("-nones");
+        //         }
+        //     } else {
+        //         total_div[i].classList.add("-nones");
+        //         if (l == total_div.length) {
+        //             l = 0;
+        //         }
+        //     }
+        // }
     }
 
 

@@ -599,7 +599,7 @@ function checktotalroom() {
 let openmoneys = true;
 
 function totalmoneys() {
-    let moneys = sessionStorage.getItem("totalmoneys");
+    let moneys = JSON.parse(sessionStorage.getItem("totalmoneys"));
     let totalmoney = document.getElementsByClassName("totalmoney")[0];
     let rightpeoplesborder = document.getElementsByClassName("rightpeople")[0];
     if (moneys != 0 && moneys != null) {
@@ -612,7 +612,7 @@ function totalmoneys() {
                         </div>
                         <div class="mainnew">
                             <p>剩餘尾款<a class="smallsize">（請於現場付清）</a></p>
-                            <p>TWD ${lastmoney.toLocaleString('en-US')}</p>
+                            <p>TWD ${lastmoney.toLocaleString()}</p>
                         </div>
                         <div class="mainnew">
                             <p>付款金額<a class="smallsize">（訂金）</a></p>
