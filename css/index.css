@@ -134,7 +134,8 @@ div.imgs div#imgborders div#move {
     margin-left: auto;
     margin-right: auto;
     /* width: 800%; */
-    transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(-320px, 0px, 0px);
+    transition: all .5s;
 }
 
 div.imgs ul div#imgborders div#move div {

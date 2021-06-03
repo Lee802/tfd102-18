@@ -161,6 +161,13 @@ function setCurrentActiveIndicator(index) {
 
 // });
 var total_divs_last;
+let move = document.getElementById("move");
+let index = 3;
+let g = 0;
+let l = 0;
+let a = document.getElementById("move");
+total_divs_last = a.querySelectorAll("div");
+let right_offsetWidth = -total_divs_last[4].offsetWidth - 20;;
 
 document.addEventListener("DOMContentLoaded", function() {
     let total_div = document.getElementById("imgborders").querySelectorAll("div");
@@ -178,165 +185,51 @@ document.addEventListener("DOMContentLoaded", function() {
     width_border.style.width = `${offwidth}%`;
     let total_divs = document.getElementById("move").querySelectorAll("div");
 
-    let a = document.getElementById("move");
+
     a.prepend(total_divs[total_divs.length - 1].cloneNode(true));
 
-    total_divs_last = a.querySelectorAll("div");
-    // a.appendChild(total_divs[6].cloneNode(true));
-    // total_divs_last = a.querySelectorAll("div");
-    // a.appendChild(total_divs[7].cloneNode(true));
-    // total_divs_last = a.querySelectorAll("div");
-    a.prepend(`<div>123</div>`);
+    // a.prepend(`<div>123</div>`);
+    move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
 
 });
 
-let index = 3;
-let g = 0;
-let l = 0;
-let right_offsetWidth = 0;
-let left_offsetWidth = 0;
+let o = 0;
 
 document.addEventListener("click", function(event) {
 
-    if (event.target.classList.contains("right")) {
+    if (event.target.classList.contains("right")) {;
+        o++;
+        let total = a.getElementsByTagName("div");
+        right_offsetWidth += -total[4].offsetWidth - 20;
 
-
-        let move = document.getElementById("move");
-        let move_div = move.querySelectorAll("div");
-        index++;
-        // console.log(index);
-        // console.log(total_divs_last.length);
-        // // console.log(total_divs_last[index].getAttribute("data-img"));
-        // console.log(move_div[index].getAttribute("data-img"));
-
-        if (index <= total_divs_last.length && move_div[index].getAttribute("data-img") != 1) {
-            right_offsetWidth += -total_divs_last[index].offsetWidth - 20;
-            left_offsetWidth -= total_divs_last[index].offsetWidth + 20;
-
-            move.style.transition = "all .5s";
-        } else if (right_offsetWidth <= 1600) {
-
-            right_offsetWidth = 0;
-            left_offsetWidth = 0
-            right_offsetWidth += 340;
-            left_offsetWidth -= 320;
-            index = 1;
-
-        }
-
-        setTimeout(() => {
-            move.style.transition = null;
-        }, 600);
 
         move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+        setTimeout(() => {
 
+            total[0].remove();
 
-
-        // for (let i = 0; i < total_div.length; i++) {
-
-
-        //     if (total_div[i].getAttribute("data-img") <= h) {
-        //         if (i == h) {
-        //             left_offsetWidth = total_div[i].offsetWidth;
-        //         }
-        //         total_div[i].classList.add("-nones");
-        //         total_div[i].classList.remove("marginleft");
-        //     }
-        //     if (j < 4 && total_div[i].getAttribute("data-img") > h) {
-        //         j++;
-        //         if (total_div[i].classList.contains("-nones")) {
-        //             total_div[i].classList.remove("-nones");
-        //         }
-        //     } else {
-        //         total_div[i].classList.add("-nones");
-        //         if (h == (total_div.length - 4)) {
-        //             h = 0;
-        //         }
-        //     }
-        // }
+            a.appendChild(a.getElementsByTagName("div")[0].cloneNode(true));
+        }, 500);
 
     }
+
     if (event.target.classList.contains("left")) {
-        let total_div = document.getElementById("move").querySelectorAll("div");
-        let move = document.getElementById("move");
-        let j = 0;
-        l++;
-        left_offsetWidth += total_div[l].offsetWidth + 20;
-        right_offsetWidth -= total_div[l].offsetWidth + 20;
-        move.style.transform = `translate3d(${left_offsetWidth}px,0px,0px)`;
 
-        // for (let i = 0; i < total_div.length; i++) {
 
-        //     total_div[i].style.left = left_offsetWidth + "px";
-        //     if (total_div[i].getAttribute("data-img") <= l) {
-        //         if (i == l) {
-        //             left_offsetWidth = total_div[i].offsetWidth;
-        //         }
-        //         total_div[i].classList.add("-nones");
-        //         total_div[i].classList.remove("marginleft");
-        //     }
-        //     if (j < 4 && total_div[i].getAttribute("data-img") > h) {
-        //         j++;
-        //         if (total_div[i].classList.contains("-nones")) {
-        //             total_div[i].classList.remove("-nones");
-        //         }
-        //     } else {
-        //         total_div[i].classList.add("-nones");
-        //         if (l == total_div.length) {
-        //             l = 0;
-        //         }
-        //     }
-        // }
+        let total = a.getElementsByTagName("div");
+
+        right_offsetWidth += total[0].offsetWidth + 20;
+
+        move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+        setTimeout(() => {
+
+            total[total.length - 1].remove();
+
+            a.prepend(total[total.length - 1].cloneNode(true));
+        }, 500);
+
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-    /*if (event.target.classList.contains("right")) {
-        let total_div = document.getElementById("imgborders").querySelectorAll("div");
-        let j = 0;
-        h++;
-        let left_offsetWidth;
-        for (let i = 0; i < total_div.length; i++) {
-            if (i == h) {
-                left_offsetWidth = total_div[i].offsetWidth;
-            }
-
-            console.log(left_offsetWidth);
-            total_div[i].style.left = left_offsetWidth + "px";
-            if (total_div[i].getAttribute("data-img") <= h) {
-                if (i == h) {
-                    left_offsetWidth = total_div[i].offsetWidth;
-                }
-                total_div[i].classList.add("-nones");
-                total_div[i].classList.remove("marginleft");
-            }
-            if (j < 4 && total_div[i].getAttribute("data-img") > h) {
-                j++;
-                if (total_div[i].classList.contains("-nones")) {
-                    total_div[i].classList.remove("-nones");
-                }
-
-                if (j == 1) {
-                    total_div[i].classList.add("marginleft");
-                } else if (j == 4) {
-                    total_div[i].classList.add("mariginright");
-                } else if (j == 3) {
-                    total_div[i].classList.remove("mariginright");
-                }
-            } else {
-                total_div[i].classList.add("-nones");
-            }
-        }
-    }*/
 
 });
 
