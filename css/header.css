@@ -91,6 +91,11 @@ div.header ul li.room ul li:hover {
     background-color: rgba(212, 211, 211, 0.986);
 }
 
+div.headerright {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 div.header ul li.room ul li:hover a,
 div.headerright ul li.room ul li:hover a {
     color: #d39717;
@@ -291,6 +296,9 @@ div.headerright ul li.room ul.roomhides {
         padding: 70px 10px;
         padding-bottom: 0;
     }
+    div.headerright {
+        display: none;
+    }
 }
 
 @media all and (min-width:576px) and (max-width: 767px) {
@@ -338,6 +346,9 @@ div.headerright ul li.room ul.roomhides {
     }
     div.header img {
         padding: 0;
+    }
+    div.headerright {
+        display: block;
     }
 }
 
@@ -389,5 +400,8 @@ div.headerright ul li.room ul.roomhides {
     }
     div.headerright ul li ul li a {
         font-size: 18px;
+    }
+    div.headerright {
+        display: block;
     }
 }

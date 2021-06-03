@@ -179,12 +179,14 @@ document.addEventListener("DOMContentLoaded", function() {
     let total_divs = document.getElementById("move").querySelectorAll("div");
 
     let a = document.getElementById("move");
-    a.appendChild(total_divs[0].cloneNode(true));
+    a.prepend(total_divs[total_divs.length - 1].cloneNode(true));
+
     total_divs_last = a.querySelectorAll("div");
-    a.appendChild(total_divs[6].cloneNode(true));
-    total_divs_last = a.querySelectorAll("div");
-    a.appendChild(total_divs[7].cloneNode(true));
-    total_divs_last = a.querySelectorAll("div");
+    // a.appendChild(total_divs[6].cloneNode(true));
+    // total_divs_last = a.querySelectorAll("div");
+    // a.appendChild(total_divs[7].cloneNode(true));
+    // total_divs_last = a.querySelectorAll("div");
+    a.prepend(`<div>123</div>`);
 
 });
 
@@ -202,22 +204,22 @@ document.addEventListener("click", function(event) {
         let move = document.getElementById("move");
         let move_div = move.querySelectorAll("div");
         index++;
-        console.log(index);
-        console.log(total_divs_last.length);
-        // console.log(total_divs_last[index].getAttribute("data-img"));
-        console.log(move_div[index].getAttribute("data-img"));
+        // console.log(index);
+        // console.log(total_divs_last.length);
+        // // console.log(total_divs_last[index].getAttribute("data-img"));
+        // console.log(move_div[index].getAttribute("data-img"));
 
-        if (index < total_divs_last.length && move_div[index].getAttribute("data-img") != 1) {
+        if (index <= total_divs_last.length && move_div[index].getAttribute("data-img") != 1) {
             right_offsetWidth += -total_divs_last[index].offsetWidth - 20;
             left_offsetWidth -= total_divs_last[index].offsetWidth + 20;
-            console.log(right_offsetWidth);
+
             move.style.transition = "all .5s";
         } else if (right_offsetWidth <= 1600) {
-            console.log("uns");
+
             right_offsetWidth = 0;
             left_offsetWidth = 0
-            right_offsetWidth += 640;
-            left_offsetWidth -= 640;
+            right_offsetWidth += 340;
+            left_offsetWidth -= 320;
             index = 1;
 
         }

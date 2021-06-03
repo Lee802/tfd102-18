@@ -3,7 +3,7 @@
     src: url(../font/DMFT1614930817567.ttf);
 }
 
-div.hiddenheader{
+div.hiddenheader {
     position: absolute;
     width: 100%;
     top: 0;
@@ -11,12 +11,14 @@ div.hiddenheader{
     transform: translateY(-500%);
     transition: all .5s;
 }
-div.hiddenheader.navFixed{
+
+div.hiddenheader.navFixed {
     position: fixed;
     top: 0;
     transform: translateY(0%);
 }
-div.hiddenheader a.logo{
+
+div.hiddenheader a.logo {
     margin: 0px 20px;
     padding: 0px 60px;
     font-size: 50px;
@@ -24,33 +26,33 @@ div.hiddenheader a.logo{
     cursor: pointer;
 }
 
-div.hiddenheader a.logo:hover{
+div.hiddenheader a.logo:hover {
     color: white;
 }
-div.hiddenheader a.first{
+
+div.hiddenheader a.first {
     position: relative;
     top: 0;
-
 }
-div.hiddenheader ul li a{
+
+div.hiddenheader ul li a {
     padding: 50px 30px 8px 30px;
 }
 
-
-div.hiddenheader li{
+div.hiddenheader li {
     font-size: 0;
     list-style: none;
 }
-div.hiddenheader ul li.room ul{
+
+div.hiddenheader ul li.room ul {
     top: 34px;
 }
-@media all and (min-width: 768px ) and (max-width: 991px){
-    div.hiddenheader ul li a{
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+    div.hiddenheader ul li a {
         padding: 50px 15px 8px 15px;
     }
-    div.hiddenheader a.logo{
+    div.hiddenheader a.logo {
         margin: 0 60px;
     }
 }
-
-
