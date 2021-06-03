@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let o = 0;
-
+let moves = 0;
 document.addEventListener("click", function(event) {
 
     if (event.target.classList.contains("right")) {;
@@ -202,14 +202,17 @@ document.addEventListener("click", function(event) {
         let total = a.getElementsByTagName("div");
         right_offsetWidth += -total[4].offsetWidth - 20;
 
-
+        move.style.transition = "all .5s";
         move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
-        setTimeout(() => {
 
+        setTimeout(() => {
+            move.style.transition = null;
+            right_offsetWidth -= -total[4].offsetWidth - 20;
             total[0].remove();
 
             a.appendChild(a.getElementsByTagName("div")[0].cloneNode(true));
-        }, 500);
+            move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+        }, 600);
 
     }
 
@@ -219,14 +222,15 @@ document.addEventListener("click", function(event) {
         let total = a.getElementsByTagName("div");
 
         right_offsetWidth += total[0].offsetWidth + 20;
-
+        move.style.transition = "all .5s";
         move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
         setTimeout(() => {
-
+            move.style.transition = null;
             total[total.length - 1].remove();
-
+            right_offsetWidth -= total[4].offsetWidth + 20;
             a.prepend(total[total.length - 1].cloneNode(true));
-        }, 500);
+            move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+        }, 600);
 
 
     }
