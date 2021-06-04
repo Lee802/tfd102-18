@@ -244,7 +244,7 @@ window.addEventListener("resize", function() {
     right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
     let width_border = document.getElementById("move");
     let offwidth = width_border.querySelectorAll("div").length * 100;
-    console.log(window.innerWidth);
+    // console.log(window.innerWidth);
     if (window.innerWidth > 1200) {
 
         let div_width = document.getElementById("move");
@@ -256,26 +256,34 @@ window.addEventListener("resize", function() {
         let div_width = document.getElementById("move");
 
         // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
-        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`);
 
     }
     if (window.innerWidth >= 768 && window.innerWidth <= 991) {
         let div_width = document.getElementById("move");
         // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
-        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`);
 
     }
     if (window.innerWidth > 575 && window.innerWidth <= 767) {
         let div_width = document.getElementById("move");
         // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
-        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`);
 
     }
     if (window.innerWidth <= 575) {
         let div_width = document.getElementById("move");
         // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
-        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`);
 
+    }
+    if (window.innerWidth > 0) {
+        slider_item_width = Math.abs(slider_items[0].offsetWidth);
+
+        let indicator_container_1 = document.getElementsByClassName("active")[0].getAttribute("index");
+        // console.log(indicator_container_1);
+        let slieder_item_container = document.getElementsByClassName("slieder-item-container")[0];
+        slieder_item_container.setAttribute("style", `left:  -${slider_item_width * indicator_container_1}px;`);
     }
 });
 

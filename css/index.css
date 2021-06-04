@@ -507,6 +507,12 @@ div.indicator-container span.indicator {
         flex-direction: column;
         align-items: center;
     }
+    div#slider {
+        padding-bottom: calc(60%);
+    }
+    div.headerright {
+        width: 70%
+    }
     div.body {
         flex-wrap: wrap;
     }
@@ -562,9 +568,6 @@ div.indicator-container span.indicator {
     div.abs {
         height: 1300px;
     }
-    div.body img {
-        height: auto;
-    }
     div.imgs img {
         height: 100%;
     }
@@ -607,10 +610,16 @@ div.indicator-container span.indicator {
         flex-wrap: wrap;
     }
     div.rwd {
-        max-width: 575px;
+        max-width: 100%;
     }
     div.imgs div#imgborders {
         width: 440px;
+    }
+    div.headerright {
+        width: 70%
+    }
+    div#slider {
+        padding-bottom: calc(60%);
     }
     div.imgs ul div#imgborders div#move div {
         width: 200px;
@@ -633,7 +642,10 @@ div.indicator-container span.indicator {
         width: 100%;
     }
     h1 {
-        margin-top: 5px;
+        margin-top: 0px;
+    }
+    div.first h1.h1margin {
+        margin-bottom: 0;
     }
     div.foods {
         transform: translateX(0);
@@ -651,18 +663,13 @@ div.indicator-container span.indicator {
     div.imgbord div.img {
         position: static;
         width: 100%;
+        margin-top: 120px;
     }
     div.abs {
         height: 1300px;
     }
-    div.body img {
-        height: auto;
-    }
     div.imgs img {
         height: 100%;
-    }
-    div.imgsec {
-        margin-top: 78px;
     }
     div.rooms h1 {
         margin-top: 70px;
@@ -690,5 +697,11 @@ div.indicator-container span.indicator {
     }
     div.imgs button.right {
         right: -10px;
+    }
+    div.imgbord div.imgsec {
+        margin-top: -100px;
+    }
+    div.imgs {
+        margin-top: -150px;
     }
 }
