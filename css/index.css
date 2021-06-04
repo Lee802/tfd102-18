@@ -123,7 +123,7 @@ div.imgs div#imgborders {
     overflow: hidden;
     margin: 0;
     padding: 0;
-    width: 1300px;
+    width: 1100px;
 }
 
 div.imgs div#imgborders div#move {
@@ -148,9 +148,13 @@ div.imgs ul div#imgborders div#move div {
     float: left;
     height: 100%;
     min-height: 1px;
-    width: 300px;
+    width: 260px;
     height: 500px;
     margin-left: 20px;
+}
+
+div.imgs ul div#imgborders div#move div:first-child {
+    margin-left: 0;
 }
 
 div.imgs ul div#imgborders div#move div li {
@@ -159,6 +163,10 @@ div.imgs ul div#imgborders div#move div li {
 }
 
 div.imgs:first-child {
+    margin-left: 0;
+}
+
+div.imgs:nth-child(3) {
     margin-left: 0;
 }
 
@@ -273,6 +281,7 @@ div.imgs button {
     background: transparent;
     cursor: pointer;
     border: 0;
+    transform: translateY(-100%);
 }
 
 div.imgs button.left::before {
@@ -426,6 +435,12 @@ div.indicator-container span.indicator {
     ul.slieder-item-container li {
         width: 13%;
     }
+    div.imgs div#imgborders {
+        width: 920px;
+    }
+    div.imgs ul div#imgborders div#move div {
+        width: 293px;
+    }
 }
 
 @media all and (min-width: 768px) and (max-width: 991px) {
@@ -441,6 +456,12 @@ div.indicator-container span.indicator {
     div.foods {
         transform: translateX(-48%);
         width: 310px;
+    }
+    div.imgs div#imgborders {
+        width: 720px;
+    }
+    div.imgs ul div#imgborders div#move div {
+        width: 350px;
     }
     div.img {
         max-width: 320px;
@@ -458,8 +479,8 @@ div.indicator-container span.indicator {
     div.imgs div#imgborders div {
         width: 200px;
         height: 400px;
-        margin-bottom: 60px;
-        margin-top: 120px;
+        margin-bottom: 0;
+        margin-top: 0px;
     }
     div.rooms div {
         height: 200px;
@@ -471,12 +492,12 @@ div.indicator-container span.indicator {
     div.sec {
         margin-top: 50px;
     }
-    div.imgs div#imgborders div.max991none {
+    /* div.imgs div#imgborders div.max991none {
         display: none;
     }
     div.max991 {
         margin-right: 30px;
-    }
+    } */
 }
 
 @media all and (min-width:576px) and (max-width: 767px) {
@@ -490,7 +511,14 @@ div.indicator-container span.indicator {
         flex-wrap: wrap;
     }
     div.rwd {
+        max-width: 540px;
+    }
+    div.imgs div#imgborders {
         width: 540px;
+    }
+    div.imgs ul div#imgborders div#move div {
+        width: 260px;
+        height: 200px;
     }
     div.foods {
         transform: translateX(-48%);
@@ -517,10 +545,6 @@ div.indicator-container span.indicator {
     div.imgs {
         width: 100%;
         margin-top: 100px;
-    }
-    div.imgs div#imgborders div {
-        margin-top: 80px;
-        margin-bottom: 60px;
     }
     div.imgs div#imgborders div.imgsfirsts {
         margin-left: 0;
@@ -570,12 +594,6 @@ div.indicator-container span.indicator {
     div.sec {
         margin-top: 50px;
     }
-    div.imgs div#imgborders div.max767none {
-        display: none;
-    }
-    div.max991 {
-        margin-right: 30px;
-    }
 }
 
 @media all and (max-width:575px) {
@@ -590,6 +608,13 @@ div.indicator-container span.indicator {
     }
     div.rwd {
         max-width: 575px;
+    }
+    div.imgs div#imgborders {
+        width: 440px;
+    }
+    div.imgs ul div#imgborders div#move div {
+        width: 200px;
+        height: 200px;
     }
     div.foods {
         transform: translateX(-48%);
@@ -617,10 +642,6 @@ div.indicator-container span.indicator {
     div.imgs {
         width: 100%;
         margin-top: 100px;
-    }
-    div.imgs div#imgborders div {
-        margin-top: 80px;
-        margin-bottom: 60px;
     }
     div.imgsec {
         position: relative;
@@ -667,10 +688,7 @@ div.indicator-container span.indicator {
         margin-top: 50px;
         width: 100%;
     }
-    div.imgs div#imgborders div.max767none {
-        display: none;
-    }
-    div.max991 {
-        margin-right: 30px;
+    div.imgs button.right {
+        right: -10px;
     }
 }

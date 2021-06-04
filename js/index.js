@@ -167,7 +167,7 @@ let g = 0;
 let l = 0;
 let a = document.getElementById("move");
 total_divs_last = a.querySelectorAll("div");
-let right_offsetWidth = -total_divs_last[4].offsetWidth - 20;;
+let right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
 
 document.addEventListener("DOMContentLoaded", function() {
     let total_div = document.getElementById("imgborders").querySelectorAll("div");
@@ -197,22 +197,25 @@ let o = 0;
 let moves = 0;
 document.addEventListener("click", function(event) {
 
-    if (event.target.classList.contains("right")) {;
+    if (event.target.classList.contains("right")) {
         o++;
         let total = a.getElementsByTagName("div");
+        // right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
         right_offsetWidth += -total[4].offsetWidth - 20;
-
+        console.log(total[4].offsetWidth + 20);
         move.style.transition = "all .5s";
         move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
 
         setTimeout(() => {
             move.style.transition = null;
-            right_offsetWidth -= -total[4].offsetWidth - 20;
+            right_offsetWidth -= (-total[4].offsetWidth - 20);
             total[0].remove();
 
             a.appendChild(a.getElementsByTagName("div")[0].cloneNode(true));
             move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+
         }, 600);
+
 
     }
 
@@ -237,6 +240,47 @@ document.addEventListener("click", function(event) {
 
 });
 
+window.addEventListener("resize", function() {
+    right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
+    let width_border = document.getElementById("move");
+    let offwidth = width_border.querySelectorAll("div").length * 100;
+    console.log(window.innerWidth);
+    if (window.innerWidth > 1200) {
+
+        let div_width = document.getElementById("move");
+        // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+
+    }
+    if (window.innerWidth >= 992 && window.innerWidth <= 1200) {
+        let div_width = document.getElementById("move");
+
+        // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+
+    }
+    if (window.innerWidth >= 768 && window.innerWidth <= 991) {
+        let div_width = document.getElementById("move");
+        // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+
+    }
+    if (window.innerWidth > 575 && window.innerWidth <= 767) {
+        let div_width = document.getElementById("move");
+        // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+
+    }
+    if (window.innerWidth <= 575) {
+        let div_width = document.getElementById("move");
+        // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
+        div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`)
+
+    }
+});
+
+
+//1100 260
 // for (let i = 0; i < 5; i++) {
 // 抬升 hoisting
 //     console.log(i);
