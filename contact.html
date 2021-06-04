@@ -43,7 +43,7 @@
             <li> <a href="./about.html">關於</a></li>
             <li><a href="./activities.html">簡介</a></li>
             <li><a href="./secne.html " class="logoleft">環境</a></li>
-            <li class="room">
+            <li class="room" id="pos">
                 <a href="./room.html" class="logoright">房型</a>
                 <button type="button" class="buttons_add">+</button>
                 <ul class="roomhides">
@@ -129,7 +129,16 @@
             <textarea id="ask" name="ask" rows="4" cols="50" placeholder="詢問內容"></textarea>
 
             <br>
-            <input type="button" value="發送訊息" class="btn">
+            <input type="button" value="發送訊息" class="btn" id="sendbtn">
+
+            <div id="grayblock">
+                <div id="click">
+                    <div class="close"></div>
+                    <p>您的訊息已發送完成。</p>
+                    <button type="button" id="checkbtn">確認</button>
+                </div>
+            </div>
+
         </div>
     </div>
     <div class="footer">
@@ -165,6 +174,7 @@
     <script src="./js/header.js"></script>
     <script src="./js/headerfixed.js"></script>
     <script src="./js/banner.js "></script>
+    <script src="./js/contact.js"></script>
 </body>
 
 </html>

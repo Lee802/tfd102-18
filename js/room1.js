@@ -79,23 +79,37 @@ document.addEventListener("click", function(event) {
 
             if (big_img_src == big_img_array[i]) {
                 h = i;
-                big_img_src = big_img_array[h + 1];
+                if (h == (big_img_array.length - 1)) {
+                    h = 0;
+                    big_img_src = big_img_array[h];
+                } else {
+
+                    big_img_src = big_img_array[h + 1];
+                }
+
                 break;
             }
 
         }
 
 
-        if (h != big_img_array.length) {
+        if (h != (big_img_array.length - 1)) {
 
-            // change_img.src = big_img_src;
             change_img.setAttribute("src", big_img_src);
 
         } else {
-            // change_img.src = big_img_array[big_img_array.length - 1];
             change_img.setAttribute("src", big_img_array[0]);
 
         }
     }
 
+});
+
+let gray_view = document.querySelectorAll("div.imgPreview")[0];
+
+gray_view.addEventListener("click", function(event) {
+    if (!event.target.classList.contains("left") && !event.target.classList.contains("right") && !event.target.classList.contains("imgs_big_view")) {
+        let big_img_view = document.getElementsByClassName("imgPreview")[0];
+        big_img_view.classList.add("-off");
+    }
 });

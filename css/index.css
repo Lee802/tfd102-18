@@ -517,7 +517,7 @@ div.indicator-container span.indicator {
         flex-wrap: wrap;
     }
     div.rwd {
-        max-width: 540px;
+        max-width: 100%;
     }
     div.imgs div#imgborders {
         width: 540px;
@@ -572,10 +572,11 @@ div.indicator-container span.indicator {
         height: 100%;
     }
     div.imgsec {
-        margin-top: 78px;
+        margin-top: -40px;
+        margin-left: -30px;
     }
     div.rooms h1 {
-        margin-top: 70px;
+        margin-top: 100px;
     }
     div.imgs h1 {
         margin-top: 30px;
@@ -595,7 +596,13 @@ div.indicator-container span.indicator {
         margin-top: 0px;
     }
     div.sec {
-        margin-top: 50px;
+        margin-top: 0;
+    }
+    div.imgs {
+        margin-top: 10px;
+    }
+    div.rooms {
+        margin-top: 5px;
     }
 }
 
@@ -674,7 +681,7 @@ div.indicator-container span.indicator {
         height: 100%;
     }
     div.rooms h1 {
-        margin-top: 70px;
+        margin-top: 0px;
     }
     div.imgs h1 {
         margin-top: 30px;

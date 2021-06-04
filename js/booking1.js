@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     </div>`;
     let text_pos = document.getElementsByClassName("moneyitems")[0];
-    console.log(text_pos);
+    // console.log(text_pos);
     if (first_num > 0) {
         text_pos.insertAdjacentHTML("beforeend", first_text);
     }
@@ -114,4 +114,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.styleSheets[0].insertRule('.roomborders::after { display:none }', 0);
     }
 
+});
+
+let send_btn = document.getElementById("sendbtn");
+let check_box = document.getElementById("Terms");
+send_btn.addEventListener("click", function() {
+    if (check_box.checked) {
+        window.location.href = "./booking2.html";
+    } else {
+        alert("請勾選同意以上所述的預訂條款及條件。");
+    }
 });
