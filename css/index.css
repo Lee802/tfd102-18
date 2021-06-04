@@ -616,7 +616,9 @@ div.indicator-container span.indicator {
         width: 440px;
     }
     div.headerright {
-        width: 70%
+        width: 70%;
+        height: calc(100% - 85px);
+        bottom: 0;
     }
     div#slider {
         padding-bottom: calc(60%);

@@ -387,7 +387,7 @@ div.headerright ul li.room ul.roomhides {
     div.header button {
         display: flex;
         position: absolute;
-        right: 10px;
+        right: 30px;
     }
     div.header {
         justify-content: space-between;
@@ -403,5 +403,9 @@ div.headerright ul li.room ul.roomhides {
     }
     div.headerright {
         display: block;
+    }
+    div.header {
+        position: fixed;
+        width: 100%;
     }
 }

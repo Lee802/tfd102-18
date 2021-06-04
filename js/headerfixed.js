@@ -1,5 +1,4 @@
 var hiddenheader = document.getElementsByClassName("hiddenheader")[0];
-
 $(function() {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 85) { /* 要滑動到選單的距離 */
