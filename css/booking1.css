@@ -431,3 +431,8 @@ div.send input {
     color: white;
     cursor: pointer;
 }
+
+.star::before {
+    content: "*";
+    color: red;
+}

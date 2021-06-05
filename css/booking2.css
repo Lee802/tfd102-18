@@ -175,6 +175,7 @@ div.mid div.checkin {
     margin: 0;
     margin-top: 50px;
     justify-content: space-between;
+    width: 800px;
 }
 
 div.mid div.checkin div {

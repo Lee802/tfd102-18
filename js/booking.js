@@ -23,7 +23,7 @@ let today = new Date();
 let years = today.getFullYear();
 let month = today.getMonth() + 1;
 let day = today.getDate();
-
+var next_btn;
 let days;
 if (JSON.stringify(day) < 10) {
 
@@ -727,6 +727,20 @@ document.addEventListener("click", function(event) {
         totalmoneys();
     }
 
+    if (event.target.getAttribute("id") == "next_btn") {
+        let start_dates = sessionStorage.getItem("startdate");
+        let new_start = new Date(start_dates);
+        let start_math = Math.abs(new_start) - Date.now();
+
+        if (start_math > 0) {
+            window.location.href = "./booking1.html";
+
+        } else {
+            alert("開始日期不能為過去時間或是當天。");
+        }
+    }
+
+
 });
 
 
@@ -754,7 +768,7 @@ function totalmoneys() {
     if (moneys != 0 && moneys != null) {
         let lastmoney = moneys * 0.8;
         let firstmoney = moneys * 0.2;
-        let text = `<div class="leftandright">
+        let text = `<div class="leftandright" id = "leftandright">
                         <div class="mainnew">
                             <p>總價<a class="smallsize">(房價已包含稅金及其他費用)</p>
                             <p></a>TWD <a class="moneyscolor">${ moneys.toLocaleString('en-US')}</a></p>
@@ -767,7 +781,7 @@ function totalmoneys() {
                             <p>付款金額<a class="smallsize">（訂金）</a></p>
                             <p>TWD <a class="red">${firstmoney.toLocaleString('en-US')}</a></p>
                         </div>
-                <input type="button" value="下一步" onclick="location.href='./booking1.html'"></input>
+                <input type="button" value="下一步" id="next_btn"></input>
                     </div>
                     `;
 
@@ -794,6 +808,7 @@ function totalmoneys() {
             openmoneys = true;
         }
     }
+    // next_btn = document.getElementById("next_btn");
 }
 
 $(function() {

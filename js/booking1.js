@@ -137,4 +137,16 @@ send_btn.addEventListener("click", function() {
     } else {
         alert("請勾選同意以上所述的預訂條款及條件。");
     }
+
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let input_star = document.querySelectorAll("input");
+    for (let i = 0; i < input_star.length; i++) {
+        if (input_star[i].getAttribute("id") == null) {
+            input_star[i].parentNode.classList.add("star");
+        }
+    }
 });
