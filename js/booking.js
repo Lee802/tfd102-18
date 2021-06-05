@@ -18,12 +18,61 @@ let getadd = document.getElementsByClassName("add");
 var q = JSON.parse(sessionStorage.getItem("firstnum"));
 var g = JSON.parse(sessionStorage.getItem("secnum"));
 var h = JSON.parse(sessionStorage.getItem("threenum"));
+let dates = document.getElementsByClassName("form-control")[0];
+let today = new Date();
+let years = today.getFullYear();
+let month = today.getMonth() + 1;
+let day = today.getDate();
+
+let days;
+if (JSON.stringify(day) < 10) {
+
+    if (day != 9) {
+        days = "0" + (day + 1);
+    } else {
+        days = day + 1;
+    }
+    day = "0" + day;
+
+    // console.log(day);
+}
+if (JSON.stringify(month) < 10) {
+    month = "0" + month;
+    // console.log(month);
+}
+
+function right_dates() {
+    let start_dates = sessionStorage.getItem("startdate");
+    let end_dates = sessionStorage.getItem("enddate");
+    let right_dates = document.getElementById("right_dates");
+    let new_start = new Date(start_dates);
+    let new_end = new Date(end_dates);
+    let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
+    let right_dates_text = `<p class="date"><img src="./img/smallicon/date.png" alt="" class="messageicon">${start_dates} - ${end_dates}  ( ${night + 1} 天 ${night} 晚)</p>`;
+
+    right_dates.insertAdjacentHTML("afterbegin", right_dates_text);
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
+
+    right_dates();
+
+
     if (defaultsopen == false) {
 
+        let start_dates = sessionStorage.getItem("startdate");
+        let end_dates = sessionStorage.getItem("enddate");
+        let new_start = new Date(start_dates);
+        let new_end = new Date(end_dates);
+        let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
+        let sess_totalmoney = 0;
 
+        dates.setAttribute("value", `${start_dates} - ${end_dates} `);
         bignum = sessionStorage.getItem("bignum");
         chilnum = sessionStorage.getItem("chilnum");
+
+
         textdefault = `<div class="bignum">` + bignum + `</div>`;
         childefault = `<div class="chilnum">` + chilnum + `</div>`;
         totaldefault = `<div class="people "> ` + bignum + ` 成人 , ` + chilnum + ` 小孩 </div>`;
@@ -51,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     deafault_room = `<div class="num"> 0 </div>`;
                     totalroom[i].insertAdjacentHTML("beforeend", deafault_room);
                 }
-                let totalmoney = totalmuch[i] * totalmuchmoney[i];
+                let totalmoney = totalmuch[i] * totalmuchmoney[i] * night;
                 let roomsborder = document.getElementsByClassName("totalroom")[0];
                 let domtext1 = `<div class="totalrooms ${div_class[i]}" >
                         <p>${name[i]}</p>
@@ -62,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + totalmuchmoney[i] + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -72,16 +121,78 @@ document.addEventListener("DOMContentLoaded", function() {
                           </div>`;
                 if (totalmoney != 0 && totalmuch[i] != null) {
                     roomsborder.insertAdjacentHTML("beforeend", domtext1);
+                    sess_totalmoney += totalmoney;
                 }
             }
             // console.log(totalroom[i]);
         }
-
+        sessionStorage.setItem("totalmoneys", sess_totalmoney);
         checktotalroom();
         totalmoneys();
+
+
     }
+
 });
 
+function change_date() {
+    let start_dates = sessionStorage.getItem("startdate");
+    let end_dates = sessionStorage.getItem("enddate");
+    let new_start = new Date(start_dates);
+    let new_end = new Date(end_dates);
+    let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
+    let totalroom = document.getElementsByClassName("addnum");
+    let text_remove = document.getElementsByClassName("num");
+    let totalmuch = Array(sessionStorage.getItem("firstnum"), sessionStorage.getItem("secnum"), sessionStorage.getItem("threenum"), 0, 0, 0);
+    let totalmuchmoney = Array(sessionStorage.getItem("firstmoney"), sessionStorage.getItem("secmoney"), sessionStorage.getItem("threemoney"), 0, 0, 0);
+    let div_class = Array("firstrooms", "secrooms", "threerooms", 0, 0, 0);
+    let name = Array("豪華雙人房-雙床房", "景觀雙人房-雙床房", "家庭四人房-雙床房", 0, 0, 0);
+    let roomsborder_del = document.getElementsByClassName("totalroom")[0].querySelectorAll("div");
+    for (let i = 0; i < roomsborder_del.length; i++) {
+        roomsborder_del[i].remove();
+    }
+    let sess_totalmoney = 0;
+    for (let i = 0; i < getadd.length; i++) {
+        deafault_room = `<div class="num">` + totalmuch[i] + `</div>`;
+        let removes_ = text_remove[i];
+        if (removes_ != null) {
+
+            removes_.remove();
+            if (totalmuch[i] != null) {
+                totalroom[i].insertAdjacentHTML("beforeend", deafault_room);
+            } else {
+                deafault_room = `<div class="num"> 0 </div>`;
+                totalroom[i].insertAdjacentHTML("beforeend", deafault_room);
+            }
+            let totalmoney = totalmuch[i] * totalmuchmoney[i] * night;
+            let roomsborder = document.getElementsByClassName("totalroom")[0];
+            let domtext1 = `<div class="totalrooms ${div_class[i]}" >
+                        <p>${name[i]}</p>
+                        <div class="leftandright">
+                            <div class="mainnew">
+                                <p>官網優惠價</p>
+                                <p>x ` + totalmuch[i] + ` 間</p>
+                            </div>
+                            <div class="mainnew">
+                                <p>TWD ` + totalmuchmoney[i] + `</p>
+                                <p>x ${night} 晚</p>
+                            </div>
+                            <div class="mainnew">
+                                <p>總價 </p>
+                                <p>TWD <a class="moneyscolor">` + totalmoney.toLocaleString('en-US') + `</a></p >
+                         </div>
+                         </div>
+                          </div>`;
+            if (totalmoney != 0 && totalmuch[i] != null) {
+                roomsborder.insertAdjacentHTML("beforeend", domtext1);
+                sess_totalmoney += totalmoney;
+
+            }
+        }
+    }
+    sessionStorage.setItem("totalmoneys", sess_totalmoney);
+    totalmoneys();
+}
 
 
 if (notnulls == null) {
@@ -92,6 +203,8 @@ if (notnulls == null) {
     var h = 0;
     sessionStorage.setItem("bignum", i);
     sessionStorage.setItem("chilnum", j);
+    sessionStorage.setItem("startdate", `${years}/${month}/${day} `);
+    sessionStorage.setItem("enddate", `${years}/${month}/${days} `);
     bignum = sessionStorage.getItem("bignum");
     chilnum = sessionStorage.getItem("chilnum");
     textdefault = `<div class="bignum">` + bignum + `</div>`;
@@ -105,6 +218,11 @@ if (notnulls == null) {
     message_rightpeople = document.getElementsByClassName("rightpeople")[0];
     message_rightpeople.insertAdjacentHTML("beforeend", message_default);
     defaultsopen = true;
+
+    let start_dates = sessionStorage.getItem("startdate");
+    let end_dates = sessionStorage.getItem("enddate");
+
+    dates.setAttribute("value", `${start_dates} - ${end_dates} `);
 }
 
 
@@ -235,7 +353,11 @@ document.addEventListener("click", function(event) {
 
     }
     if (event.target.getAttribute("id") == "firstadd") {
-
+        let start_dates = sessionStorage.getItem("startdate");
+        let end_dates = sessionStorage.getItem("enddate");
+        let new_start = new Date(start_dates);
+        let new_end = new Date(end_dates);
+        let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
 
         q = JSON.parse(sessionStorage.getItem("firstnum")) + 1;
         sessionStorage.setItem("firstnum", q);
@@ -250,7 +372,7 @@ document.addEventListener("click", function(event) {
 
 
         let totalroom = document.getElementsByClassName("totalroom")[0];
-        let totalmoneys = first_money * firstnum;
+        let totalmoneys = first_money * firstnum * night;
 
         let totalroom_text = `<div class="totalrooms firstrooms" >
                         <p>豪華雙人房-雙床房</p>
@@ -261,7 +383,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -275,7 +397,7 @@ document.addEventListener("click", function(event) {
 
             totalroom.insertAdjacentHTML("beforeend", totalroom_text);
         } else if (firstnum > 1) {
-            totalmoneys = first_money * firstnum;
+            totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms firstrooms" >
                         <p>豪華雙人房-雙床房</p>
                         <div class="leftandright">
@@ -285,7 +407,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -301,7 +423,11 @@ document.addEventListener("click", function(event) {
 
     } else if (event.target.getAttribute("id") == "firstnoadd" && q > 0) {
 
-
+        let start_dates = sessionStorage.getItem("startdate");
+        let end_dates = sessionStorage.getItem("enddate");
+        let new_start = new Date(start_dates);
+        let new_end = new Date(end_dates);
+        let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
 
         q = JSON.parse(sessionStorage.getItem("firstnum")) - 1;;
         sessionStorage.setItem("firstnum", q);
@@ -314,11 +440,11 @@ document.addEventListener("click", function(event) {
         text_remove.remove();
 
         add_num.insertAdjacentHTML("beforeend", text);
-        let totalmoneys = first_money * firstnum;
+        let totalmoneys = first_money * firstnum * night;
         if (firstnum == 0) {
             totalroom.getElementsByClassName("firstrooms")[0].remove();
         } else if (firstnum > 0) {
-            totalmoneys = first_money * firstnum;
+            totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms firstrooms" >
                         <p>豪華雙人房-雙床房</p>
                         <div class="leftandright">
@@ -328,7 +454,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -347,6 +473,12 @@ document.addEventListener("click", function(event) {
 
     if (event.target.getAttribute("id") == "secadd") {
 
+        let start_dates = sessionStorage.getItem("startdate");
+        let end_dates = sessionStorage.getItem("enddate");
+        let new_start = new Date(start_dates);
+        let new_end = new Date(end_dates);
+        let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
+
 
         g = JSON.parse(sessionStorage.getItem("secnum")) + 1;
         sessionStorage.setItem("secnum", g);
@@ -361,7 +493,7 @@ document.addEventListener("click", function(event) {
 
 
         let totalroom = document.getElementsByClassName("totalroom")[0];
-        let totalmoneys = first_money * firstnum;
+        let totalmoneys = first_money * firstnum * night;
 
         let totalroom_text = `<div class="totalrooms secrooms" >
                         <p>景觀雙人房-雙人床</p>
@@ -372,7 +504,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -386,7 +518,7 @@ document.addEventListener("click", function(event) {
 
             totalroom.insertAdjacentHTML("beforeend", totalroom_text);
         } else if (firstnum > 1) {
-            totalmoneys = first_money * firstnum;
+            totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms secrooms" >
                         <p>景觀雙人房-雙人床</p>
                         <div class="leftandright">
@@ -396,7 +528,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -410,7 +542,11 @@ document.addEventListener("click", function(event) {
 
 
     } else if (event.target.getAttribute("id") == "secnoadd" && g > 0) {
-
+        let start_dates = sessionStorage.getItem("startdate");
+        let end_dates = sessionStorage.getItem("enddate");
+        let new_start = new Date(start_dates);
+        let new_end = new Date(end_dates);
+        let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
 
 
         g = JSON.parse(sessionStorage.getItem("secnum")) - 1;
@@ -424,11 +560,11 @@ document.addEventListener("click", function(event) {
         text_remove.remove();
 
         add_num.insertAdjacentHTML("beforeend", text);
-        let totalmoneys = first_money * firstnum;
+        let totalmoneys = first_money * firstnum * night;
         if (firstnum == 0) {
             totalroom.getElementsByClassName("secrooms")[0].remove();
         } else if (firstnum > 0) {
-            totalmoneys = first_money * firstnum;
+            totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms secrooms" >
                         <p>家庭四人房-雙人床</p>
                         <div class="leftandright">
@@ -438,7 +574,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -458,7 +594,11 @@ document.addEventListener("click", function(event) {
 
 
     if (event.target.getAttribute("id") == "threeadd") {
-
+        let start_dates = sessionStorage.getItem("startdate");
+        let end_dates = sessionStorage.getItem("enddate");
+        let new_start = new Date(start_dates);
+        let new_end = new Date(end_dates);
+        let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
 
         h = JSON.parse(sessionStorage.getItem("threenum")) + 1;
         sessionStorage.setItem("threenum", h);
@@ -473,7 +613,7 @@ document.addEventListener("click", function(event) {
 
 
         let totalroom = document.getElementsByClassName("totalroom")[0];
-        let totalmoneys = first_money * firstnum;
+        let totalmoneys = first_money * firstnum * night;
 
         let totalroom_text = `<div class="totalrooms threerooms" >
                         <p>家庭四人房-雙人床</p>
@@ -484,7 +624,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -498,7 +638,7 @@ document.addEventListener("click", function(event) {
 
             totalroom.insertAdjacentHTML("beforeend", totalroom_text);
         } else if (firstnum > 1) {
-            totalmoneys = first_money * firstnum;
+            totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms threerooms" >
                         <p>家庭四人房-雙人床</p>
                         <div class="leftandright">
@@ -508,7 +648,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -523,7 +663,11 @@ document.addEventListener("click", function(event) {
 
 
     } else if (event.target.getAttribute("id") == "threenoadd" && h > 0) {
-
+        let start_dates = sessionStorage.getItem("startdate");
+        let end_dates = sessionStorage.getItem("enddate");
+        let new_start = new Date(start_dates);
+        let new_end = new Date(end_dates);
+        let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
 
 
 
@@ -538,11 +682,11 @@ document.addEventListener("click", function(event) {
         text_remove.remove();
 
         add_num.insertAdjacentHTML("beforeend", text);
-        let totalmoneys = first_money * firstnum;
+        let totalmoneys = first_money * firstnum * night;
         if (firstnum == 0) {
             totalroom.getElementsByClassName("threerooms")[0].remove();
         } else if (firstnum > 0) {
-            totalmoneys = first_money * firstnum;
+            totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms threerooms" >
                         <p>家庭四人房-雙人床</p>
                         <div class="leftandright">
@@ -552,7 +696,7 @@ document.addEventListener("click", function(event) {
                             </div>
                             <div class="mainnew">
                                 <p>TWD ` + first_money + `</p>
-                                <p>x 1 晚</p>
+                                <p>x ${night} 晚</p>
                             </div>
                             <div class="mainnew">
                                 <p>總價 </p>
@@ -571,7 +715,12 @@ document.addEventListener("click", function(event) {
     let sec_money = sessionStorage.getItem("secmoney");
     let three = sessionStorage.getItem("threenum");
     let three_money = sessionStorage.getItem("threemoney");
-    let totals = (first * first_money) + (sec * sec_money) + (three * three_money);
+    let start_dates = sessionStorage.getItem("startdate");
+    let end_dates = sessionStorage.getItem("enddate");
+    let new_start = new Date(start_dates);
+    let new_end = new Date(end_dates);
+    let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
+    let totals = (first * first_money * night) + (sec * sec_money * night) + (three * three_money * night);
     sessionStorage.setItem("totalmoneys", totals);
     checktotalroom();
     if (event.target.classList.contains("add") || event.target.classList.contains("noadd")) {
@@ -646,3 +795,30 @@ function totalmoneys() {
         }
     }
 }
+
+$(function() {
+
+    $('input[name="daterange"]').daterangepicker({
+        autoUpdateInput: false,
+
+        startDate: `${month}/${day}/${years}`,
+        endDate: `${month}/${day + 1}/${years}`
+    });
+    $('input[name="daterange"]').data('daterangepicker').setStartDate(`${month}/${ day }/${years}`);
+    $('input[name="daterange"]').data('daterangepicker').setEndDate(`${month}/${day +1}/${years}`);
+    $('input[name="daterange"]').on('apply.daterangepicker', function(ev, picker) {
+
+        $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+        sessionStorage.setItem("startdate", `${picker.startDate.format('YYYY/MM/DD')}`);
+        sessionStorage.setItem("enddate", `${picker.endDate.format('YYYY/MM/DD')}`);
+        let right_del_dates = document.getElementById("right_dates").getElementsByClassName("date")[0];
+        right_del_dates.remove();
+        right_dates();
+        change_date();
+    });
+
+    $('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
+        // $(this).val('');
+    });
+
+});

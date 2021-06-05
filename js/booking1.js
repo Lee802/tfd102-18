@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
+
+    let start_dates = sessionStorage.getItem("startdate");
+    let end_dates = sessionStorage.getItem("enddate");
+    let new_start = new Date(start_dates);
+    let new_end = new Date(end_dates);
+    let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
+
+
+
+    let dates_text = `<p class="date"><img src="./img/smallicon/date.png" alt="" class="messageicon">${start_dates} - ${end_dates} ( ${night+1} 天 ${night} 夜)</p>`;
+    let dates_add = document.getElementById("insertdates");
+    dates_add.insertAdjacentHTML("afterbegin", dates_text);
+
     let peoples_text = `  <p class="people"><img src="./img/smallicon/people.jpg" alt="" class="messageicon">${sessionStorage.getItem("bignum")} 成人 , ${sessionStorage.getItem("chilnum")} 小孩</p>`;
     let people_add = document.getElementsByClassName("dates")[0];
     people_add.insertAdjacentHTML("beforeend", peoples_text);
@@ -42,12 +55,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <p class="roomstitle">標準雙人房-雙床房</p>
                     <div class="moneystotal moneystotal1">
-                        <p>TWD ${first_money}</p>
+                        <p>TWD ${first_money.toLocaleString('en-US')}</p>
                         <p>x ${first_num} 間</p>
-                        <p>x 1 晚</p>
+                        <p>x ${night} 晚</p>
                     </div>
                     <div class="moneystotal moneystotal2">
-                        <p>TWD ${first_money * first_num}</p>
+                        <p>TWD ${(first_money * first_num * night).toLocaleString('en-US')}</p>
                         <p>(房價已包含</p>
                         <p>稅金及其他</p>
                         <p>費用)</p>
@@ -61,12 +74,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <p class="roomstitle">景觀雙人房-雙床房</p>
                     <div class="moneystotal moneystotal1">
-                        <p>TWD ${sec_money}</p>
+                        <p>TWD ${sec_money.toLocaleString('en-US')}</p>
                         <p>x ${sec_num} 間</p>
-                        <p>x 1 晚</p>
+                        <p>x ${night} 晚</p>
                     </div>
                     <div class="moneystotal moneystotal2">
-                        <p>TWD ${sec_money * sec_num}</p>
+                        <p>TWD ${(sec_money * sec_num * night).toLocaleString('en-US')}</p>
                         <p>(房價已包含</p>
                         <p>稅金及其他</p>
                         <p>費用)</p>
@@ -80,12 +93,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <p class="roomstitle">家庭四人房-雙床房</p>
                     <div class="moneystotal moneystotal1">
-                        <p>TWD ${three_money}</p>
+                        <p>TWD ${three_money.toLocaleString('en-US')}</p>
                         <p>x ${three_num} 間</p>
-                        <p>x 1 晚</p>
+                        <p>x ${night} 晚</p>
                     </div>
                     <div class="moneystotal moneystotal2">
-                        <p>TWD ${three_money * three_num}</p>
+                        <p>TWD ${(three_money * three_num * night).toLocaleString('en-US')}</p>
                         <p>(房價已包含</p>
                         <p>稅金及其他</p>
                         <p>費用)</p>
