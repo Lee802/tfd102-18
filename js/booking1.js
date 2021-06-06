@@ -47,7 +47,12 @@ document.addEventListener("DOMContentLoaded", function() {
     let sec_money = JSON.parse(sessionStorage.getItem("secmoney"));
     let three_money = JSON.parse(sessionStorage.getItem("threemoney"));
 
-    let first_text = `  <div class="roomborders">
+
+    let text_pos = document.getElementsByClassName("moneyitems")[0];
+    // console.log(text_pos);
+    if (first_num > 0) {
+
+        let first_text = `  <div class="roomborders">
     <div class="rooms">
                         <div class="img">
                             <img src="./img/index/rooms/09-1.jpg" alt="" class="rooms">
@@ -66,7 +71,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         <p>費用)</p>
                     </div>
                     </div>`;
-    let sec_text = `  <div class="roomborders">
+
+        text_pos.insertAdjacentHTML("beforeend", first_text);
+    }
+
+    if (sec_num > 0) {
+        let sec_text = `  <div class="roomborders">
     <div class="rooms">
                         <div class="img">
                             <img src="./img/index/rooms/leonardo-2091747-tpesh-king-0584-hor-clsc_O-610221-1.jpg" alt="" class="rooms">
@@ -85,7 +95,13 @@ document.addEventListener("DOMContentLoaded", function() {
                         <p>費用)</p>
                     </div>
                     </div>`;
-    let three_text = `  <div class="roomborders">
+
+
+        text_pos.insertAdjacentHTML("beforeend", sec_text);
+    }
+
+    if (three_num > 0) {
+        let three_text = `  <div class="roomborders">
     <div class="rooms">
                         <div class="img">
                             <img src="./img/index/rooms/TKUO-Vol3-1920-0030-1.jpg" alt="" class="rooms">
@@ -104,17 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <p>費用)</p>
                     </div>
                     </div>`;
-    let text_pos = document.getElementsByClassName("moneyitems")[0];
-    // console.log(text_pos);
-    if (first_num > 0) {
-        text_pos.insertAdjacentHTML("beforeend", first_text);
-    }
 
-    if (sec_num > 0) {
-        text_pos.insertAdjacentHTML("beforeend", sec_text);
-    }
 
-    if (three_num > 0) {
         text_pos.insertAdjacentHTML("beforeend", three_text);
     }
 
@@ -133,7 +140,42 @@ let send_btn = document.getElementById("sendbtn");
 let check_box = document.getElementById("Terms");
 send_btn.addEventListener("click", function() {
     if (check_box.checked) {
-        window.location.href = "./booking2.html";
+        let send_data = true;
+        let getname = document.getElementsByClassName("name")[0];
+        if (getname.value == "") {
+            getname.classList.add("-error");
+            send_data = false;
+        } else {
+            getname.classList.remove("-error");
+        }
+        let getnames = document.getElementsByClassName("names")[0];
+        if (getnames.value == "") {
+            getnames.classList.add("-error");
+            send_data = false;
+        } else {
+            getnames.classList.remove("-error");
+        }
+        let getphone = document.getElementsByClassName("phone")[0];
+        let pattern = /^09\d{8}$/;
+        if (getphone.value == "" || !pattern.test(getphone.value)) {
+            getphone.classList.add("-error");
+            send_data = false;
+        } else {
+            getphone.classList.remove("-error");
+        }
+        let getemail = document.getElementsByClassName("email")[0];
+        if (!is.email(getemail.value)) {
+            getemail.classList.add("-error");
+            send_data = false;
+        } else {
+            getemail.classList.remove("-error");
+        }
+        if (send_data == false) {
+            alert("請將紅框內資料填入正確。");
+
+        } else {
+            window.location.href = "./booking2.html";
+        }
     } else {
         alert("請勾選同意以上所述的預訂條款及條件。");
     }
@@ -141,12 +183,17 @@ send_btn.addEventListener("click", function() {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", function() {
     let input_star = document.querySelectorAll("input");
     for (let i = 0; i < input_star.length; i++) {
         if (input_star[i].getAttribute("id") == null) {
             input_star[i].parentNode.classList.add("star");
+        }
+    }
+    let select_star = document.querySelectorAll("select");
+    for (let i = 0; i < select_star.length; i++) {
+        if (select_star[i].getAttribute("id") == null) {
+            select_star[i].parentNode.classList.add("star");
         }
     }
 });

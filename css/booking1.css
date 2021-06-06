@@ -188,7 +188,8 @@ textarea {
 }
 
 div.payinfos input,
-div.cards input {
+div.cards input,
+div.payinfos select {
     width: 300px;
     height: 20px;
     padding: 4px 6px;
@@ -213,7 +214,8 @@ div.payinfos div.full {
 
 div.payinfos input,
 div.payinfos textarea,
-div.cards input {
+div.cards input,
+div.payinfos select {
     width: 100%;
     margin-top: 10px;
 }
@@ -236,7 +238,8 @@ div.payinfos textarea {
 
 div.payinfos input:focus-visible,
 div.payinfos textarea:focus-visible,
-div.cards input:focus-visible {
+div.cards input:focus-visible,
+div.payinfos select:focus-visible {
     background-color: white;
     border: 1px solid rgba(128, 128, 128, 0.589);
     outline: none;
@@ -244,9 +247,16 @@ div.cards input:focus-visible {
 
 div.payinfos input,
 div.payinfos textarea,
-div.cards input {
+div.cards input,
+div.payinfos select {
     border: 1px solid rgba(122, 122, 122, 0.178);
     outline: none;
+}
+
+div.payinfos select {
+    height: 30px;
+    width: 344px;
+    font-size: 16px;
 }
 
 div.dates {
@@ -435,4 +445,8 @@ div.send input {
 .star::before {
     content: "*";
     color: red;
+}
+
+.-error {
+    border: 1px solid red !important;
 }

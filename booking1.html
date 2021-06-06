@@ -117,11 +117,20 @@
                 <h2>付款資訊</h2>
                 <div class="payinfos">
                     <p>訂購人資訊</p>
-                    <div class="payinfofirst">姓氏<br><input type="text"></div>
-                    <div class="right payinfofirst">名字<br><input type="text"></div>
-                    <div>國籍<br><input type="text"></div>
-                    <div class="right">電話<br><input type="text"></div>
-                    <div class="full">Email<input type="text"></div>
+                    <div class="payinfofirst">姓氏<br><input type="text" class="name"></div>
+                    <div class="right payinfofirst">名字<br><input type="text" class="names"></div>
+                    <div>國籍<br>
+                        <!-- <input type="text"> -->
+                        <select name="country">
+                            <option value="taiwan"selected>taiwan</option>
+                            <option value="japan" >japan</option>
+                            <option value="american">american</option>
+                            <option value="korean">korean</option>
+
+                        </select>
+                    </div>
+                    <div class="right">電話<br><input type="text" class="phone"></div>
+                    <div class="full">Email<input type="text" class="email"></div>
                     <div>特殊需求<br><textarea id="ask" name="ask" rows="4" cols="50" placeholder="如您有特殊需求可以在此欄位註明"></textarea>
                     </div>
                 </div>
@@ -262,6 +271,7 @@
     <script src="./js/header.js"></script>
     <script src="./js/headerfixed.js"></script>
     <script src="./js/banner.js "></script>
+    <script src="./vender/is.min.js"></script>
     <script src="./js/booking1.js"></script>
 </body>
 
