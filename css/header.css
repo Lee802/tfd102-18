@@ -57,7 +57,7 @@ div.header ul li.room {
 
 div.header ul li.room:hover ul {
     display: block;
-    z-index: 1;
+    z-index: 3;
 }
 
 div.header ul li.room ul {
