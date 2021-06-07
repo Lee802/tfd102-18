@@ -169,6 +169,8 @@ let a = document.getElementById("move");
 total_divs_last = a.querySelectorAll("div");
 let right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
 
+
+
 document.addEventListener("DOMContentLoaded", function() {
     let total_div = document.getElementById("imgborders").querySelectorAll("div");
     let j = 0;
@@ -181,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     let width_border = document.getElementById("move");
-    let offwidth = width_border.querySelectorAll("div").length * 100;
+    let offwidth = (width_border.querySelectorAll("div").length + 1) * 100;
     width_border.style.width = `${offwidth}%`;
     let total_divs = document.getElementById("move").querySelectorAll("div");
 
@@ -189,7 +191,12 @@ document.addEventListener("DOMContentLoaded", function() {
     a.prepend(total_divs[total_divs.length - 1].cloneNode(true));
 
     // a.prepend(`<div>123</div>`);
-    move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+    if (window.innerWidth <= 575) {
+        right_offsetWidth = -total_divs_last[4].offsetWidth - 10;
+        move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+    } else {
+        move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
+    }
 
 });
 
@@ -201,14 +208,23 @@ document.addEventListener("click", function(event) {
         o++;
         let total = a.getElementsByTagName("div");
         // right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
-        right_offsetWidth += -total[4].offsetWidth - 20;
-        console.log(total[4].offsetWidth + 20);
+        if (window.innerWidth <= 575) {
+            right_offsetWidth += -total[4].offsetWidth - 52;
+            console.log(total[4].offsetWidth);
+        } else {
+            right_offsetWidth += -total[4].offsetWidth - 20;
+        }
+
         move.style.transition = "all .5s";
         move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
 
         setTimeout(() => {
             move.style.transition = null;
-            right_offsetWidth -= (-total[4].offsetWidth - 20);
+            if (window.innerWidth <= 575) {
+                right_offsetWidth -= (-total[4].offsetWidth - 52);
+            } else {
+                right_offsetWidth -= (-total[4].offsetWidth - 20);
+            }
             total[0].remove();
 
             a.appendChild(a.getElementsByTagName("div")[0].cloneNode(true));
@@ -223,14 +239,23 @@ document.addEventListener("click", function(event) {
 
 
         let total = a.getElementsByTagName("div");
+        if (window.innerWidth <= 575) {
+            right_offsetWidth += total[0].offsetWidth + 52;
+            console.log(total[0].offsetWidth);
+        } else {
+            right_offsetWidth += total[0].offsetWidth + 20;
+        }
 
-        right_offsetWidth += total[0].offsetWidth + 20;
         move.style.transition = "all .5s";
         move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
         setTimeout(() => {
             move.style.transition = null;
             total[total.length - 1].remove();
-            right_offsetWidth -= total[4].offsetWidth + 20;
+            if (window.innerWidth <= 575) {
+                right_offsetWidth -= total[4].offsetWidth + 52;
+            } else {
+                right_offsetWidth -= total[4].offsetWidth + 20;
+            }
             a.prepend(total[total.length - 1].cloneNode(true));
             move.style.transform = `translate3d(${right_offsetWidth}px,0px,0px)`;
         }, 600);
@@ -240,7 +265,10 @@ document.addEventListener("click", function(event) {
 
 });
 
-window.addEventListener("resize", function() {
+let img_lissss = document.getElementById("imgborders").querySelectorAll("div");
+console.log(img_lissss);
+let add_ = 234;
+window.addEventListener("resize", function(e) {
     right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
     let width_border = document.getElementById("move");
     let offwidth = width_border.querySelectorAll("div").length * 100;
@@ -275,7 +303,11 @@ window.addEventListener("resize", function() {
         let div_width = document.getElementById("move");
         // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
         div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`);
-
+        add_++;
+        for (let i = 1; i < img_lissss.length; i++) {
+            img_lissss[i].setAttribute("style", `width:${Math.abs(add_)}px;`)
+            console.log(Math.abs(right_offsetWidth));
+        }
     }
     if (window.innerWidth > 0) {
         slider_item_width = Math.abs(slider_items[0].offsetWidth);

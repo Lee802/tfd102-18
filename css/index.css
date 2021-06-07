@@ -617,14 +617,18 @@ div.indicator-container span.indicator {
         max-width: 100%;
     }
     div.imgs div#imgborders {
-        width: 440px;
+        width: auto;
     }
     div#slider {
         padding-bottom: calc(60%);
+        position: relative;
+        top: 85px;
     }
     div.imgs ul div#imgborders div#move div {
-        width: 200px;
+        width: 234px;
+        margin-left: 0;
         height: 200px;
+        margin: 0 26px;
     }
     div.foods {
         transform: translateX(-48%);
@@ -642,9 +646,6 @@ div.indicator-container span.indicator {
         margin-right: 0px;
         width: 100%;
     }
-    h1 {
-        margin-top: 0px;
-    }
     div.first h1.h1margin {
         margin-bottom: 0;
     }
@@ -653,8 +654,9 @@ div.indicator-container span.indicator {
         width: 100%;
     }
     div.imgs {
-        width: 100%;
+        width: auto;
         margin-top: 100px;
+        max-width: unset;
     }
     div.imgsec {
         position: relative;
@@ -697,12 +699,19 @@ div.indicator-container span.indicator {
         width: 100%;
     }
     div.imgs button.right {
-        right: -10px;
+        right: 7px;
     }
     div.imgbord div.imgsec {
         margin-top: -100px;
     }
     div.imgs {
+        width: auto;
+        margin-top: 100px;
+        max-width: unset;
         margin-top: -150px;
+    }
+    div.imgs button.left {
+        left: 6px;
+        z-index: 50;
     }
 }

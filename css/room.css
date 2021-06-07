@@ -227,7 +227,7 @@ div.roomsss {
     div.rooms div {
         margin: 0;
         margin-top: 20px;
-        width: 100%;
+        width: auto;
     }
     div.rooms p.rooms {
         visibility: visible;
@@ -242,5 +242,8 @@ div.roomsss {
     div.rooms div div.mask {
         background-color: #5a5a5a87;
         height: 300px;
+    }
+    div.rooms123 div {
+        margin: 10px !important;
     }
 }

@@ -266,7 +266,13 @@ div.inputlist textarea {
 
 @media screen and (max-width:575px) {
     div.inputlist {
-        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-width: auto;
+        padding: 20px;
+        margin: 10px;
     }
     div.in {
         /* width: 140px; */
@@ -275,6 +281,28 @@ div.inputlist textarea {
     }
     div.inside {
         flex-direction: column;
+    }
+    div.inputlist input.right {
+        margin-left: 0;
+    }
+    div.inputlist input.full,
+    div.inputlist textarea {
+        width: 100%;
+    }
+    div.inputlist input,
+    div.inputlist textarea {
+        width: 100%;
+    }
+    div.inputlist input.btn {
+        margin-top: 50px;
+        width: 100%;
+    }
+    br {
+        display: none;
+    }
+    div.inputlist input,
+    div.inputlist textarea {
+        width: 100%;
     }
 }
 

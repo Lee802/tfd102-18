@@ -171,12 +171,21 @@ div.bodys {
 
 @media screen and (max-width:575px) {
     div.body div.gridbody {
-        width: 100%;
+        width: auto;
         grid-template-columns: auto;
-        grid-template-rows: 280px 280px 280px 280px 280px;
+        grid-template-rows: 166px 166px 166px 166px 166px;
+        margin: 0 10px;
     }
     div.body div.gridbody div.griditem {
         width: 100%;
-        height: 360px;
+    }
+    div.body div.griditem:hover img.smallimgs {
+        transform: unset;
+    }
+    div.body img.smallimgs {
+        transition: unset;
+    }
+    .imgPreview img {
+        width: 100%;
     }
 }

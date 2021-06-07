@@ -331,7 +331,8 @@ div.header ul li.room ul li a.roomsfirst {
         align-items: flex-start;
     }
     div.imgs {
-        width: 100%;
+        width: auto;
+        margin: 10px;
     }
     div.text div {
         width: 180px;
@@ -357,11 +358,10 @@ div.header ul li.room ul li a.roomsfirst {
         margin-bottom: 5px;
     }
     div.small div {
-        width: 100%;
+        width: auto;
         height: auto;
     }
     div.small div {
-        margin-top: 5px;
-        margin-left: 0;
+        margin: 10px 10px 0px 10px;
     }
 }
