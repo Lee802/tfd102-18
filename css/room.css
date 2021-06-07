@@ -153,6 +153,22 @@ div.roomsss {
     display: flex;
 }
 
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    div.roomsss {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    div.rooms {
+        width: 960px;
+    }
+    div.rooms div {
+        width: 250px;
+        height: 250px;
+    }
+}
+
 @media screen and (min-width: 768px) and (max-width: 991px) {
     div.roomsss {
         flex-direction: column;
@@ -165,8 +181,8 @@ div.roomsss {
     }
     div.rooms div {
         margin-left: 20px;
-        width: 160px;
-        height: 160px;
+        min-width: 200px;
+        height: 200px;
     }
 }
 

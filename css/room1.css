@@ -263,3 +263,105 @@ div.header ul li.room ul li a.roomsfirst {
     width: 100%;
     height: 100%;
 }
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    div.small {
+        width: 900px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    div.small {
+        width: 720px;
+        justify-content: space-between;
+    }
+    div.imgs {
+        width: 720px;
+    }
+    div.text div {
+        width: 280px;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    div.small {
+        width: 540px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    div.imgs {
+        width: 540px;
+    }
+    div.text div {
+        width: 180px;
+        /* white-space: nowrap; */
+    }
+    div.big div.img {
+        display: none;
+    }
+    div.text p {
+        margin-left: 0%;
+    }
+    div.text p.right {
+        margin-left: 0%;
+    }
+    div.text {
+        flex-direction: column;
+        white-space: nowrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    div.text h1 {
+        margin-bottom: 5px;
+    }
+    div.small div {
+        width: 540px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width:575px) {
+    div.small {
+        width: 100%;
+        justify-content: left;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    div.imgs {
+        width: 100%;
+    }
+    div.text div {
+        width: 180px;
+        /* white-space: nowrap; */
+    }
+    div.big div.img {
+        display: none;
+    }
+    div.text p {
+        margin-left: 0%;
+    }
+    div.text p.right {
+        margin-left: 0%;
+    }
+    div.text {
+        flex-direction: column;
+        white-space: nowrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    div.text h1 {
+        margin-bottom: 5px;
+    }
+    div.small div {
+        width: 100%;
+        height: auto;
+    }
+    div.small div {
+        margin-top: 5px;
+        margin-left: 0;
+    }
+}

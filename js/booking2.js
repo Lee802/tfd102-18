@@ -17,6 +17,6 @@ checkinout.insertAdjacentHTML("afterbegin", text);
 
 
 let mid = document.getElementById("mid");
-let text1 = `<h2>您的住宿訂單</h2>
-            <p>訂單號碼：${Date.now()}</p>`;
+let text1 = `<div class="roomsnumbers"><h2>您的住宿訂單</h2>
+            <p>訂單號碼：${Date.now()}</p></div>`;
 mid.insertAdjacentHTML("afterbegin", text1);

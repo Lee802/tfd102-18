@@ -719,6 +719,7 @@ document.addEventListener("click", function(event) {
     let end_dates = sessionStorage.getItem("enddate");
     let new_start = new Date(start_dates);
     let new_end = new Date(end_dates);
+    let now_date = new Date(`${years}/${month}/${day}`);
     let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
     let totals = (first * first_money * night) + (sec * sec_money * night) + (three * three_money * night);
     sessionStorage.setItem("totalmoneys", totals);
@@ -730,13 +731,13 @@ document.addEventListener("click", function(event) {
     if (event.target.getAttribute("id") == "next_btn") {
         let start_dates = sessionStorage.getItem("startdate");
         let new_start = new Date(start_dates);
-        let start_math = Math.abs(new_start) - Date.now();
+        let start_math = Math.abs(new_start) - now_date;
 
-        if (start_math > 0) {
+        if (start_math >= 0) {
             window.location.href = "./booking1.html";
 
         } else {
-            alert("開始日期不能為過去時間或是當天。");
+            alert("開始日期不能為過去時間。");
         }
     }
 
