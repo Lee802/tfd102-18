@@ -223,30 +223,32 @@ div.body div.border div.text123 {
 
 @media screen and (max-width:575px) {
     div.leftimg {
-        width: 540px;
-        margin-top: 10px;
+        width: auto;
+        margin: 10px;
     }
     div.rightimg {
-        max-width: 540px;
-        margin-top: 10px;
+        width: auto;
+        max-width: unset;
+        margin: 10px;
     }
     div.body div.text1 {
-        width: 540px;
-        margin-right: 100px;
-        margin-top: 0;
+        width: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin: 10px;
     }
     div.body div.text {
         margin-top: 0;
         margin-left: 0;
-        width: 540px;
+        width: auto;
+        margin: 10px;
     }
     div.body div.border div.text123 {
-        margin-top: 20px;
-        width: 540px;
+        margin: 10px;
     }
     div.body div.border {
         flex-direction: column;
-        margin-top: 20px;
+        margin: 10px;
     }
     div.body div.border:first-child {
         flex-direction: column-reverse;

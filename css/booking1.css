@@ -598,10 +598,12 @@ div.manboshi {
     div.moneyitems,
     div.moneytotalsandpays,
     div.paypals {
-        width: 420px;
+        width: auto;
+        margin: 0px 30px;
     }
     div.cancels {
-        width: 453px;
+        width: auto;
+        margin: 0px 30px;
     }
     div.payinfos div.right {
         margin-left: 0;
@@ -675,5 +677,18 @@ div.manboshi {
     }
     div.top div::after {
         display: none;
+    }
+    div.back {
+        width: auto;
+        font-size: 12px;
+    }
+    h2 {
+        margin: 20px 30px 10px 30px;
+    }
+    div.img {
+        display: none;
+    }
+    div.rooms {
+        height: 200px;
     }
 }

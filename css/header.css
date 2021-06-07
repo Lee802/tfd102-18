@@ -370,6 +370,7 @@ div.headerright ul li.room ul.roomhides {
     }
     div.footer {
         min-width: 100%;
+        height: auto;
     }
     div.footer {
         margin-top: 100px;
@@ -385,7 +386,6 @@ div.headerright ul li.room ul.roomhides {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
     }
     div.numbersandaddress {
         margin-top: 14px;
@@ -432,5 +432,11 @@ div.headerright ul li.room ul.roomhides {
     }
     div.footer img {
         transform: none;
+    }
+    div.numbersandaddress {
+        transform: none;
+    }
+    div.addressborders div {
+        margin: 10px;
     }
 }
