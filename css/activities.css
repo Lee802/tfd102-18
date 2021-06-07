@@ -79,6 +79,11 @@ h1 {
     font-size: 20px;
 }
 
+div.bodys {
+    display: flex;
+    justify-content: center;
+}
+
 div.body {
     display: flex;
     justify-content: center;
@@ -89,6 +94,32 @@ div.body div.text1 {
     width: 600px;
     margin-right: 100px;
     margin-top: 150px;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    div.body {
+        width: 960px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    div.body {
+        width: 720px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    div.body {
+        width: 540px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:575px) {
+    div.body {
+        width: 100%;
+        flex-direction: column;
+    }
 }
 
 div.sec {
@@ -118,4 +149,110 @@ div.body img:hover {
 
 div.body div.border div.text123 {
     margin-top: 70px;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    div.leftimg {
+        min-width: 450px;
+    }
+    div.rightimg {
+        max-width: 450px;
+    }
+    div.body div.text1 {
+        width: 600px;
+        margin-right: 100px;
+        margin-top: 100px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    div.leftimg {
+        min-width: 320px;
+    }
+    div.rightimg {
+        max-width: 320px;
+    }
+    div.body div.text1 {
+        width: 600px;
+        margin-right: 100px;
+        margin-top: 50px;
+    }
+    div.body div.text {
+        margin-top: 80px;
+    }
+    div.body div.border div.text123 {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    div.leftimg {
+        width: 540px;
+        margin-top: 10px;
+    }
+    div.rightimg {
+        max-width: 540px;
+        margin-top: 10px;
+    }
+    div.body div.text1 {
+        width: 540px;
+        margin-right: 100px;
+        margin-top: 0;
+    }
+    div.body div.text {
+        margin-top: 0;
+        margin-left: 0;
+        width: 540px;
+    }
+    div.body div.border div.text123 {
+        margin-top: 20px;
+        width: 540px;
+    }
+    div.body div.border {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    div.body div.border:first-child {
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+    div.body div.border:nth-child(3) {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width:575px) {
+    div.leftimg {
+        width: 540px;
+        margin-top: 10px;
+    }
+    div.rightimg {
+        max-width: 540px;
+        margin-top: 10px;
+    }
+    div.body div.text1 {
+        width: 540px;
+        margin-right: 100px;
+        margin-top: 0;
+    }
+    div.body div.text {
+        margin-top: 0;
+        margin-left: 0;
+        width: 540px;
+    }
+    div.body div.border div.text123 {
+        margin-top: 20px;
+        width: 540px;
+    }
+    div.body div.border {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    div.body div.border:first-child {
+        flex-direction: column-reverse;
+        margin-top: 20px;
+    }
+    div.body div.border:nth-child(3) {
+        flex-direction: column-reverse;
+    }
 }

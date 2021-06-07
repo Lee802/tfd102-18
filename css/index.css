@@ -392,7 +392,7 @@ div.indicator-container span.indicator {
     background: #d39717;
 }
 
-@media all and (min-width: 992px) and (max-width: 1200px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
     div.bodys {
         display: flex;
         justify-content: center;
@@ -443,7 +443,7 @@ div.indicator-container span.indicator {
     }
 }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     div.bodys {
         display: flex;
         justify-content: center;
@@ -500,7 +500,7 @@ div.indicator-container span.indicator {
     } */
 }
 
-@media all and (min-width:576px) and (max-width: 767px) {
+@media screen and (min-width:576px) and (max-width: 767px) {
     div.bodys {
         display: flex;
         justify-content: center;
@@ -509,9 +509,6 @@ div.indicator-container span.indicator {
     }
     div#slider {
         padding-bottom: calc(60%);
-    }
-    div.headerright {
-        width: 70%
     }
     div.body {
         flex-wrap: wrap;
@@ -606,7 +603,7 @@ div.indicator-container span.indicator {
     }
 }
 
-@media all and (max-width:575px) {
+@media screen and (max-width:575px) {
     div.bodys {
         display: flex;
         justify-content: center;
@@ -621,11 +618,6 @@ div.indicator-container span.indicator {
     }
     div.imgs div#imgborders {
         width: 440px;
-    }
-    div.headerright {
-        width: 70%;
-        height: calc(100% - 85px);
-        bottom: 0;
     }
     div#slider {
         padding-bottom: calc(60%);

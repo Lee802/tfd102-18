@@ -267,7 +267,7 @@ div.headerright ul li.room ul.roomhides {
     display: none;
 }
 
-@media all and (min-width: 992px) and (max-width: 1200px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
     body {
         min-width: 960px;
     }
@@ -279,7 +279,7 @@ div.headerright ul li.room ul.roomhides {
     } */
 }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     body {
         min-width: 720px;
     }
@@ -301,7 +301,7 @@ div.headerright ul li.room ul.roomhides {
     }
 }
 
-@media all and (min-width:576px) and (max-width: 767px) {
+@media screen and (min-width:576px) and (max-width: 767px) {
     body {
         min-width: 540px;
     }
@@ -337,22 +337,34 @@ div.headerright ul li.room ul.roomhides {
         display: flex;
         position: absolute;
         right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
     }
     div.header {
         justify-content: space-between;
         position: sticky;
         top: 0;
         z-index: 2;
+        width: 100%;
+        padding-right: 17px;
     }
     div.header img {
         padding: 0;
     }
     div.headerright {
         display: block;
+        width: 70%;
+    }
+    div.footers {
+        flex-direction: column;
+        margin: 0;
+    }
+    div.footer img {
+        transform: none;
     }
 }
 
-@media all and (max-width:575px) {
+@media screen and (max-width:575px) {
     body {
         min-width: 100%;
     }
@@ -376,7 +388,7 @@ div.headerright ul li.room ul.roomhides {
         align-items: center;
     }
     div.numbersandaddress {
-        transform: none;
+        margin-top: 14px;
     }
     div.works {
         margin-top: 20px;
@@ -388,12 +400,19 @@ div.headerright ul li.room ul.roomhides {
         display: flex;
         position: absolute;
         right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
     }
     div.header {
         justify-content: space-between;
         position: sticky;
         top: 0;
         z-index: 1;
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        padding-right: 17px;
     }
     div.header img {
         padding: 0;
@@ -403,9 +422,15 @@ div.headerright ul li.room ul.roomhides {
     }
     div.headerright {
         display: block;
+        width: 70%;
+        height: calc(100% - 85px);
+        bottom: 0;
     }
-    div.header {
-        position: fixed;
-        width: 100%;
+    div.footers {
+        flex-direction: column;
+        margin: 0;
+    }
+    div.footer img {
+        transform: none;
     }
 }
