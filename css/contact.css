@@ -88,13 +88,13 @@ div.in {
     margin-left: 200px;
 }
 
-div.firstin {
-    margin-left: 0;
+div.in p {
+    white-space: nowrap;
 }
 
 div.inputlist {
     margin-top: 2%;
-    width: 50%;
+    min-width: 900px;
     height: 800px;
     background-color: #f5e5be;
     text-align: center;
@@ -227,4 +227,57 @@ div.inputlist textarea {
     transform: rotate(-45deg);
     top: 20px;
     right: 10px;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    div.inputlist {
+        width: 90%;
+    }
+    div.inside {
+        width: 960px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    div.inputlist {
+        width: 90%;
+    }
+    div.inside {
+        width: 720px;
+    }
+    div.in {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    div.inputlist {
+        min-width: 100%;
+    }
+    div.in {
+        /* width: 140px; */
+        margin: 0px;
+        margin-top: 30px;
+    }
+    div.inside {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:575px) {
+    div.inputlist {
+        min-width: 100%;
+    }
+    div.in {
+        /* width: 140px; */
+        margin: 0px;
+        margin-top: 30px;
+    }
+    div.inside {
+        flex-direction: column;
+    }
+}
+
+div.firstin {
+    margin-top: 0;
 }
