@@ -301,11 +301,13 @@ div.manboshi {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: auto;
     }
     div.mid div.checkin {
         flex-direction: column;
         align-items: center;
         margin-top: 25px;
+        width: auto;
     }
     div.mid div.checkin div {
         margin-left: 0;

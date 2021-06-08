@@ -187,26 +187,26 @@ div.body div.border div.text123 {
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
     div.leftimg {
-        width: 540px;
+        width: auto;
         margin-top: 10px;
     }
     div.rightimg {
-        max-width: 540px;
+        max-width: auto;
         margin-top: 10px;
     }
     div.body div.text1 {
-        width: 540px;
+        width: auto;
         margin-right: 100px;
         margin-top: 0;
     }
     div.body div.text {
         margin-top: 0;
         margin-left: 0;
-        width: 540px;
+        width: auto;
     }
     div.body div.border div.text123 {
         margin-top: 20px;
-        width: 540px;
+        width: auto;
     }
     div.body div.border {
         flex-direction: column;
@@ -218,6 +218,12 @@ div.body div.border div.text123 {
     }
     div.body div.border:nth-child(3) {
         flex-direction: column-reverse;
+    }
+    div.body img {
+        transition: none;
+    }
+    div.body img:hover {
+        transform: none;
     }
 }
 

@@ -268,7 +268,7 @@ document.addEventListener("click", function(event) {
 let img_lissss = document.getElementById("imgborders").querySelectorAll("div");
 console.log(img_lissss);
 let add_ = 234;
-window.addEventListener("resize", function(e) {
+window.addEventListener("resize", function() {
     right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
     let width_border = document.getElementById("move");
     let offwidth = width_border.querySelectorAll("div").length * 100;

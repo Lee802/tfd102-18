@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         sessionStorage.setItem("totalmoneys", sess_totalmoney);
         checktotalroom();
         totalmoneys();
-
+        rwddate();
 
     }
 
@@ -740,7 +740,12 @@ document.addEventListener("click", function(event) {
             alert("開始日期不能為過去時間。");
         }
     }
+    if (event.target.getAttribute("class") == "close") {
 
+        let clicki = document.getElementsByClassName("clicki")[0];
+        clicki.style.display = "none";
+        clicki.getElementsByClassName("message")[0].remove();
+    }
 
 });
 
@@ -771,7 +776,7 @@ function totalmoneys() {
         let firstmoney = moneys * 0.2;
         let text = `<div class="leftandright" id = "leftandright">
                         <div class="mainnew">
-                            <p>總價<a class="smallsize">(房價已包含稅金及其他費用)</p>
+                            <p>總價<a class="smallsize"></p>
                             <p></a>TWD <a class="moneyscolor">${ moneys.toLocaleString('en-US')}</a></p>
                         </div>
                         <div class="mainnew">
@@ -812,6 +817,33 @@ function totalmoneys() {
     // next_btn = document.getElementById("next_btn");
 }
 
+function rwddate() {
+    let text_pos = document.getElementsByClassName("rwdtop")[0];
+
+    let start_dates = sessionStorage.getItem("startdate");
+    let end_dates = sessionStorage.getItem("enddate");
+    let bignum = sessionStorage.getItem("bignum");
+    let chlinum = sessionStorage.getItem("chilnum");
+    let text = ` <div id="datesssss">
+                <a>${start_dates} - ${end_dates} </a>
+            </div>
+            <div id="peoplesssss">
+                <a> ${bignum} 成人 , ${chlinum} 小孩</a>
+            </div>`;
+    console.log(text_pos.children);
+    if (text_pos.children != null) {
+        for (let i = 0; i < text_pos.children.length; i++) {
+            text_pos.children[i].remove();
+        }
+        text_pos.insertAdjacentHTML("afterbegin", text);
+    } else {
+        text_pos.insertAdjacentHTML("afterbegin", text);
+    }
+    text_pos.insertAdjacentHTML("afterbegin", text);
+}
+
+
+
 $(function() {
 
     $('input[name="daterange"]').daterangepicker({
@@ -831,6 +863,7 @@ $(function() {
         right_del_dates.remove();
         right_dates();
         change_date();
+        rwddate();
     });
 
     $('input[name="daterange"]').on('cancel.daterangepicker', function(ev, picker) {
@@ -838,3 +871,65 @@ $(function() {
     });
 
 });
+
+var rwdtop = document.getElementsByClassName("rwdtop")[0];
+$(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 665) { /* 要滑動到選單的距離 */
+            if (window.innerWidth <= 767) {
+                $(rwdtop).addClass('-rwdscroll'); /* 幫選單加上固定效果 */
+            }
+        } else {
+            if (window.innerWidth <= 767) {
+                $(rwdtop).removeClass('-rwdscroll'); /* 移除選單固定效果 */
+            }
+        }
+    });
+});
+
+window.addEventListener("resize", function() {
+
+    if (window.innerWidth > 767) {
+        rwdtop.classList.remove("-rwdscroll");
+    }
+
+});
+
+
+let rwd_button = document.getElementsByClassName("rwdtotal")[0].querySelector("button");
+rwd_button.addEventListener("click", function() {
+
+    let clicki = document.getElementsByClassName("clicki")[0];
+    // console.log(message_length);
+    // if (message_length != 0) {
+
+
+    let message = document.getElementsByClassName("message")[0];
+    let text = `<div class="close"></div>`;
+    clicki.insertAdjacentHTML("beforeend", message.outerHTML);
+    clicki.style.display = "block";
+    clicki.getElementsByClassName("rightpeople")[0].remove();
+    clicki.getElementsByClassName("totalmoney ")[0].querySelector("input").remove();
+    let text_pos = clicki.getElementsByClassName("message")[0];
+    text_pos.insertAdjacentHTML("afterbegin", text);
+    // } else {
+    //     let message = document.getElementsByClassName("message")[0];
+
+    //     let text = `<div class="close"></div>`;
+    //     clicki.insertAdjacentHTML("beforeend", message.outerHTML);
+    //     clicki.style.display = "block";
+    //     clicki.getElementsByClassName("rightpeople")[0].remove();
+    //     clicki.getElementsByClassName("totalmoney ")[0].querySelector("input").remove();
+    //     let text_pos = clicki.getElementsByClassName("message")[0];
+    //     text_pos.insertAdjacentHTML("afterbegin", text);
+    // }
+});
+
+
+
+
+
+
+
+
+// asdf

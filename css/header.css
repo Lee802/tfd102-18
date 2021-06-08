@@ -345,7 +345,7 @@ div.headerright ul li.room ul.roomhides {
         position: sticky;
         top: 0;
         z-index: 2;
-        width: 100%;
+        width: auto;
         padding-right: 17px;
     }
     div.header img {
