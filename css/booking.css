@@ -3,7 +3,7 @@ div.banner {
 }
 
 .--hambuger_class {
-    height: calc(100% - 85px - 50px);
+    height: calc(100% - 85px - 50px) !important;
     bottom: 0;
 }
 
