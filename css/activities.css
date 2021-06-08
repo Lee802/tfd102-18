@@ -263,4 +263,10 @@ div.body div.border div.text123 {
     div.body div.border:nth-child(3) {
         flex-direction: column-reverse;
     }
+    div.body img {
+        transition: none;
+    }
+    div.body img:hover {
+        transform: none;
+    }
 }

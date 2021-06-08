@@ -637,6 +637,7 @@ div.indicator-container span.indicator {
     div.img {
         max-width: 100%;
         margin-top: 30px;
+        margin: 0 10px;
     }
     div.imgfirst {
         left: 0;
@@ -684,7 +685,7 @@ div.indicator-container span.indicator {
         flex-direction: column;
     }
     div.rooms a {
-        margin-left: 0;
+        margin: 0 10px;
     }
     div.rooms div {
         height: 400px;
@@ -699,7 +700,7 @@ div.indicator-container span.indicator {
         width: 100%;
     }
     div.imgs button.right {
-        right: 7px;
+        right: 20px;
     }
     div.imgbord div.imgsec {
         margin-top: -100px;
@@ -711,7 +712,7 @@ div.indicator-container span.indicator {
         margin-top: -150px;
     }
     div.imgs button.left {
-        left: 6px;
+        left: 20px;
         z-index: 50;
     }
 }

@@ -304,10 +304,10 @@ window.addEventListener("resize", function() {
         // div_width.style.transform = `translate3d(-${right_offsetWidth}px,0px,0px)`;
         div_width.setAttribute("style", `transform: translate3d(${right_offsetWidth}px,0px,0px) ; width:${offwidth}%;`);
         add_++;
-        for (let i = 1; i < img_lissss.length; i++) {
-            img_lissss[i].setAttribute("style", `width:${Math.abs(add_)}px;`)
-            console.log(Math.abs(right_offsetWidth));
-        }
+        // for (let i = 1; i < img_lissss.length; i++) {
+        //     img_lissss[i].setAttribute("style", `width:${Math.abs(add_)}px;`)
+        //     console.log(Math.abs(right_offsetWidth));
+        // }
     }
     if (window.innerWidth > 0) {
         slider_item_width = Math.abs(slider_items[0].offsetWidth);

@@ -4,24 +4,28 @@ var hamburger = document.querySelector(".hamburger");
 let html = document.getElementsByTagName("html")[0];
 
 hamburger.addEventListener("click", function() {
-    // Toggle class "is-active"
+
     hamburger.classList.toggle("is-active");
     if (hamburger.classList.contains("is-active")) {
-        // if (window.innerWidth <= 575 && !(window.innerWidth > 575)) {
-        //     hamburger.style.right = "47px";
-        // }
 
+        let rwdtop = document.getElementsByClassName("rwdtop")[0];
+        if (rwdtop.classList.contains("-rwdscroll")) {
+            let right_height = document.getElementsByClassName("headerright")[0];
+            right_height.style.height = "calc(100% - 85px - 50px)";
+        }
         html.style.overflowY = "hidden";
-        // html.style.marginRight = "17px";
+
     } else {
-        //     if (window.innerWidth <= 575 && !(window.innerWidth > 575)) {
-        //         hamburger.style.right = null;
-        //     }
+
         html.style.overflowY = "scroll";
-        //     html.style.marginRight = "0px";
+        let right_height = document.getElementsByClassName("headerright")[0];
+        right_height.style.height = null;
+
     }
-    // Do something else, like open/close menu
+
 });
+
+// height: calc(100% - 85px - 50px);
 
 window.addEventListener("resize", function() {
     if (window.innerWidth > 767) {
