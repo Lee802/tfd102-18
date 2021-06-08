@@ -22,6 +22,7 @@ hamburger.addEventListener("click", function() {
         html.style.overflowY = "scroll";
         let right_height = document.getElementsByClassName("headerright")[0];
         right_height.style.height = null;
+        right_height.style.bottom = "0";
 
 
     }
