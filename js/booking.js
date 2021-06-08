@@ -57,8 +57,8 @@ function right_dates() {
 document.addEventListener("DOMContentLoaded", function() {
 
     right_dates();
-
-
+    rwddate();
+    reload();
     if (defaultsopen == false) {
 
         let start_dates = sessionStorage.getItem("startdate");
@@ -127,10 +127,10 @@ document.addEventListener("DOMContentLoaded", function() {
             // console.log(totalroom[i]);
         }
         sessionStorage.setItem("totalmoneys", sess_totalmoney);
+
         checktotalroom();
         totalmoneys();
-        rwddate();
-
+        rwdmoney();
     }
 
 });
@@ -191,7 +191,10 @@ function change_date() {
         }
     }
     sessionStorage.setItem("totalmoneys", sess_totalmoney);
+
+
     totalmoneys();
+    rwdmoney();
 }
 
 
@@ -247,6 +250,7 @@ people_add.addEventListener("click", function() {
     people_noadd.insertAdjacentHTML("afterend", textdefault);
     total.insertAdjacentHTML("beforeend", totaldefault);
     message_rightpeople.insertAdjacentHTML("beforeend", message_default);
+    rwddate();
 });
 
 
@@ -270,7 +274,7 @@ people_noadd.addEventListener("click", function() {
         total.insertAdjacentHTML("beforeend", totaldefault);
         message_rightpeople.insertAdjacentHTML("beforeend", message_default);
     }
-
+    rwddate();
 });
 
 
@@ -295,7 +299,7 @@ chli_noadd.addEventListener("click", function() {
         chli_noadd.insertAdjacentHTML("afterend", childefault);
         total.insertAdjacentHTML("beforeend", totaldefault);
         message_rightpeople.insertAdjacentHTML("beforeend", message_default);
-
+        rwddate();
     }
 });
 
@@ -318,7 +322,7 @@ chli_add.addEventListener("click", function() {
     chli_noadd.insertAdjacentHTML("afterend", childefault);
     total.insertAdjacentHTML("beforeend", totaldefault);
     message_rightpeople.insertAdjacentHTML("beforeend", message_default);
-
+    rwddate();
 });
 
 
@@ -349,7 +353,9 @@ document.addEventListener("click", function(event) {
         event.target.getAttribute("id") != "peopleadd" && event.target.getAttribute("id") != "peopleadd" &&
         event.target.getAttribute("id") != "peoplenoadd" && event.target.getAttribute("id") != "chlinoadd" &&
         event.target.getAttribute("id") != "chliadd") {
+        let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
         people_hide.classList.remove("-on");
+        // rwdmessage.classList.remove("--block");
 
     }
     if (event.target.getAttribute("id") == "firstadd") {
@@ -358,6 +364,7 @@ document.addEventListener("click", function(event) {
         let new_start = new Date(start_dates);
         let new_end = new Date(end_dates);
         let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
+        let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
 
         q = JSON.parse(sessionStorage.getItem("firstnum")) + 1;
         sessionStorage.setItem("firstnum", q);
@@ -394,6 +401,9 @@ document.addEventListener("click", function(event) {
 
         // console.log(event.target.parentNode);
         if (firstnum == 1) {
+            if (window.innerWidth < 767) {
+                rwdmessage.classList.add("--block");
+            }
 
             totalroom.insertAdjacentHTML("beforeend", totalroom_text);
         } else if (firstnum > 1) {
@@ -418,6 +428,10 @@ document.addEventListener("click", function(event) {
             // console.log(totalroom);
             totalroom.getElementsByClassName("firstrooms")[0].insertAdjacentHTML("afterend", totalroom_text);
             totalroom.getElementsByClassName("firstrooms")[0].remove();
+            if (window.innerWidth < 767) {
+                rwdmessage.classList.add("--block");
+            }
+
         }
 
 
@@ -428,7 +442,7 @@ document.addEventListener("click", function(event) {
         let new_start = new Date(start_dates);
         let new_end = new Date(end_dates);
         let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
-
+        let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
         q = JSON.parse(sessionStorage.getItem("firstnum")) - 1;;
         sessionStorage.setItem("firstnum", q);
         let firstnum = sessionStorage.getItem("firstnum");
@@ -443,6 +457,8 @@ document.addEventListener("click", function(event) {
         let totalmoneys = first_money * firstnum * night;
         if (firstnum == 0) {
             totalroom.getElementsByClassName("firstrooms")[0].remove();
+
+
         } else if (firstnum > 0) {
             totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms firstrooms" >
@@ -464,6 +480,9 @@ document.addEventListener("click", function(event) {
                           </div>`;
             totalroom.getElementsByClassName("firstrooms")[0].insertAdjacentHTML("afterend", totalroom_text);
             totalroom.getElementsByClassName("firstrooms")[0].remove();
+            if (window.innerWidth < 767) {
+                rwdmessage.classList.add("--block");
+            }
         }
     }
 
@@ -472,7 +491,7 @@ document.addEventListener("click", function(event) {
 
 
     if (event.target.getAttribute("id") == "secadd") {
-
+        let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
         let start_dates = sessionStorage.getItem("startdate");
         let end_dates = sessionStorage.getItem("enddate");
         let new_start = new Date(start_dates);
@@ -515,7 +534,9 @@ document.addEventListener("click", function(event) {
 
         // console.log(event.target.parentNode);
         if (firstnum == 1) {
-
+            if (window.innerWidth < 767) {
+                rwdmessage.classList.add("--block");
+            }
             totalroom.insertAdjacentHTML("beforeend", totalroom_text);
         } else if (firstnum > 1) {
             totalmoneys = first_money * firstnum * night;
@@ -547,7 +568,7 @@ document.addEventListener("click", function(event) {
         let new_start = new Date(start_dates);
         let new_end = new Date(end_dates);
         let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
-
+        let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
 
         g = JSON.parse(sessionStorage.getItem("secnum")) - 1;
         sessionStorage.setItem("secnum", g);
@@ -563,6 +584,7 @@ document.addEventListener("click", function(event) {
         let totalmoneys = first_money * firstnum * night;
         if (firstnum == 0) {
             totalroom.getElementsByClassName("secrooms")[0].remove();
+
         } else if (firstnum > 0) {
             totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms secrooms" >
@@ -600,6 +622,7 @@ document.addEventListener("click", function(event) {
         let new_end = new Date(end_dates);
         let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
 
+        let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
         h = JSON.parse(sessionStorage.getItem("threenum")) + 1;
         sessionStorage.setItem("threenum", h);
         sessionStorage.setItem("threemoney", "4000");
@@ -635,7 +658,9 @@ document.addEventListener("click", function(event) {
 
         // console.log(event.target.parentNode);
         if (firstnum == 1) {
-
+            if (window.innerWidth < 767) {
+                rwdmessage.classList.add("--block");
+            }
             totalroom.insertAdjacentHTML("beforeend", totalroom_text);
         } else if (firstnum > 1) {
             totalmoneys = first_money * firstnum * night;
@@ -669,7 +694,7 @@ document.addEventListener("click", function(event) {
         let new_end = new Date(end_dates);
         let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
 
-
+        let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
 
         h = JSON.parse(sessionStorage.getItem("threenum")) - 1;
         sessionStorage.setItem("threenum", h);
@@ -685,6 +710,8 @@ document.addEventListener("click", function(event) {
         let totalmoneys = first_money * firstnum * night;
         if (firstnum == 0) {
             totalroom.getElementsByClassName("threerooms")[0].remove();
+
+
         } else if (firstnum > 0) {
             totalmoneys = first_money * firstnum * night;
             totalroom_text = `<div class="totalrooms threerooms" >
@@ -723,9 +750,12 @@ document.addEventListener("click", function(event) {
     let night = Math.abs(new_end - new_start) / 60 / 60 / 24 / 1000;
     let totals = (first * first_money * night) + (sec * sec_money * night) + (three * three_money * night);
     sessionStorage.setItem("totalmoneys", totals);
+
+
     checktotalroom();
     if (event.target.classList.contains("add") || event.target.classList.contains("noadd")) {
         totalmoneys();
+        rwdmoney();
     }
 
     if (event.target.getAttribute("id") == "next_btn") {
@@ -740,13 +770,47 @@ document.addEventListener("click", function(event) {
             alert("開始日期不能為過去時間。");
         }
     }
-    if (event.target.getAttribute("class") == "close") {
+    if (event.target.getAttribute("id") == "rwd_next_btn") {
+        let start_dates = sessionStorage.getItem("startdate");
+        let new_start = new Date(start_dates);
+        let start_math = Math.abs(new_start) - now_date;
 
+        if (start_math >= 0) {
+            window.location.href = "./booking1.html";
+
+        } else {
+            alert("開始日期不能為過去時間。");
+        }
+    }
+    if (event.target.getAttribute("class") == "close") {
+        let html = document.getElementsByTagName("html")[0];
         let clicki = document.getElementsByClassName("clicki")[0];
+        html.style.overflowY = "scroll";
+        clicki.classList.remove("1234");
         clicki.style.display = "none";
         clicki.getElementsByClassName("message")[0].remove();
     }
 
+    // console.log(message_length);
+    // if (message_length != 0) {
+
+    if (event.target.getAttribute("id") == "rwdinfo") {
+        let rwd_button = document.getElementsByClassName("rwdtotal")[0].querySelector("button");
+        let message = document.getElementsByClassName("message")[0];
+        let clicki = document.getElementsByClassName("clicki")[0];
+        let text = `<div class="close"></div>`;
+        clicki.insertAdjacentHTML("beforeend", message.outerHTML);
+        clicki.style.display = "block";
+        clicki.classList.add("1234");
+        clicki.getElementsByClassName("rightpeople")[0].remove();
+        clicki.getElementsByClassName("totalmoney ")[0].querySelector("input").remove();
+        let text_pos = clicki.getElementsByClassName("message")[0];
+        text_pos.insertAdjacentHTML("afterbegin", text);
+        if (clicki.classList.contains("1234")) {
+            let html = document.getElementsByTagName("html")[0];
+            html.style.overflowY = "hidden";
+        }
+    }
 });
 
 
@@ -754,12 +818,14 @@ function checktotalroom() {
     let gettotal = document.getElementsByClassName("totalroom")[0];
     let gettotals = document.getElementsByClassName("totalrooms");
     let rightpeoplesborder = document.getElementsByClassName("rightpeople")[0];
+
     if (gettotals.length > 1) {
         gettotal.classList.add("addcss");
 
         // console.log("1");
     } else if (gettotals.length == 2) {
         gettotal.classList.remove("addcss");
+
         // console.log("2");
         rightpeoplesborder.classList.remove("borderadd");
     }
@@ -774,13 +840,34 @@ function totalmoneys() {
     if (moneys != 0 && moneys != null) {
         let lastmoney = moneys * 0.8;
         let firstmoney = moneys * 0.2;
-        let text = `<div class="leftandright" id = "leftandright">
+        let text;
+
+
+        if (window.innerWidth < 767) {
+            text = `<div class="leftandright" id = "leftandright">
                         <div class="mainnew">
                             <p>總價<a class="smallsize"></p>
                             <p></a>TWD <a class="moneyscolor">${ moneys.toLocaleString('en-US')}</a></p>
                         </div>
                         <div class="mainnew">
-                            <p>剩餘尾款<a class="smallsize">（請於現場付清）</a></p>
+                            <p>剩餘尾款 <br><a class="smallsize">（請於現場付清）</a></p>
+                            <p>TWD ${lastmoney.toLocaleString()}</p>
+                        </div>
+                        <div class="mainnew">
+                            <p>付款金額<br><a class="smallsize">（訂金）</a></p>
+                            <p>TWD <a class="red">${firstmoney.toLocaleString('en-US')}</a></p>
+                        </div>
+                <input type="button" value="下一步" id="next_btn"></input>
+                    </div>
+                    `;
+        } else {
+            text = `<div class="leftandright" id = "leftandright">
+                        <div class="mainnew">
+                            <p>總價<a class="smallsize"></p>
+                            <p></a>TWD <a class="moneyscolor">${ moneys.toLocaleString('en-US')}</a></p>
+                        </div>
+                        <div class="mainnew">
+                            <p>剩餘尾款 <a class="smallsize">（請於現場付清）</a></p>
                             <p>TWD ${lastmoney.toLocaleString()}</p>
                         </div>
                         <div class="mainnew">
@@ -790,6 +877,8 @@ function totalmoneys() {
                 <input type="button" value="下一步" id="next_btn"></input>
                     </div>
                     `;
+        }
+
 
         let gettotals = document.getElementsByClassName("totalrooms");
         if (openmoneys) {
@@ -816,6 +905,28 @@ function totalmoneys() {
     }
     // next_btn = document.getElementById("next_btn");
 }
+let insidsss = true;
+
+function rwdmoney() {
+    let rwdmoney = JSON.parse(sessionStorage.getItem("totalmoneys"));
+    let text__ = ` <p id="rwdmoneysp">總價：TWD ${rwdmoney.toLocaleString('en-US')}
+   <button id = "rwdinfo">i</button></p>                 `;
+    let text__pos = document.getElementsByClassName("rwdtotal")[0];
+    let getpos = text__pos.children;
+
+    if (getpos.length == 0) {
+
+        text__pos.insertAdjacentHTML("afterbegin", text__);
+    } else {
+        text__pos.querySelector("p").remove();
+        text__pos.insertAdjacentHTML("afterbegin", text__);
+    }
+    if (rwdmoney == 0) {
+        let rwd_block = document.getElementsByClassName("rwdmessage")[0];
+        rwd_block.classList.remove("--block");
+    }
+
+}
 
 function rwddate() {
     let text_pos = document.getElementsByClassName("rwdtop")[0];
@@ -830,16 +941,20 @@ function rwddate() {
             <div id="peoplesssss">
                 <a> ${bignum} 成人 , ${chlinum} 小孩</a>
             </div>`;
-    console.log(text_pos.children);
-    if (text_pos.children != null) {
-        for (let i = 0; i < text_pos.children.length; i++) {
-            text_pos.children[i].remove();
+
+    if (insidsss == true) {
+        text_pos.insertAdjacentHTML("afterbegin", text);
+        insidsss = false;
+    } else {
+        let alldiv = text_pos.querySelectorAll("div");
+        for (let i = 0; i < alldiv.length; i++) {
+            alldiv[i].remove();
         }
         text_pos.insertAdjacentHTML("afterbegin", text);
-    } else {
-        text_pos.insertAdjacentHTML("afterbegin", text);
     }
-    text_pos.insertAdjacentHTML("afterbegin", text);
+
+
+
 }
 
 
@@ -891,40 +1006,28 @@ window.addEventListener("resize", function() {
 
     if (window.innerWidth > 767) {
         rwdtop.classList.remove("-rwdscroll");
+        let rwd_block = document.getElementsByClassName("rwdmessage")[0];
+        rwd_block.classList.remove("--block");
+    }
+    let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
+    let first = sessionStorage.getItem("firstnum");
+    let sec = sessionStorage.getItem("secnum");
+    let three = sessionStorage.getItem("threenum");
+    if (window.innerWidth <= 767 && (first > 0 || sec > 0 || three > 0)) {
+        rwdmessage.classList.add("--block");
     }
 
 });
 
-
-let rwd_button = document.getElementsByClassName("rwdtotal")[0].querySelector("button");
-rwd_button.addEventListener("click", function() {
-
-    let clicki = document.getElementsByClassName("clicki")[0];
-    // console.log(message_length);
-    // if (message_length != 0) {
-
-
-    let message = document.getElementsByClassName("message")[0];
-    let text = `<div class="close"></div>`;
-    clicki.insertAdjacentHTML("beforeend", message.outerHTML);
-    clicki.style.display = "block";
-    clicki.getElementsByClassName("rightpeople")[0].remove();
-    clicki.getElementsByClassName("totalmoney ")[0].querySelector("input").remove();
-    let text_pos = clicki.getElementsByClassName("message")[0];
-    text_pos.insertAdjacentHTML("afterbegin", text);
-    // } else {
-    //     let message = document.getElementsByClassName("message")[0];
-
-    //     let text = `<div class="close"></div>`;
-    //     clicki.insertAdjacentHTML("beforeend", message.outerHTML);
-    //     clicki.style.display = "block";
-    //     clicki.getElementsByClassName("rightpeople")[0].remove();
-    //     clicki.getElementsByClassName("totalmoney ")[0].querySelector("input").remove();
-    //     let text_pos = clicki.getElementsByClassName("message")[0];
-    //     text_pos.insertAdjacentHTML("afterbegin", text);
-    // }
-});
-
+function reload() {
+    let rwdmessage = document.getElementsByClassName("rwdmessage")[0];
+    let first = sessionStorage.getItem("firstnum");
+    let sec = sessionStorage.getItem("secnum");
+    let three = sessionStorage.getItem("threenum");
+    if (window.innerWidth <= 767 && (first > 0 || sec > 0 || three > 0)) {
+        rwdmessage.classList.add("--block");
+    }
+}
 
 
 

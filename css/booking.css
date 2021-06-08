@@ -451,7 +451,7 @@ div.rwdmessage {
     width: 60%;
     height: 50px;
     position: fixed;
-    bottom: 4%;
+    bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -513,6 +513,10 @@ div.clicki div.message div.totalroom {
     margin-top: 20px;
 }
 
+.--block {
+    display: flex !important;
+}
+
 .close {
     z-index: 1002;
 }
@@ -547,6 +551,10 @@ div.clicki div.message div.totalroom {
     transform: rotate(-45deg);
     top: 20px;
     left: 10px;
+}
+
+div.rwdtotal p {
+    position: relative;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
@@ -674,6 +682,7 @@ div.clicki div.message div.totalroom {
     }
     div.rwdmessage {
         display: flex;
+        display: none;
     }
     div.clicki div.message {
         display: block;
@@ -733,7 +742,8 @@ div.clicki div.message div.totalroom {
         width: 30%;
     }
     div.rwdmessage {
-        display: flex;
+        width: 100%;
+        display: none;
     }
     div.clicki div.message {
         display: block;
