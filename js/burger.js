@@ -12,8 +12,7 @@ hamburger.addEventListener("click", function() {
             let rwdtop = document.getElementsByClassName("rwdtop")[0];
             if (rwdtop.classList.contains("-rwdscroll")) {
                 let right_height = document.getElementsByClassName("headerright")[0];
-                right_height.style.height = "calc(100% - 85px - 50px)";
-                right_height.style.bottom = "0";
+                right_height.classList.add("--hambuger_class");
             }
             html.style.overflowY = "hidden";
         }
@@ -21,8 +20,7 @@ hamburger.addEventListener("click", function() {
 
         html.style.overflowY = "scroll";
         let right_height = document.getElementsByClassName("headerright")[0];
-        right_height.style.height = null;
-        right_height.style.bottom = "0";
+        right_height.classList.remove("--hambuger_class");
 
 
     }

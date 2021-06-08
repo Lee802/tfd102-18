@@ -2,6 +2,11 @@ div.banner {
     overflow: hidden;
 }
 
+.--hambuger_class {
+    height: calc(100% - 85px - 50px);
+    bottom: 0;
+}
+
 div.banner div.mask {
     width: 100%;
     /* height: 500px; */
