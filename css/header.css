@@ -432,6 +432,7 @@ div.headerright ul li.room ul.roomhides {
     }
     div.footer img {
         transform: none;
+        margin-top: 30px;
     }
     div.numbersandaddress {
         transform: none;

@@ -209,7 +209,7 @@ document.addEventListener("click", function(event) {
         let total = a.getElementsByTagName("div");
         // right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
         if (window.innerWidth <= 575) {
-            right_offsetWidth += -total[4].offsetWidth - 52;
+            right_offsetWidth += -total[4].offsetWidth - 100;
             console.log(total[4].offsetWidth);
         } else {
             right_offsetWidth += -total[4].offsetWidth - 20;
@@ -221,7 +221,7 @@ document.addEventListener("click", function(event) {
         setTimeout(() => {
             move.style.transition = null;
             if (window.innerWidth <= 575) {
-                right_offsetWidth -= (-total[4].offsetWidth - 52);
+                right_offsetWidth -= (-total[4].offsetWidth - 100);
             } else {
                 right_offsetWidth -= (-total[4].offsetWidth - 20);
             }
@@ -240,7 +240,7 @@ document.addEventListener("click", function(event) {
 
         let total = a.getElementsByTagName("div");
         if (window.innerWidth <= 575) {
-            right_offsetWidth += total[0].offsetWidth + 52;
+            right_offsetWidth += total[0].offsetWidth + 100;
             console.log(total[0].offsetWidth);
         } else {
             right_offsetWidth += total[0].offsetWidth + 20;
@@ -252,7 +252,7 @@ document.addEventListener("click", function(event) {
             move.style.transition = null;
             total[total.length - 1].remove();
             if (window.innerWidth <= 575) {
-                right_offsetWidth -= total[4].offsetWidth + 52;
+                right_offsetWidth -= total[4].offsetWidth + 100;
             } else {
                 right_offsetWidth -= total[4].offsetWidth + 20;
             }
@@ -266,13 +266,17 @@ document.addEventListener("click", function(event) {
 });
 
 let img_lissss = document.getElementById("imgborders").querySelectorAll("div");
-console.log(img_lissss);
-let add_ = 234;
+
 window.addEventListener("resize", function() {
-    right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
+
     let width_border = document.getElementById("move");
     let offwidth = width_border.querySelectorAll("div").length * 100;
     // console.log(window.innerWidth);
+    if (window.innerWidth < 575) {
+        right_offsetWidth = -total_divs_last[4].offsetWidth - 100;
+    } else {
+        right_offsetWidth = -total_divs_last[4].offsetWidth - 20;
+    }
     if (window.innerWidth > 1200) {
 
         let div_width = document.getElementById("move");

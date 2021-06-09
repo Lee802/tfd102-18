@@ -194,4 +194,7 @@ div.bodys {
     .imgPreview img {
         width: 100%;
     }
+    div.body h1 {
+        font-size: 30px;
+    }
 }

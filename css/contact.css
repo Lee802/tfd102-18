@@ -329,6 +329,9 @@ div.inputlist textarea {
     #click {
         width: 100%;
     }
+    div.inside {
+        width: 100%;
+    }
 }
 
 div.firstin {

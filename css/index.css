@@ -625,10 +625,10 @@ div.indicator-container span.indicator {
         top: 85px;
     }
     div.imgs ul div#imgborders div#move div {
-        width: 234px;
+        width: 200px;
         margin-left: 0;
         height: 200px;
-        margin: 0 26px;
+        margin: 0px 50px;
     }
     div.foods {
         transform: translateX(-48%);
@@ -644,7 +644,7 @@ div.indicator-container span.indicator {
         margin-top: 220px;
     }
     div.first {
-        margin-right: 0px;
+        margin: 0 10px;
         width: 100%;
     }
     div.first h1.h1margin {
@@ -653,6 +653,7 @@ div.indicator-container span.indicator {
     div.foods {
         transform: translateX(0);
         width: 100%;
+        margin: 0 10px;
     }
     div.imgs {
         width: auto;
@@ -666,8 +667,8 @@ div.indicator-container span.indicator {
     }
     div.imgbord div.img {
         position: static;
-        width: 100%;
-        margin-top: 120px;
+        width: 95%;
+        height: unset;
     }
     div.abs {
         height: 1300px;
@@ -676,7 +677,7 @@ div.indicator-container span.indicator {
         height: 100%;
     }
     div.rooms h1 {
-        margin-top: 0px;
+        margin-top: 80px;
     }
     div.imgs h1 {
         margin-top: 30px;
@@ -685,7 +686,10 @@ div.indicator-container span.indicator {
         flex-direction: column;
     }
     div.rooms a {
-        margin: 0 10px;
+        margin: 0 10px !important;
+    }
+    div.rooms a.firsts {
+        margin-top: 50px !important;
     }
     div.rooms div {
         height: 400px;
@@ -701,9 +705,6 @@ div.indicator-container span.indicator {
     }
     div.imgs button.right {
         right: 20px;
-    }
-    div.imgbord div.imgsec {
-        margin-top: -100px;
     }
     div.imgs {
         width: auto;
