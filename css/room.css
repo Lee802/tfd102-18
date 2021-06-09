@@ -94,10 +94,16 @@ div.rooms h1 {
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
+    margin: 0;
+    margin-top: 10px;
 }
 
 div.rooms div:first-child {
     margin-left: 0;
+}
+
+div.rooms p {
+    margin-top: -30px;
 }
 
 div.rooms img {
