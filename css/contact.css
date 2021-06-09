@@ -80,12 +80,9 @@ div.map iframe {
 
 div.inside {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
-}
-
-div.in {
-    margin-left: 200px;
+    width: 900px;
 }
 
 div.in p {
@@ -244,9 +241,6 @@ div.inputlist textarea {
     }
     div.inside {
         width: 720px;
-    }
-    div.in {
-        margin-left: 100px;
     }
 }
 
