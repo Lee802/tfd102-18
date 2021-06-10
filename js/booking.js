@@ -35,6 +35,8 @@ if (JSON.stringify(day) < 10) {
     day = "0" + day;
 
     // console.log(day);
+} else {
+    days = day + 1;
 }
 if (JSON.stringify(month) < 10) {
     month = "0" + month;
@@ -811,6 +813,14 @@ document.addEventListener("click", function(event) {
             html.style.overflowY = "hidden";
         }
     }
+    if (event.target.getAttribute("id") == "moressallborder") {
+        let ul_moress = document.getElementById("moressallborder");
+
+        ul_moress.classList.remove("--flexon");
+        let html = document.getElementsByTagName("html")[0];
+        html.style.overflowY = "scroll";
+
+    }
 });
 
 
@@ -1031,8 +1041,33 @@ function reload() {
 
 
 
+let closesssssss = document.getElementById("close");
 
+closesssssss.addEventListener("click", function() {
+    let ul_moress = document.getElementById("moressallborder");
 
+    ul_moress.classList.remove("--flexon");
+    let html = document.getElementsByTagName("html")[0];
+    html.style.overflowY = "scroll";
+});
 
+let closemore = document.getElementById("closed");
+closemore.addEventListener("click", function() {
+    let ul_moress = document.getElementById("moressallborder");
 
+    ul_moress.classList.remove("--flexon");
+    let html = document.getElementsByTagName("html")[0];
+    html.style.overflowY = "scroll";
+});
+
+let p_more = document.getElementsByClassName("more");
+for (let i = 0; i < p_more.length; i++) {
+    p_more[i].addEventListener("click", function() {
+        let ul_moress = document.getElementById("moressallborder");
+
+        ul_moress.classList.add("--flexon");
+        let html = document.getElementsByTagName("html")[0];
+        html.style.overflowY = "hidden";
+    });
+}
 // asdf
